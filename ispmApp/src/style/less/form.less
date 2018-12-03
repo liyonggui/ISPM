@@ -1,0 +1,20 @@
+@import "./variable.less";
+
+.rb-form {
+  margin-top: 16px;
+  overflow-y: auto;
+  .form_inner_input {
+    width: 300px;
+  }
+}
+.form-detail {
+  .el-form-item__label:after {
+    content: '：'
+  }
+  .el-form-item.is-required .el-form-item__label:before {
+    content: ''
+  }
+}
+.rb-form-item-content {
+  color: #333;
+}

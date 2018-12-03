@@ -1,0 +1,332 @@
+{
+    "@platforms" : [ "android", "iPhone", "iPad" ],
+    "id" : "com.opjtech.ispm",
+    /*应用的标识，创建应用时自动生成，勿手动修改*/
+    "name" : "智慧工地项目管理平台",
+    /*应用名称，程序桌面图标名称*/
+    "version" : {
+        "name" : "1.1.1",
+        /*应用版本名称*/
+        "code" : 2
+    },
+    "description" : "",
+    /*应用描述信息*/
+    "icons" : {
+        "72" : "icon.png"
+    },
+    "launch_path" : "index.html",
+    /*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+    "developer" : {
+        "name" : "",
+        /*开发者名称*/
+        "email" : "",
+        /*开发者邮箱地址*/
+        "url" : ""
+    },
+    "permissions" : {
+        "Accelerometer" : {
+            "description" : "访问加速度感应器"
+        },
+        "Audio" : {
+            "description" : "访问麦克风"
+        },
+        "Cache" : {
+            "description" : "管理应用缓存"
+        },
+        "Camera" : {
+            "description" : "访问摄像头"
+        },
+        "Console" : {
+            "description" : "跟踪调试输出日志"
+        },
+        "Device" : {
+            "description" : "访问设备信息"
+        },
+        "Downloader" : {
+            "description" : "文件下载管理"
+        },
+        "Events" : {
+            "description" : "应用扩展事件"
+        },
+        "File" : {
+            "description" : "访问本地文件系统"
+        },
+        "Gallery" : {
+            "description" : "访问系统相册"
+        },
+        "Geolocation" : {
+            "description" : "访问位置信息"
+        },
+        "Invocation" : {
+            "description" : "使用Native.js能力"
+        },
+        "Orientation" : {
+            "description" : "访问方向感应器"
+        },
+        "Proximity" : {
+            "description" : "访问距离感应器"
+        },
+        "Push" : {
+            "description" : "消息推送"
+        },
+        "Storage" : {
+            "description" : "管理应用本地数据"
+        },
+        "Uploader" : {
+            "description" : "管理文件上传任务"
+        },
+        "Runtime" : {
+            "description" : "访问运行期环境"
+        },
+        "XMLHttpRequest" : {
+            "description" : "跨域网络访问"
+        },
+        "Zip" : {
+            "description" : "文件压缩与解压缩"
+        },
+        "Barcode" : {
+            "description" : "管理二维码扫描插件"
+        },
+        "Webview" : {
+            "description" : "窗口管理"
+        },
+        "NativeUI" : {
+            "description" : "原生UI控件"
+        },
+        "Navigator" : {
+            "description" : "浏览器信息"
+        },
+        "NativeObj" : {
+            "description" : "原生对象"
+        },
+        "Share" : {
+            "description" : "管理社交分享插件"
+        }
+    },
+    "plus" : {
+        /*沉浸式状态栏*/
+        "statusbar" : {
+            "immersed" : true
+        },
+        "splashscreen" : {
+            "autoclose" : true,
+            /*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+            "waiting" : true
+        },
+        "popGesture" : "close",
+        /*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+        "runmode" : "normal",
+        /*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+        "signature" : "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",
+        /*可选，保���给应用签名，暂不使用*/
+        "distribute" : {
+            "apple" : {
+                /*沉浸式状态栏*/
+                "UIReserveStatusbarOffset" : true,
+                "appid" : "io.dcloud.VGTH55A95E3D",
+                /*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+                "mobileprovision" : "",
+                /*iOS应用打包配置文件*/
+                "password" : "",
+                /*iOS应用打包个人证书导入密码*/
+                "p12" : "",
+                /*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+                "devices" : "universal",
+                /*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+                "frameworks" : []
+            },
+            "google" : {
+                "packagename" : "test.pm.management",
+                /*Android应用包名，如io.dcloud.HelloH5*/
+                "keystore" : "",
+                /*Android应用打包使用的密钥库文件*/
+                "password" : "",
+                /*Android应用打包使用密钥库中证书的密码*/
+                "aliasname" : "",
+                /*Android应用打包���用密钥库中证书的别名*/
+                "permissions" : [
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>"
+                ]
+            },
+            "orientation" : [ "portrait-primary" ],
+            /*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+            "icons" : {
+                "ios" : {
+                    "prerendered" : true,
+                    /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*//*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+                    "iphone" : {
+                        "normal" : "",
+                        /*iPhone3/3GS程序图标，分辨率：57x57*/
+                        "retina" : "",
+                        /*iPhone4程序图标，分辨率：114x114*//*iPhone4S/5/6程序图标，分辨率：120x120*//*iPhone6 Plus程序图标，分辨率：180x180*/
+                        "spotlight-normal" : "",
+                        /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+                        "spotlight-retina" : "",
+                        /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*//*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+                        "settings-normal" : "",
+                        /*iPhone4设置页面程序图标，分辨率：29x29*//*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                    },
+                    "ipad" : {
+                        "normal" : "",
+                        /*iPad普通屏幕程序图标，分辨率：72x72*/
+                        "retina" : "",
+                        /*iPad高分屏程序图标，分辨率：144x144*//*iPad iOS7程序图标，分辨率：76x76*//*iPad iOS7高分屏程序图标，分辨率：152x152*/
+                        "spotlight-normal" : "",
+                        /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+                        "spotlight-retina" : "",
+                        /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*//*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*//*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*//*iPad设置页面程序图标，分辨率：29x29*/
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png"
+                    },
+                    "appstore" : "unpackage/res/icons/1024x1024.png"
+                },
+                "android" : {
+                    "mdpi" : "unpackage/res/icons/48x48.png",
+                    /*普通屏程序图标，分辨率：48x48*/
+                    "ldpi" : "unpackage/res/icons/48x48.png",
+                    /*大屏程序图标，分辨率：48x48*/
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    /*高分屏程序图标，分辨率：72x72*/
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    /*720P高分屏程序图标，分辨率：96x96*/
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                }
+            },
+            "splashscreen" : {
+                "ios" : {
+                    "iphone" : {
+                        "default" : "",
+                        /*iPhone3启动图片选，分辨率：320x480*/
+                        "retina35" : "unpackage/launch/launch_640-960.png",
+                        /*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+                        "retina40" : "unpackage/launch/launch_640-1136.png",
+                        /*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+                        "retina47" : "unpackage/launch/launch_750-1334.png",
+                        /*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+                        "retina55" : "unpackage/launch/launch_1242-2208.png",
+                        /*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+                        "retina55l" : "unpackage/launch/launch_1242-2208.png",
+                        "iphonex" : "unpackage/launch/launch_1125-2436.png",
+                        "iphonexl" : "unpackage/launch/launch_1125-2436.png",
+                        "retina40l" : "unpackage/launch/launch_640-1136.png",
+                        "retina47l" : "unpackage/launch/launch_750-1334.png"
+                    },
+                    "ipad" : {
+                        "portrait" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad竖屏启动图片，分辨率：768x1004*/
+                        "portrait-retina" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad高分屏竖屏图片，分辨率：1536x2008*/
+                        "landscape" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad横屏启动图片，分辨率：1024x748*/
+                        "landscape-retina" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+                        "portrait7" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad iOS7竖屏启动图��，分辨率：768x1024*/
+                        "portrait-retina7" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+                        "landscape7" : "unpackage/launch/launch_750-1334.png",
+                        /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+                        "landscape-retina7" : "unpackage/launch/launch_750-1334.png"
+                    }
+                },
+                "android" : {
+                    "mdpi" : "",
+                    /*普通屏启动图片，分辨率：240x282*/
+                    "ldpi" : "",
+                    /*大屏启动图片，分辨率：320x442*/
+                    "hdpi" : "unpackage/launch/launch_750-1334.png",
+                    /*高分屏启动图片，分辨率：480x762*/
+                    "xhdpi" : "unpackage/launch/launch_750-1334.png",
+                    /*720P高分屏启动图片，分辨率：720x1242*/
+                    "xxhdpi" : "unpackage/launch/launch_750-1334.png"
+                }
+            },
+            "plugins" : {
+                "push" : {
+                    "description" : "管理消息推送能力",
+                    "cover" : "false",
+                    "igexin" : {
+                        "appid" : "Fjbq4S9oLb80QuCLjCb5Z2",
+                        "appkey" : "UOxzluYBzK8yYqG8duoED7",
+                        "appsecret" : "wy1ze7Wr8J9NTBSjWEA539"
+                    }
+                },
+                "maps" : {
+                    "description" : "地图插件"
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wx643558d873a1eedc",
+                        "appsecret" : "e8717d430650102476b94189cc0e544c",
+                        "discription" : "微信分享"
+                    }
+                }
+            }
+        }
+    },
+    "dependencies" : {
+        "pages" : {
+            "index.html" : {
+                "href" : "index.html",
+                "priority" : 0
+            }
+        },
+        "idle" : {
+            "resources" : [
+                "img/indexbackgroud_1.a4887c8.png",
+                "img/buluobg.e00c7d6.png",
+                "img/wayouji.8f9e232.png",
+                "favicon.ico",
+                "fonts/element-icons.b02bdc1.ttf",
+                "img/not_found.120c774.png",
+                "img/backgroud.8338372.png",
+                "img/iconfont.5988119.svg",
+                "img/banner2.80dbd25.png",
+                "logo.png",
+                "js/manifest.eb3381ad457ce019a03e.js",
+                "img/profile.4c8e859.png",
+                "js/vendor.0999f72c8eab48de3c31.js",
+                "img/indexbackgroud.432b0a7.png",
+                "img/shui.e8cc6d6.png",
+                "img/head.39d721c.png",
+                "img/banner.2eadf27.png",
+                "js/app.dd164e85688509bff616.js",
+                "img/popup.af33eae.png",
+                "img/index_01.eb0328b.jpg",
+                "css/app.33fc08f97fc87a4f84816d6b999c5854.css",
+                "js/0.c47bb55780af6981ed4d.js"
+            ]
+        }
+    }
+}
