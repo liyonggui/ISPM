@@ -1,0 +1,6 @@
+framework module Pods_ISPMIOT {
+  umbrella header "Pods-ISPMIOT-umbrella.h"
+
+  export *
+  module * { export * }
+}
