@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Xvw-3f-KrT" customClass="ListItemTableViewCell" customModule="ISPMIOT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvw-3f-KrT" id="1aO-QC-Mgb">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSQ-yX-jRj">
+                        <rect key="frame" x="0.0" y="0.0" width="5" height="43.5"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.82745098039999998" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="ITe-0C-MWl"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enh-Vm-bnC">
+                        <rect key="frame" x="15" y="11.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="enh-Vm-bnC" firstAttribute="centerY" secondItem="1aO-QC-Mgb" secondAttribute="centerY" id="LMh-4h-1NF"/>
+                    <constraint firstAttribute="bottom" secondItem="JSQ-yX-jRj" secondAttribute="bottom" id="fbE-rt-cA4"/>
+                    <constraint firstItem="enh-Vm-bnC" firstAttribute="leading" secondItem="JSQ-yX-jRj" secondAttribute="trailing" constant="10" id="kc8-sy-Qvg"/>
+                    <constraint firstItem="JSQ-yX-jRj" firstAttribute="top" secondItem="1aO-QC-Mgb" secondAttribute="top" id="l6a-fL-AZQ"/>
+                    <constraint firstItem="JSQ-yX-jRj" firstAttribute="leading" secondItem="1aO-QC-Mgb" secondAttribute="leading" id="uyK-aA-ayc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="titleLabel" destination="enh-Vm-bnC" id="7TL-4h-5cc"/>
+            </connections>
+            <point key="canvasLocation" x="200.80000000000001" y="58.47076461769116"/>
+        </tableViewCell>
+    </objects>
+</document>

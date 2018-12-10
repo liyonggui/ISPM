@@ -18,7 +18,16 @@ class MainTabBarController: UITabBarController {
     
     // MARK: - setup UI
     private func setupUI() {
-        
+        tabBar.barTintColor = .mainBlue
+        let item = UITabBarItem.appearance()
+        item.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+            ], for: .normal)
+        item.setTitleTextAttributes([
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+            ], for: .selected)
     }
     
     private func setUpTabBarAssets() {
@@ -27,7 +36,7 @@ class MainTabBarController: UITabBarController {
         }
 
         let homeTitle = TabTitle.home
-
+        
         let icons = [homeIcon]
         let titles =  [homeTitle]
 
@@ -55,7 +64,7 @@ class MainTabBarController: UITabBarController {
     }
 }
 
-// MARK: - extension
+// MARK: - UITabBarControllerDelegate
 extension MainTabBarController: UITabBarControllerDelegate {
     
 }

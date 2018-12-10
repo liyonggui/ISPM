@@ -2,10 +2,22 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .mainBlue
     }
 
 }
@@ -58,12 +70,13 @@ extension BaseViewController {
     }
 }
 
+/// SingleTitleView - 一行文本
 private class SingleTitleView: UIView {
     lazy var mainTitle: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 1, width: self.bounds.width, height: self.bounds.height))
         label.font = UIFont.TisaSans.light.sized(.xlarge)
         label.textAlignment = .center
-        label.textColor = .blackXO
+        label.textColor = .white
         return label
     }()
     
@@ -76,19 +89,21 @@ private class SingleTitleView: UIView {
         if let font = font { mainTitle.font = font }
         self.mainTitle.text = title
         if sizeToFit { self.mainTitle.sizeToFit() }
-        self.frame = CGRect(x: 0, y: 1, width: self.bounds.width, height: self.bounds.height)// just set the size and height to whatever was calc'ed in the title label
+        self.frame = CGRect(x: 0, y: 1, width: self.bounds.width, height: self.bounds.height)
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
+
+/// DoubleTitleView - 两行文本
 private class DoubleTitleView: UIView {
     lazy var mainTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.TisaSans.regular.sized(.regular)
         label.textAlignment = .center
-        label.textColor = .blackXO
+        label.textColor = .white
         return label
     }()
     
@@ -98,7 +113,7 @@ private class DoubleTitleView: UIView {
         label.text = "▾"
         label.font = UIFont(name: "ArialMT", size: 14) ?? UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
-        label.textColor = .blackXO
+        label.textColor = .white
         return label
     }()
     
