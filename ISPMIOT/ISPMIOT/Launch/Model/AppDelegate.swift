@@ -4,9 +4,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    lazy var homeVC: HomeViewController = {
-        let homeVC = HomeViewController()
-        return homeVC
+    lazy var mainTabBarController: MainTabBarController = {
+        let mainTabBarController = MainTabBarController()
+        return mainTabBarController
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupWindow() {
         if self.window == nil {
             self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = self.homeVC
+            self.window?.rootViewController = self.mainTabBarController
             self.window?.makeKeyAndVisible()
         }
     }
