@@ -15,7 +15,9 @@
                 <outlet property="contantTableView" destination="AMT-Ft-dIU" id="vDA-kb-lTD"/>
                 <outlet property="leadingConstraint" destination="car-Vj-4Xf" id="qBu-F0-VaX"/>
                 <outlet property="listItemView" destination="ut1-SL-Xi7" id="6H5-6W-k8V"/>
+                <outlet property="mainTableView" destination="KNQ-Hl-Ax5" id="yHx-uT-piE"/>
                 <outlet property="projectInfoView" destination="lkD-eW-zIt" id="bEN-kI-mju"/>
+                <outlet property="tapSegmented" destination="HRh-LJ-aDv" id="lMP-DM-rog"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Z8r-p5-hnp"/>
             </connections>
         </placeholder>
@@ -99,7 +101,7 @@
                                         <constraint firstAttribute="width" constant="110" id="i9r-zt-Tus"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：2018-05-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-JB-hJF">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式：13534554323" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-JB-hJF">
                                     <rect key="frame" x="8" y="118.5" width="231" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -136,19 +138,34 @@
                             <rect key="frame" x="0.0" y="150" width="369" height="44"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HRh-LJ-aDv">
-                                    <rect key="frame" x="0.0" y="0.0" width="369" height="45"/>
+                                    <rect key="frame" x="2" y="0.0" width="365" height="45"/>
                                     <segments>
-                                        <segment title="First"/>
-                                        <segment title="Second"/>
+                                        <segment title="项目状态"/>
+                                        <segment title="设备列表"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="HRh-LJ-aDv" firstAttribute="leading" secondItem="kO1-7N-fpV" secondAttribute="leading" id="4o9-vH-yfY"/>
+                                <constraint firstItem="HRh-LJ-aDv" firstAttribute="leading" secondItem="kO1-7N-fpV" secondAttribute="leading" constant="2" id="4o9-vH-yfY"/>
                                 <constraint firstAttribute="bottom" secondItem="HRh-LJ-aDv" secondAttribute="bottom" id="HgA-d9-ed9"/>
                                 <constraint firstItem="HRh-LJ-aDv" firstAttribute="top" secondItem="kO1-7N-fpV" secondAttribute="top" id="eRA-Oy-if8"/>
                                 <constraint firstAttribute="height" constant="44" id="hxY-OZ-afN"/>
-                                <constraint firstAttribute="trailing" secondItem="HRh-LJ-aDv" secondAttribute="trailing" id="r4N-v7-G9g"/>
+                                <constraint firstAttribute="trailing" secondItem="HRh-LJ-aDv" secondAttribute="trailing" constant="2" id="r4N-v7-G9g"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-Sw-gX4">
+                            <rect key="frame" x="0.0" y="196" width="369" height="446"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KNQ-Hl-Ax5" customClass="BaseTableView" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="446"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="KNQ-Hl-Ax5" secondAttribute="trailing" id="12j-Ig-k0W"/>
+                                <constraint firstItem="KNQ-Hl-Ax5" firstAttribute="leading" secondItem="wBo-Sw-gX4" secondAttribute="leading" id="BRu-aM-GAR"/>
+                                <constraint firstAttribute="bottom" secondItem="KNQ-Hl-Ax5" secondAttribute="bottom" id="OTQ-lq-MuT"/>
+                                <constraint firstItem="KNQ-Hl-Ax5" firstAttribute="top" secondItem="wBo-Sw-gX4" secondAttribute="top" id="agF-H8-dLI"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -156,9 +173,13 @@
                         <constraint firstAttribute="trailing" secondItem="UzX-Hn-YpT" secondAttribute="trailing" id="8Wd-0g-US8"/>
                         <constraint firstAttribute="trailing" secondItem="kO1-7N-fpV" secondAttribute="trailing" id="H56-Sz-LXQ"/>
                         <constraint firstItem="kO1-7N-fpV" firstAttribute="top" secondItem="UzX-Hn-YpT" secondAttribute="bottom" id="INZ-Ya-UNS"/>
+                        <constraint firstItem="wBo-Sw-gX4" firstAttribute="leading" secondItem="lkD-eW-zIt" secondAttribute="leading" id="Je0-Bb-Vc7"/>
+                        <constraint firstAttribute="bottom" secondItem="wBo-Sw-gX4" secondAttribute="bottom" id="WQa-WQ-zyB"/>
+                        <constraint firstAttribute="trailing" secondItem="wBo-Sw-gX4" secondAttribute="trailing" id="YeD-Qk-uPy"/>
                         <constraint firstItem="kO1-7N-fpV" firstAttribute="leading" secondItem="lkD-eW-zIt" secondAttribute="leading" id="eNE-u0-xez"/>
                         <constraint firstItem="UzX-Hn-YpT" firstAttribute="leading" secondItem="lkD-eW-zIt" secondAttribute="leading" id="gyY-Qq-dka"/>
                         <constraint firstItem="UzX-Hn-YpT" firstAttribute="top" secondItem="lkD-eW-zIt" secondAttribute="top" id="k7b-DX-4ek"/>
+                        <constraint firstItem="wBo-Sw-gX4" firstAttribute="top" secondItem="kO1-7N-fpV" secondAttribute="bottom" constant="2" id="pF7-3U-pXS"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcm-dO-8Zt">

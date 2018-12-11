@@ -25,7 +25,7 @@
 		9806DF0D21BE4E3100B6A367 /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9806DF0C21BE4E3100B6A367 /* BaseTableView.swift */; };
 		9806DF0F21BE4F5F00B6A367 /* ListItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9806DF0E21BE4F5F00B6A367 /* ListItemTableViewCell.xib */; };
 		9806DF1121BE507B00B6A367 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9806DF1021BE507B00B6A367 /* BaseTableViewCell.swift */; };
-		9877418221BBBE62009A238B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9877418021BBBE62009A238B /* LaunchScreen.storyboard */; };
+		98686F8021BF5CDF0016CDEE /* Launch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98686F7F21BF5CDE0016CDEE /* Launch.xib */; };
 		9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877419421BBBF9F009A238B /* AppDelegate.swift */; };
 		987741A421BBC244009A238B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A321BBC244009A238B /* HomeViewController.swift */; };
 		987741AA21BBC3E4009A238B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A921BBC3E4009A238B /* BaseViewController.swift */; };
@@ -56,8 +56,8 @@
 		9806DF0C21BE4E3100B6A367 /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		9806DF0E21BE4F5F00B6A367 /* ListItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListItemTableViewCell.xib; sourceTree = "<group>"; };
 		9806DF1021BE507B00B6A367 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		98686F7F21BF5CDE0016CDEE /* Launch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Launch.xib; sourceTree = "<group>"; };
 		9877417421BBBE60009A238B /* ISPMIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISPMIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9877418121BBBE62009A238B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9877418321BBBE62009A238B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9877419421BBBF9F009A238B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		987741A321BBC244009A238B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 		9806DEE821BDF7F900B6A367 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				98686F7F21BF5CDE0016CDEE /* Launch.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,7 +181,6 @@
 				9877419221BBBF9F009A238B /* Launch */,
 				9877419521BBBF9F009A238B /* Home */,
 				9877418921BBBF9F009A238B /* Network */,
-				9877418021BBBE62009A238B /* LaunchScreen.storyboard */,
 				9877418321BBBE62009A238B /* Info.plist */,
 				9806DEFC21BE12FE00B6A367 /* Assets.xcassets */,
 			);
@@ -363,8 +363,8 @@
 			files = (
 				9806DF0F21BE4F5F00B6A367 /* ListItemTableViewCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
-				9877418221BBBE62009A238B /* LaunchScreen.storyboard in Resources */,
 				9806DEFF21BE297E00B6A367 /* HomeViewController.xib in Resources */,
+				98686F8021BF5CDF0016CDEE /* Launch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,17 +452,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9877418021BBBE62009A238B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9877418121BBBE62009A238B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9877418421BBBE62009A238B /* Debug */ = {

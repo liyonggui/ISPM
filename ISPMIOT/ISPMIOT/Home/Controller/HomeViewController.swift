@@ -6,6 +6,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var contantTableView: UIView!
     @IBOutlet weak var projectInfoView: UIView!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var mainTableView: BaseTableView!
+    @IBOutlet weak var tapSegmented: UISegmentedControl!
     
     lazy var listItemViewController: ListItemViewController = {
         let vc = ListItemViewController()
