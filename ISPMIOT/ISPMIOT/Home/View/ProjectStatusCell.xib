@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="161" id="Ju9-Q0-LGS" customClass="ProjectStatusCell" customModule="ISPMIOT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="458" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ju9-Q0-LGS" id="ei4-Qq-kML">
+                <rect key="frame" x="0.0" y="0.0" width="458" height="160.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHM-Hh-2zc">
+                        <rect key="frame" x="5" y="5" width="448" height="142"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-b3-kGe">
+                                <rect key="frame" x="0.0" y="0.0" width="448" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51v-W6-PFD" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">PM2.5
+(ug/m3)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoF-T8-ScW" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="74.5" y="0.0" width="75" height="40"/>
+                                        <string key="text">温度
+(°C)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxU-Xa-wxf" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="149.5" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">湿度
+(%)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8c-DJ-WyT" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="224" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">风力
+(等级)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iof-5q-lyi" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="298.5" y="0.0" width="75" height="40"/>
+                                        <string key="text">风速
+(m/s)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="风向" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-qw-YgB" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="373.5" y="0.0" width="74.5" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hoF-T8-ScW" firstAttribute="width" secondItem="51v-W6-PFD" secondAttribute="width" id="2bJ-fa-xWk"/>
+                                    <constraint firstItem="DxU-Xa-wxf" firstAttribute="width" secondItem="51v-W6-PFD" secondAttribute="width" id="OSi-t7-DCF"/>
+                                    <constraint firstItem="iof-5q-lyi" firstAttribute="width" secondItem="51v-W6-PFD" secondAttribute="width" id="OeB-ku-G1n"/>
+                                    <constraint firstItem="ez4-qw-YgB" firstAttribute="width" secondItem="51v-W6-PFD" secondAttribute="width" id="Xie-30-64w"/>
+                                    <constraint firstItem="G8c-DJ-WyT" firstAttribute="width" secondItem="51v-W6-PFD" secondAttribute="width" id="cFq-kt-mkg"/>
+                                    <constraint firstAttribute="height" constant="40" id="rFH-go-gub"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yag-Qy-FzE">
+                                <rect key="frame" x="0.0" y="40" width="448" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLY-bK-d0g" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-N2-rH6" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="74.5" y="0.0" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPi-et-AS4" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="149.5" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一级" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91F-jM-7lj" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="224" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWM-3g-wCz" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="298.5" y="0.0" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="东南" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcg-Ig-uJV" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="373.5" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GWM-3g-wCz" firstAttribute="width" secondItem="TLY-bK-d0g" secondAttribute="width" id="Gw1-cU-DNj"/>
+                                    <constraint firstItem="zcg-Ig-uJV" firstAttribute="width" secondItem="TLY-bK-d0g" secondAttribute="width" id="K3E-a9-6rb"/>
+                                    <constraint firstAttribute="height" constant="30" id="KDy-57-ZaQ"/>
+                                    <constraint firstItem="XPi-et-AS4" firstAttribute="width" secondItem="TLY-bK-d0g" secondAttribute="width" id="KvI-Ht-GCp"/>
+                                    <constraint firstItem="91F-jM-7lj" firstAttribute="width" secondItem="TLY-bK-d0g" secondAttribute="width" id="fgi-y1-tyy"/>
+                                    <constraint firstItem="YaF-N2-rH6" firstAttribute="width" secondItem="TLY-bK-d0g" secondAttribute="width" id="ilD-7J-7Tl"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2as-F0-OiR">
+                                <rect key="frame" x="0.0" y="70" width="448" height="1"/>
+                                <color key="backgroundColor" red="0.28954147357781845" green="0.90440865347652377" blue="1" alpha="0.49280652322404372" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="PoL-yl-ebX"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQM-FW-zhO">
+                                <rect key="frame" x="0.0" y="71" width="448" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px9-JV-eyh" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">进出比例
+(%)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-BU-wBp" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="74.5" y="0.0" width="75" height="40"/>
+                                        <string key="text">扬尘
+(ug/m3)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfP-4y-uoG" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="149.5" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">噪声
+(dB)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-Pq-tzX" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="224" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">甲醛
+(mg/m3)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVO-fG-Gaj" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="298.5" y="0.0" width="75" height="40"/>
+                                        <string key="text">人员总数
+(人)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtK-hI-Ydo" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="373.5" y="0.0" width="74.5" height="40"/>
+                                        <string key="text">刷卡次数
+(次)</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13417002522223798" green="1" blue="0.96539234624619141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="WtK-hI-Ydo" firstAttribute="width" secondItem="Px9-JV-eyh" secondAttribute="width" id="IZe-7k-5Vf"/>
+                                    <constraint firstItem="vRB-Pq-tzX" firstAttribute="width" secondItem="Px9-JV-eyh" secondAttribute="width" id="Zhc-qt-r4H"/>
+                                    <constraint firstItem="yzu-BU-wBp" firstAttribute="width" secondItem="Px9-JV-eyh" secondAttribute="width" id="ajj-tf-ziZ"/>
+                                    <constraint firstItem="lVO-fG-Gaj" firstAttribute="width" secondItem="Px9-JV-eyh" secondAttribute="width" id="cQn-v3-AbJ"/>
+                                    <constraint firstItem="SfP-4y-uoG" firstAttribute="width" secondItem="Px9-JV-eyh" secondAttribute="width" id="hWZ-dF-N1I"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr3-dA-ScJ">
+                                <rect key="frame" x="0.0" y="111" width="448" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueC-5o-aCa" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6y-n7-1fp" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="74.5" y="0.0" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncU-ai-jEG" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="149.5" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okq-PX-zpp" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="224" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWa-ZL-LeE" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="298.5" y="0.0" width="75" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAx-jR-rWz" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
+                                        <rect key="frame" x="373.5" y="0.0" width="74.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Za-Qb-o2z"/>
+                                    <constraint firstItem="dWa-ZL-LeE" firstAttribute="width" secondItem="ueC-5o-aCa" secondAttribute="width" id="C18-ih-bWj"/>
+                                    <constraint firstItem="Y6y-n7-1fp" firstAttribute="width" secondItem="ueC-5o-aCa" secondAttribute="width" id="KDQ-VE-IC1"/>
+                                    <constraint firstItem="PAx-jR-rWz" firstAttribute="width" secondItem="ueC-5o-aCa" secondAttribute="width" id="RMa-Db-aDK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Rf2-fw-Cbf"/>
+                                    <constraint firstItem="ncU-ai-jEG" firstAttribute="width" secondItem="ueC-5o-aCa" secondAttribute="width" id="p5k-eL-WU2"/>
+                                    <constraint firstItem="Okq-PX-zpp" firstAttribute="width" secondItem="ueC-5o-aCa" secondAttribute="width" id="pfh-IB-vYh"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="zFu-2Y-vxe"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Hfl-b3-kGe" firstAttribute="leading" secondItem="aHM-Hh-2zc" secondAttribute="leading" id="0mA-Gh-Vib"/>
+                            <constraint firstAttribute="height" constant="142" id="1IK-WR-92k"/>
+                            <constraint firstAttribute="trailing" secondItem="mQM-FW-zhO" secondAttribute="trailing" id="5zp-PF-GBu"/>
+                            <constraint firstAttribute="trailing" secondItem="2as-F0-OiR" secondAttribute="trailing" id="73l-Bx-r0G"/>
+                            <constraint firstItem="2as-F0-OiR" firstAttribute="top" secondItem="Yag-Qy-FzE" secondAttribute="bottom" id="9zd-E4-0Eh"/>
+                            <constraint firstItem="2as-F0-OiR" firstAttribute="leading" secondItem="aHM-Hh-2zc" secondAttribute="leading" id="F9j-nC-Y6D"/>
+                            <constraint firstAttribute="trailing" secondItem="Yag-Qy-FzE" secondAttribute="trailing" id="KTh-SW-9CT"/>
+                            <constraint firstAttribute="trailing" secondItem="yr3-dA-ScJ" secondAttribute="trailing" id="QMd-GP-r3F"/>
+                            <constraint firstAttribute="trailing" secondItem="Hfl-b3-kGe" secondAttribute="trailing" id="bVp-j0-vlK"/>
+                            <constraint firstItem="yr3-dA-ScJ" firstAttribute="leading" secondItem="aHM-Hh-2zc" secondAttribute="leading" id="btD-zV-eav"/>
+                            <constraint firstItem="Yag-Qy-FzE" firstAttribute="leading" secondItem="aHM-Hh-2zc" secondAttribute="leading" id="chU-Jf-3ic"/>
+                            <constraint firstItem="mQM-FW-zhO" firstAttribute="top" secondItem="2as-F0-OiR" secondAttribute="bottom" id="dDd-4u-h0a"/>
+                            <constraint firstItem="yr3-dA-ScJ" firstAttribute="height" secondItem="Yag-Qy-FzE" secondAttribute="height" id="gRk-Pk-NHm"/>
+                            <constraint firstItem="Yag-Qy-FzE" firstAttribute="top" secondItem="Hfl-b3-kGe" secondAttribute="bottom" id="hnv-Z3-iQz"/>
+                            <constraint firstItem="mQM-FW-zhO" firstAttribute="leading" secondItem="aHM-Hh-2zc" secondAttribute="leading" id="lUo-dw-4xJ"/>
+                            <constraint firstItem="Hfl-b3-kGe" firstAttribute="top" secondItem="aHM-Hh-2zc" secondAttribute="top" id="m3L-YC-RIl"/>
+                            <constraint firstItem="yr3-dA-ScJ" firstAttribute="top" secondItem="mQM-FW-zhO" secondAttribute="bottom" id="rYv-ns-uxx"/>
+                            <constraint firstItem="mQM-FW-zhO" firstAttribute="height" secondItem="Hfl-b3-kGe" secondAttribute="height" id="xkm-GL-Fwu"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="aHM-Hh-2zc" firstAttribute="leading" secondItem="ei4-Qq-kML" secondAttribute="leading" constant="5" id="N0p-PH-DI4"/>
+                    <constraint firstAttribute="bottom" secondItem="aHM-Hh-2zc" secondAttribute="bottom" constant="5" id="oOx-hV-u9b"/>
+                    <constraint firstItem="aHM-Hh-2zc" firstAttribute="top" secondItem="ei4-Qq-kML" secondAttribute="top" constant="5" id="pbx-of-n4y"/>
+                    <constraint firstAttribute="trailing" secondItem="aHM-Hh-2zc" secondAttribute="trailing" constant="5" id="y6o-IQ-lqX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mainView" destination="aHM-Hh-2zc" id="iFJ-EI-4gW"/>
+            </connections>
+            <point key="canvasLocation" x="54.399999999999999" y="48.125937031484263"/>
+        </tableViewCell>
+    </objects>
+</document>

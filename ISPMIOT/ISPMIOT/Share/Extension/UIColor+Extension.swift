@@ -5,6 +5,8 @@ import UIKit
 public extension UIColor {
     @objc public static let mainBlue = UIColor(red: 24/255, green: 44/255, blue: 70/255, alpha: 1)
     @objc public static let secondaryBlue = UIColor(red: 23/255, green: 35/255, blue: 57/255, alpha: 1)
+    @objc public static let backgroundBlue1 = UIColor(red: 32/255, green: 52/255, blue: 76/255, alpha: 1)
+    @objc public static let textBlue1 = UIColor(red: 73/255, green: 185/255, blue: 255/255, alpha: 1)
 }
 
 // MARK: Grays
