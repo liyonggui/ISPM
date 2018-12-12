@@ -27,7 +27,6 @@ extension ListItemViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(of: ListItemTableViewCell.self, for: indexPath, defaultCell: nil, configure: { cell in
             cell.setup()
-            print(cell)
         })
     }
 }

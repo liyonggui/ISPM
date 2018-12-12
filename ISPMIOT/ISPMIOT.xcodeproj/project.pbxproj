@@ -32,6 +32,14 @@
 		98686F8821BF9FCE0016CDEE /* LabelTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F8721BF9FCE0016CDEE /* LabelTools.swift */; };
 		98686F8A21BFBF2D0016CDEE /* DevicesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F8921BFBF2D0016CDEE /* DevicesListCell.swift */; };
 		98686F8C21BFC0DF0016CDEE /* DevicesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98686F8B21BFC0DF0016CDEE /* DevicesListCell.xib */; };
+		98686F9021C09E850016CDEE /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F8F21C09E850016CDEE /* Interface.swift */; };
+		98686F9221C0A0AC0016CDEE /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F9121C0A0AC0016CDEE /* UserService.swift */; };
+		98686F9521C0A1680016CDEE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F9421C0A1680016CDEE /* Extensions.swift */; };
+		98686F9B21C0A9360016CDEE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F9A21C0A9360016CDEE /* User.swift */; };
+		98686F9D21C0A9670016CDEE /* ServicesConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686F9C21C0A9670016CDEE /* ServicesConstants.swift */; };
+		98686FA521C0D9590016CDEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FA421C0D9590016CDEE /* LoginViewController.swift */; };
+		98686FA721C0DA210016CDEE /* IOTNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */; };
+		98686FA921C0DD170016CDEE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98686FA821C0DD170016CDEE /* LoginViewController.xib */; };
 		9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877419421BBBF9F009A238B /* AppDelegate.swift */; };
 		987741A421BBC244009A238B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A321BBC244009A238B /* HomeViewController.swift */; };
 		987741AA21BBC3E4009A238B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A921BBC3E4009A238B /* BaseViewController.swift */; };
@@ -69,6 +77,14 @@
 		98686F8721BF9FCE0016CDEE /* LabelTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelTools.swift; sourceTree = "<group>"; };
 		98686F8921BFBF2D0016CDEE /* DevicesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesListCell.swift; sourceTree = "<group>"; };
 		98686F8B21BFC0DF0016CDEE /* DevicesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevicesListCell.xib; sourceTree = "<group>"; };
+		98686F8F21C09E850016CDEE /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		98686F9121C0A0AC0016CDEE /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		98686F9421C0A1680016CDEE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		98686F9A21C0A9360016CDEE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		98686F9C21C0A9670016CDEE /* ServicesConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesConstants.swift; sourceTree = "<group>"; };
+		98686FA421C0D9590016CDEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTNotificationCenter.swift; sourceTree = "<group>"; };
+		98686FA821C0DD170016CDEE /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9877417421BBBE60009A238B /* ISPMIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISPMIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9877418321BBBE62009A238B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9877419421BBBF9F009A238B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +134,7 @@
 		9806DEE621BD3CA500B6A367 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
+				98686F9121C0A0AC0016CDEE /* UserService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -163,8 +180,67 @@
 			isa = PBXGroup;
 			children = (
 				9806DEF221BE046400B6A367 /* Constants.swift */,
+				98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		98686F8D21C09E140016CDEE /* APIInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				98686F9C21C0A9670016CDEE /* ServicesConstants.swift */,
+				98686F8F21C09E850016CDEE /* Interface.swift */,
+			);
+			path = APIInterfaces;
+			sourceTree = "<group>";
+		};
+		98686F8E21C09E2E0016CDEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				98686F9A21C0A9360016CDEE /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98686F9321C0A1470016CDEE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98686F9421C0A1680016CDEE /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		98686FA021C0D9150016CDEE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				98686FA321C0D93C0016CDEE /* Controller */,
+				98686FA121C0D93C0016CDEE /* Model */,
+				98686FA221C0D93C0016CDEE /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		98686FA121C0D93C0016CDEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98686FA221C0D93C0016CDEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98686FA321C0D93C0016CDEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98686FA421C0D9590016CDEE /* LoginViewController.swift */,
+				98686FA821C0DD170016CDEE /* LoginViewController.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		9877416B21BBBE60009A238B = {
@@ -192,6 +268,7 @@
 				987741A521BBC3C7009A238B /* Basic */,
 				9877419221BBBF9F009A238B /* Launch */,
 				9877419521BBBF9F009A238B /* Home */,
+				98686FA021C0D9150016CDEE /* Login */,
 				9877418921BBBF9F009A238B /* Network */,
 				9877418321BBBE62009A238B /* Info.plist */,
 				9806DEFC21BE12FE00B6A367 /* Assets.xcassets */,
@@ -202,6 +279,9 @@
 		9877418921BBBF9F009A238B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				98686F9321C0A1470016CDEE /* Extensions */,
+				98686F8E21C09E2E0016CDEE /* Model */,
+				98686F8D21C09E140016CDEE /* APIInterfaces */,
 				9806DEE621BD3CA500B6A367 /* APIService */,
 				987741AB21BD3B57009A238B /* Base */,
 			);
@@ -379,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98686FA921C0DD170016CDEE /* LoginViewController.xib in Resources */,
 				9806DF0F21BE4F5F00B6A367 /* ListItemTableViewCell.xib in Resources */,
 				98686F8421BF621E0016CDEE /* ProjectStatusCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
@@ -422,6 +503,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONWebToken/JWT.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -429,6 +511,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWT.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -450,10 +533,12 @@
 				9806DF0B21BE4C4100B6A367 /* ReusableCellExtensions.swift in Sources */,
 				987741B921BD3B58009A238B /* NetworkConstants.swift in Sources */,
 				9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */,
+				98686F9521C0A1680016CDEE /* Extensions.swift in Sources */,
 				9806DF0521BE418600B6A367 /* ListItemViewController.swift in Sources */,
 				9806DEF921BE0A6600B6A367 /* UIColor+Extension.swift in Sources */,
 				987741B521BD3B58009A238B /* GraphQLQuery.swift in Sources */,
 				98686F8A21BFBF2D0016CDEE /* DevicesListCell.swift in Sources */,
+				98686FA521C0D9590016CDEE /* LoginViewController.swift in Sources */,
 				9806DF0121BE3CAA00B6A367 /* BaseMainView.swift in Sources */,
 				987741B421BD3B58009A238B /* NetworkManager.swift in Sources */,
 				987741B321BD3B58009A238B /* Future.swift in Sources */,
@@ -464,13 +549,18 @@
 				98686F8821BF9FCE0016CDEE /* LabelTools.swift in Sources */,
 				9806DF1121BE507B00B6A367 /* BaseTableViewCell.swift in Sources */,
 				987741B721BD3B58009A238B /* Promise.swift in Sources */,
+				98686F9021C09E850016CDEE /* Interface.swift in Sources */,
 				9806DEF121BE016400B6A367 /* BaseNavigationController.swift in Sources */,
 				9806DF0721BE42DA00B6A367 /* ListItemTableViewCell.swift in Sources */,
 				9806DEEA21BDF81000B6A367 /* MainTabBarController.swift in Sources */,
 				9806DEF721BE0A2200B6A367 /* UIFont+Extension.swift in Sources */,
+				98686F9D21C0A9670016CDEE /* ServicesConstants.swift in Sources */,
+				98686F9221C0A0AC0016CDEE /* UserService.swift in Sources */,
 				9806DF0321BE3E7F00B6A367 /* BaseSecondaryBlueView.swift in Sources */,
+				98686FA721C0DA210016CDEE /* IOTNotificationCenter.swift in Sources */,
 				98686F8621BF9E3B0016CDEE /* BaseLabels.swift in Sources */,
 				987741B821BD3B58009A238B /* Future+When.swift in Sources */,
+				98686F9B21C0A9360016CDEE /* User.swift in Sources */,
 				98686F8221BF60640016CDEE /* ProjectStatusCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

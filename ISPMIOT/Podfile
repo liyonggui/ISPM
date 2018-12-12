@@ -5,6 +5,7 @@ inhibit_all_warnings!
 def app_pods
     pod 'SwiftyJSON'
     pod 'JSONWebToken'
+    pod 'IQKeyboardManagerSwift'
 end
 
 target 'ISPMIOT' do

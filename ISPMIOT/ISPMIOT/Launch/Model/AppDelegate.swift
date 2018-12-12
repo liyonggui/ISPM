@@ -1,4 +1,5 @@
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,17 +10,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return mainTabBarController
     }()
     
+    lazy var loginVC: LoginViewController = {
+       return LoginViewController()
+    }()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        IOTNotificationCenter.defaultCenter.addObserver(self, selector: #selector(dd), notificationType: .userLoggedIn)
+        IQKeyboardManager.shared.enable = true
         setupWindow()
         return true
     }
     
+    @objc func dd() {
+        print("asfsdfsdf")
+    }
+    
     private func setupWindow() {
-        if self.window == nil {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            self.window?.rootViewController = self.mainTabBarController
-            self.window?.makeKeyAndVisible()
+        if window == nil {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = loginVC
+            window?.makeKeyAndVisible()
         }
     }
 

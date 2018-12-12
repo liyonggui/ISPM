@@ -26,6 +26,8 @@ class HomeViewController: BaseViewController {
         setNavigationBar(title: NavTitle.projectInformation)
         setupUI()
 //        self.navigationController?.addChild(listItemViewController)
+        interfaceSharedInstance = Interface(environment: .qa, applicationSource: "IOT")
+        
     }
     
     private func setupUI() {
@@ -65,6 +67,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func didTapTabSegmented(_ sender: UISegmentedControl) {
+        interfaceSharedInstance.userService.get()
         selectedState = State(rawValue: sender.selectedSegmentIndex) ?? .project
     }
 }
@@ -80,14 +83,11 @@ extension HomeViewController: UITableViewDataSource {
         case .project:
             return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
                 cell.setup()
-                print(cell)
             })
         case .devices:
             return tableView.dequeueReusableCell(of: DevicesListCell.self, for: indexPath, defaultCell: nil, configure: { cell in
                 cell.setup()
-                print(cell)
             })
-        default: return UITableViewCell()
         }
         
     }
