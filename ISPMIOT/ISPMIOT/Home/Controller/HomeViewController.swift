@@ -26,7 +26,6 @@ class HomeViewController: BaseViewController {
         setNavigationBar(title: NavTitle.projectInformation)
         setupUI()
 //        self.navigationController?.addChild(listItemViewController)
-        interfaceSharedInstance = Interface(environment: .qa, applicationSource: "IOT")
         
     }
     
@@ -67,7 +66,6 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func didTapTabSegmented(_ sender: UISegmentedControl) {
-        interfaceSharedInstance.userService.get()
         selectedState = State(rawValue: sender.selectedSegmentIndex) ?? .project
     }
 }

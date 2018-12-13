@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ISPMIOT" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="xMl-Pn-J0S" id="aR5-oo-SqT"/>
+                <outlet property="passwordTF" destination="XbS-64-dDW" id="e3R-5R-PeP"/>
+                <outlet property="usernameTF" destination="8Ts-f7-D67" id="0iW-S3-zxs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="5u0-dF-z1C"/>
             </connections>
         </placeholder>
@@ -23,16 +26,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQ8-f5-2Jn">
                     <rect key="frame" x="50" y="258.5" width="275" height="150"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ts-f7-D67">
-                            <rect key="frame" x="20" y="17" width="235" height="30"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入账号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8Ts-f7-D67">
+                            <rect key="frame" x="20" y="11" width="235" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMl-Pn-J0S">
-                            <rect key="frame" x="20" y="117" width="235" height="33"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-64-dDW">
+                            <rect key="frame" x="20" y="61" width="235" height="30"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMl-Pn-J0S" customClass="BaseButton" customModule="ISPMIOT" customModuleProvider="target">
+                            <rect key="frame" x="20" y="111" width="235" height="34"/>
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="登录">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -42,21 +50,15 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="didTapLogin:" destination="-1" eventType="touchUpInside" id="7xe-za-k1r"/>
+                                <action selector="didTapLogin:" destination="-1" eventType="touchUpInside" id="I7p-VY-0il"/>
                             </connections>
                         </button>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XbS-64-dDW">
-                            <rect key="frame" x="20" y="67" width="235" height="30"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="xMl-Pn-J0S" firstAttribute="trailing" secondItem="8Ts-f7-D67" secondAttribute="trailing" id="Aob-kt-8H3"/>
                         <constraint firstItem="xMl-Pn-J0S" firstAttribute="leading" secondItem="8Ts-f7-D67" secondAttribute="leading" id="C4w-QH-9YS"/>
-                        <constraint firstAttribute="bottom" secondItem="xMl-Pn-J0S" secondAttribute="bottom" id="EUc-lE-1t6"/>
+                        <constraint firstAttribute="bottom" secondItem="xMl-Pn-J0S" secondAttribute="bottom" constant="5" id="EUc-lE-1t6"/>
                         <constraint firstItem="8Ts-f7-D67" firstAttribute="leading" secondItem="QQ8-f5-2Jn" secondAttribute="leading" constant="20" id="IpE-cv-AKV"/>
                         <constraint firstAttribute="trailing" secondItem="8Ts-f7-D67" secondAttribute="trailing" constant="20" id="Oas-7G-0B2"/>
                         <constraint firstItem="xMl-Pn-J0S" firstAttribute="top" secondItem="XbS-64-dDW" secondAttribute="bottom" constant="20" id="TNY-3G-DHU"/>

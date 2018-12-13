@@ -6,6 +6,7 @@ def app_pods
     pod 'SwiftyJSON'
     pod 'JSONWebToken'
     pod 'IQKeyboardManagerSwift'
+    pod 'MBProgressHUD'
 end
 
 target 'ISPMIOT' do

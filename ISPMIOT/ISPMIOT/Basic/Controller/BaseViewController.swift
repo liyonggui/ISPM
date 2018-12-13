@@ -1,5 +1,6 @@
 import UIKit
 
+/// VC 基类
 class BaseViewController: UIViewController {
 
     init() {
@@ -19,10 +20,37 @@ class BaseViewController: UIViewController {
         
         view.backgroundColor = .mainBlue
     }
-
+    
 }
 
-// MARK: - extension
+// MARK: - 显示HUB
+extension BaseViewController {
+    func showActivityHUD() {
+        view.showActivityHUD()
+    }
+    
+    func hideActivityHUD() {
+        view.hideActivityHUD()
+    }
+}
+
+// MARK: - 显示Alert
+extension BaseViewController {
+    func showAlert(_ title: String? = "提示", message: String, actionTitle: String? = nil, from viewController: UIViewController? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: actionTitle ?? "确定", style: .cancel, handler: handler))
+        alert.showAnimated(true, from: viewController)
+    }
+    
+    func showError(_ error: NSError?) {
+        guard let errorMsg = error?.domain else {
+            return
+        }
+        showAlert("提示", message: errorMsg)
+    }
+}
+
+// MARK: - 设置nav
 extension BaseViewController {
     func setNavigationBar(title: String, withSubTitle subtitle: String? = .none, color: UIColor? = nil, font: UIFont? = nil, sizeToFit: Bool = true) {
         if let subtitle = subtitle {
@@ -164,4 +192,3 @@ private class DoubleTitleView: UIView {
         subtitle.center = CGPoint(x: centerX, y: subtitle.center.y)
     }
 }
-

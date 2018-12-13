@@ -308,7 +308,7 @@ extension URLSession: HTTPClient {
 
         // Dispatch request
         let task = self.dataTask(with: urlRequest) {(data, response, error) in
-
+            
             guard nil == error else {
                 reject(NSError(domain: "Connection failed", code: HTTPError.serverError.rawValue, userInfo: [NSUnderlyingErrorKey: error!]), promise: promise)
                 return

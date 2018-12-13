@@ -1,4 +1,5 @@
 import UIKit
+import MBProgressHUD
 
 // MARK: layout
 extension UIView {
@@ -92,6 +93,26 @@ extension UIView {
         }
         set(newValue) {
             layer.borderColor = newValue.cgColor
+        }
+    }
+}
+
+extension UIView {
+    
+    /// 显示HUB
+    func showActivityHUD() {
+        DispatchQueue.main.async { () -> Void in
+            MBProgressHUD.hide(for: self, animated: true)
+            let hud = MBProgressHUD.showAdded(to: self, animated: true)
+            hud.label.text = "施工中..."
+            hud.button.removeTarget(nil, action: nil, for: .allEvents)
+        }
+    }
+    
+    /// 隐藏HUB
+    func hideActivityHUD() {
+        DispatchQueue.main.async { () -> Void in
+            MBProgressHUD.hide(for: self, animated: true)
         }
     }
 }

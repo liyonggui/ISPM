@@ -19,11 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IOTNotificationCenter.defaultCenter.addObserver(self, selector: #selector(dd), notificationType: .userLoggedIn)
         IQKeyboardManager.shared.enable = true
         setupWindow()
+        interfaceSharedInstance = Interface(environment: .qa, applicationSource: "IOT")
         return true
     }
     
     @objc func dd() {
-        print("asfsdfsdf")
+        window?.rootViewController = mainTabBarController
     }
     
     private func setupWindow() {
@@ -59,3 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+
+extension AppDelegate {
+    func showError(_ error: NSError?) {
+        MyLogLine("Showing error \(String(describing: error))")
+        self.window?.endEditing(true)
+    }
+}

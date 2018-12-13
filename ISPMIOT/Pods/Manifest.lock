@@ -1,24 +1,28 @@
 PODS:
   - IQKeyboardManagerSwift (6.2.0)
   - JSONWebToken (2.2.0)
+  - MBProgressHUD (1.1.0)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - JSONWebToken
+  - MBProgressHUD
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IQKeyboardManagerSwift
     - JSONWebToken
+    - MBProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: b07ccf9d8cafe993dcd6cb794eb4ba34611a0c4e
   JSONWebToken: 6fae32489632658d563dd6952a5c34020ea813e4
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 3c2074d2059d0582a95b35efaae001a490e0693e
+PODFILE CHECKSUM: 84a54bdf092245893fbdc5e7f49aa44a0f3b7236
 
 COCOAPODS: 1.5.3

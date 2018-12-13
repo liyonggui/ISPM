@@ -23,4 +23,25 @@ public struct Interface {
     
     public let applicationSource: String
     public let environment: Environment
+    
+    public var loggedUser: User?
+    
+    public var token: String? {
+        get {
+            return UserDefaults.standard.string(forKey: kSavedUserToken)
+        }
+        
+        set {
+            if let newUser = newValue {
+                UserDefaults.standard.set(newUser, forKey: kSavedUserToken)
+            } else {
+                UserDefaults.standard.removeObject(forKey: kSavedUserToken)
+            }
+        }
+    }
+
 }
+
+// Private reference
+internal let kSavedUserDataKey = "Saved User Data"
+internal let kSavedUserToken = "Saved User Token"

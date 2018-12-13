@@ -40,6 +40,11 @@
 		98686FA521C0D9590016CDEE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FA421C0D9590016CDEE /* LoginViewController.swift */; };
 		98686FA721C0DA210016CDEE /* IOTNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */; };
 		98686FA921C0DD170016CDEE /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98686FA821C0DD170016CDEE /* LoginViewController.xib */; };
+		98686FAB21C10BAC0016CDEE /* MyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FAA21C10BAC0016CDEE /* MyLog.swift */; };
+		98686FB221C203010016CDEE /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FB121C203010016CDEE /* UIAlertController+Extension.swift */; };
+		98686FB521C204A80016CDEE /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FB421C204A80016CDEE /* TopViewController.swift */; };
+		98686FB921C20C1D0016CDEE /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FB821C20C1D0016CDEE /* BaseButton.swift */; };
+		98686FBB21C213D90016CDEE /* Future+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FBA21C213D90016CDEE /* Future+Extension.swift */; };
 		9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877419421BBBF9F009A238B /* AppDelegate.swift */; };
 		987741A421BBC244009A238B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A321BBC244009A238B /* HomeViewController.swift */; };
 		987741AA21BBC3E4009A238B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A921BBC3E4009A238B /* BaseViewController.swift */; };
@@ -85,6 +90,12 @@
 		98686FA421C0D9590016CDEE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOTNotificationCenter.swift; sourceTree = "<group>"; };
 		98686FA821C0DD170016CDEE /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		98686FAA21C10BAC0016CDEE /* MyLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLog.swift; sourceTree = "<group>"; };
+		98686FAD21C111670016CDEE /* ISPMIOT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ISPMIOT-Bridging-Header.h"; sourceTree = "<group>"; };
+		98686FB121C203010016CDEE /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		98686FB421C204A80016CDEE /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		98686FB821C20C1D0016CDEE /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
+		98686FBA21C213D90016CDEE /* Future+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future+Extension.swift"; sourceTree = "<group>"; };
 		9877417421BBBE60009A238B /* ISPMIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISPMIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9877418321BBBE62009A238B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9877419421BBBF9F009A238B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +169,7 @@
 		9806DEEB21BDFC6000B6A367 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				98686FB321C2048A0016CDEE /* Controller */,
 				9806DEEF21BDFD1C00B6A367 /* Model */,
 				9806DEEC21BDFC6000B6A367 /* Extension */,
 			);
@@ -172,6 +184,7 @@
 				9806DEF821BE0A6600B6A367 /* UIColor+Extension.swift */,
 				9806DEFA21BE0AAE00B6A367 /* UIView+Extensions.swift */,
 				9806DF0A21BE4C4100B6A367 /* ReusableCellExtensions.swift */,
+				98686FB121C203010016CDEE /* UIAlertController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -181,6 +194,8 @@
 			children = (
 				9806DEF221BE046400B6A367 /* Constants.swift */,
 				98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */,
+				98686FAA21C10BAC0016CDEE /* MyLog.swift */,
+				98686FBA21C213D90016CDEE /* Future+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -243,6 +258,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		98686FAC21C111560016CDEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				98686FAD21C111670016CDEE /* ISPMIOT-Bridging-Header.h */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		98686FB321C2048A0016CDEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98686FB421C204A80016CDEE /* TopViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		9877416B21BBBE60009A238B = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +300,7 @@
 				9877419221BBBF9F009A238B /* Launch */,
 				9877419521BBBF9F009A238B /* Home */,
 				98686FA021C0D9150016CDEE /* Login */,
+				98686FAC21C111560016CDEE /* Resources */,
 				9877418921BBBF9F009A238B /* Network */,
 				9877418321BBBE62009A238B /* Info.plist */,
 				9806DEFC21BE12FE00B6A367 /* Assets.xcassets */,
@@ -372,6 +404,7 @@
 				9806DF1021BE507B00B6A367 /* BaseTableViewCell.swift */,
 				98686F8521BF9E3A0016CDEE /* BaseLabels.swift */,
 				98686F8721BF9FCE0016CDEE /* LabelTools.swift */,
+				98686FB821C20C1D0016CDEE /* BaseButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +466,7 @@
 				TargetAttributes = {
 					9877417321BBBE60009A238B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -505,6 +539,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONWebToken/JWT.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -513,6 +548,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JWT.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,17 +568,21 @@
 				987741AA21BBC3E4009A238B /* BaseViewController.swift in Sources */,
 				9806DF0B21BE4C4100B6A367 /* ReusableCellExtensions.swift in Sources */,
 				987741B921BD3B58009A238B /* NetworkConstants.swift in Sources */,
+				98686FBB21C213D90016CDEE /* Future+Extension.swift in Sources */,
 				9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */,
 				98686F9521C0A1680016CDEE /* Extensions.swift in Sources */,
 				9806DF0521BE418600B6A367 /* ListItemViewController.swift in Sources */,
 				9806DEF921BE0A6600B6A367 /* UIColor+Extension.swift in Sources */,
 				987741B521BD3B58009A238B /* GraphQLQuery.swift in Sources */,
+				98686FB921C20C1D0016CDEE /* BaseButton.swift in Sources */,
 				98686F8A21BFBF2D0016CDEE /* DevicesListCell.swift in Sources */,
+				98686FB221C203010016CDEE /* UIAlertController+Extension.swift in Sources */,
 				98686FA521C0D9590016CDEE /* LoginViewController.swift in Sources */,
 				9806DF0121BE3CAA00B6A367 /* BaseMainView.swift in Sources */,
 				987741B421BD3B58009A238B /* NetworkManager.swift in Sources */,
 				987741B321BD3B58009A238B /* Future.swift in Sources */,
 				9806DF0D21BE4E3100B6A367 /* BaseTableView.swift in Sources */,
+				98686FB521C204A80016CDEE /* TopViewController.swift in Sources */,
 				987741A421BBC244009A238B /* HomeViewController.swift in Sources */,
 				9806DEF321BE046400B6A367 /* Constants.swift in Sources */,
 				9806DEFB21BE0AAE00B6A367 /* UIView+Extensions.swift in Sources */,
@@ -552,6 +592,7 @@
 				98686F9021C09E850016CDEE /* Interface.swift in Sources */,
 				9806DEF121BE016400B6A367 /* BaseNavigationController.swift in Sources */,
 				9806DF0721BE42DA00B6A367 /* ListItemTableViewCell.swift in Sources */,
+				98686FAB21C10BAC0016CDEE /* MyLog.swift in Sources */,
 				9806DEEA21BDF81000B6A367 /* MainTabBarController.swift in Sources */,
 				9806DEF721BE0A2200B6A367 /* UIFont+Extension.swift in Sources */,
 				98686F9D21C0A9670016CDEE /* ServicesConstants.swift in Sources */,
@@ -689,6 +730,7 @@
 			baseConfigurationReference = E5CBEEAEB1EEFBA9E222AE02 /* Pods-ISPMIOT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3N872ZMWLJ;
 				INFOPLIST_FILE = ISPMIOT/Info.plist;
@@ -699,6 +741,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispm.ISPMIOT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ISPMIOT/Resources/ISPMIOT-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -709,6 +753,7 @@
 			baseConfigurationReference = CB217BD1891631D0DDFE153C /* Pods-ISPMIOT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3N872ZMWLJ;
 				INFOPLIST_FILE = ISPMIOT/Info.plist;
@@ -719,6 +764,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispm.ISPMIOT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ISPMIOT/Resources/ISPMIOT-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
