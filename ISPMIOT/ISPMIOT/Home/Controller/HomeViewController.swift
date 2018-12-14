@@ -9,6 +9,13 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var mainTableView: BaseTableView!
     @IBOutlet weak var tapSegmented: UISegmentedControl!
     
+    @IBOutlet weak var projectNameLabel: LabelWhite16!
+    @IBOutlet weak var typeLabel: LabelWhite14!
+    @IBOutlet weak var areaLabel: LabelWhite14!
+    @IBOutlet weak var timeLabel: LabelWhite14!
+    @IBOutlet weak var addressLabel: LabeBluel12!
+    @IBOutlet weak var iconImageView: UIImageView!
+    
     lazy var listItemViewController: ListItemViewController = {
         let vc = ListItemViewController()
         return vc
@@ -20,15 +27,61 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    var monitorArray: [MonitorModelel] = []
+    var devicesArray: [DevicesModel] = []
+    var projectModel: ProjectModel? {
+        didSet {
+            if let model = projectModel {
+                loadEnvMonitor(model)
+                loadDevices(model)
+            }
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavigationBar(title: NavTitle.projectInformation)
         setupUI()
-//        self.navigationController?.addChild(listItemViewController)
-        
+        loadProjectList()
+        setupCallBack()
     }
     
+    /// 设置点击回调的闭包
+    private func setupCallBack() {
+        listItemViewController.callBack = { model in
+            self.projectModel = model
+        }
+    }
+    
+    /// 网络请求项目列表
+    private func loadProjectList() {
+        interfaceSharedInstance.projectService.getProjects().successOrShowError(on: self) {
+            self.listItemViewController.projectList = $0
+            self.projectModel = $0.first
+        }
+    }
+    
+    /// 网络请求设备列表
+    private func loadDevices(_ model: ProjectModel) {
+        interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
+            self.devicesArray = $0
+        }
+    }
+    
+    /// 网络请求环境数据
+    ///
+    /// - Parameter model: 项目模型
+    private func loadEnvMonitor(_ model: ProjectModel) {
+        interfaceSharedInstance.projectService.getEnvMonitor(model).successOrShowError(on: self) {
+            guard $0.count > 0 else { return }
+            self.monitorArray = $0
+            self.mainTableView.reloadData()
+        }
+    }
+    
+    
+    // MARK: - UI 设置
     private func setupUI() {
         leadingConstraint.constant = 0
         
@@ -72,19 +125,25 @@ class HomeViewController: BaseViewController {
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        switch selectedState {
+        case .project:
+            return monitorArray.count
+        case .devices:
+            return devicesArray.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedState {
         case .project:
             return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                cell.setup()
+                cell.setup(self.monitorArray[indexPath.row])
             })
         case .devices:
             return tableView.dequeueReusableCell(of: DevicesListCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                cell.setup()
+                cell.setup(self.devicesArray[indexPath.row])
             })
         }
         

@@ -1,5 +1,4 @@
 import Foundation
-import CoreLocation
 import SwiftyJSON
 
 public struct UserService: Service {
@@ -15,9 +14,7 @@ public struct UserService: Service {
         )
         
         return client.performJSONRequest(request).map { v -> Try<User> in
-            MyLogLine("sdfasfasdfsa")
-            MyLogLine(v)
-            guard let user = User(json: v["resObject"]) else {
+            guard let user = User(json: v["resObject"]), v["resCode"] == "200" else {
                 return .failure(NSError(domain: v["resMessage"].stringValue, code: HTTPError.unreadableFormat.rawValue, userInfo: .none))
             }
             return .success(user)

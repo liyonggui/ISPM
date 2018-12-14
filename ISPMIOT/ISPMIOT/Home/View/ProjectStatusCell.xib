@@ -141,8 +141,8 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Px9-JV-eyh" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="40"/>
-                                        <string key="text">进出比例
-(%)</string>
+                                        <string key="text">气压
+(Pa)</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -165,8 +165,8 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-Pq-tzX" customClass="LabelWhite12" customModule="ISPMIOT" customModuleProvider="target">
                                         <rect key="frame" x="224" y="0.0" width="74.5" height="40"/>
-                                        <string key="text">甲醛
-(mg/m3)</string>
+                                        <string key="text">进出比例
+(%)</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -279,7 +279,15 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="humidityLabel" destination="XPi-et-AS4" id="Uk8-cz-HlJ"/>
                 <outlet property="mainView" destination="aHM-Hh-2zc" id="iFJ-EI-4gW"/>
+                <outlet property="noiseLevelLabel" destination="ncU-ai-jEG" id="yGx-7p-KiL"/>
+                <outlet property="pm25Label" destination="TLY-bK-d0g" id="wjr-u0-3iA"/>
+                <outlet property="pressureLabel" destination="Px9-JV-eyh" id="3Ux-kS-aoR"/>
+                <outlet property="temperatureLabel" destination="YaF-N2-rH6" id="Q67-D6-UHq"/>
+                <outlet property="windDirectionLabel" destination="zcg-Ig-uJV" id="GZZ-pT-xTy"/>
+                <outlet property="windPowerLabel" destination="91F-jM-7lj" id="bEM-g4-r0v"/>
+                <outlet property="windSpeedLabel" destination="GWM-3g-wCz" id="oh3-yw-K6p"/>
             </connections>
             <point key="canvasLocation" x="54.399999999999999" y="48.125937031484263"/>
         </tableViewCell>

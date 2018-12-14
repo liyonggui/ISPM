@@ -15,11 +15,14 @@ public struct Interface {
                 applicationSource: String) {
         self.applicationSource = applicationSource
         self.environment = environment
+        
         userService = UserService(env: environment, applicationSource: applicationSource)
+        projectService = ProjectService(env: environment, applicationSource: applicationSource)
     }
     
     // Service
     public var userService: UserService
+    public var projectService: ProjectService
     
     public let applicationSource: String
     public let environment: Environment

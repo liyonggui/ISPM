@@ -1,7 +1,7 @@
 import Foundation
 import SwiftyJSON
 
-/// 用户d对象
+/// 用户对象
 public class User {
     
 //    public let id: String

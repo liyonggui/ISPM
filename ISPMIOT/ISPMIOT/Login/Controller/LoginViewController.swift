@@ -9,7 +9,11 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginButton.isEnabled = false
+        // TODO: 测试数据
+        usernameTF.text = "admin"
+        passwordTF.text = "admin"
+        
+//        loginButton.isEnabled = false
         usernameTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
         passwordTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
     }
@@ -31,7 +35,6 @@ class LoginViewController: BaseViewController {
         interfaceSharedInstance.userService.login(username: username, password: password).successOrShowError(on: self) {
             interfaceSharedInstance.loggedUser = $0
             IOTNotificationCenter.defaultCenter.post(notificationType: .userLoggedIn)
-            MyLogLine($0)
         }        
     }
     

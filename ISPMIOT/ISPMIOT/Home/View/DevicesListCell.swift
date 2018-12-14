@@ -3,6 +3,7 @@ import UIKit
 class DevicesListCell: BaseTableViewCell {
     
     @IBOutlet weak var mainView: UIView!
+    @IBOutlet weak var titleLabel: LabelWhite17!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -17,7 +18,7 @@ class DevicesListCell: BaseTableViewCell {
         mainView.clipsToBounds = true
     }
     
-    func setup() {
-        
+    func setup(_ model: DevicesModel) {
+        titleLabel.text = model.name
     }
 }

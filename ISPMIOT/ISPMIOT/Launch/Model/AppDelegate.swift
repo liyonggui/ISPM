@@ -59,11 +59,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
-
-extension AppDelegate {
-    func showError(_ error: NSError?) {
-        MyLogLine("Showing error \(String(describing: error))")
-        self.window?.endEditing(true)
-    }
-}

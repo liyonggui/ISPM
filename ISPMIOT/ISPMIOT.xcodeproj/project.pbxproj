@@ -45,6 +45,10 @@
 		98686FB521C204A80016CDEE /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FB421C204A80016CDEE /* TopViewController.swift */; };
 		98686FB921C20C1D0016CDEE /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FB821C20C1D0016CDEE /* BaseButton.swift */; };
 		98686FBB21C213D90016CDEE /* Future+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FBA21C213D90016CDEE /* Future+Extension.swift */; };
+		98686FBD21C22F4B0016CDEE /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FBC21C22F4B0016CDEE /* ProjectService.swift */; };
+		98686FBF21C2359A0016CDEE /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FBE21C2359A0016CDEE /* ProjectModel.swift */; };
+		98686FC121C250180016CDEE /* MonitorModelel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FC021C250180016CDEE /* MonitorModelel.swift */; };
+		98686FC321C3500D0016CDEE /* DevicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98686FC221C3500D0016CDEE /* DevicesModel.swift */; };
 		9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9877419421BBBF9F009A238B /* AppDelegate.swift */; };
 		987741A421BBC244009A238B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A321BBC244009A238B /* HomeViewController.swift */; };
 		987741AA21BBC3E4009A238B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741A921BBC3E4009A238B /* BaseViewController.swift */; };
@@ -96,6 +100,10 @@
 		98686FB421C204A80016CDEE /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		98686FB821C20C1D0016CDEE /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		98686FBA21C213D90016CDEE /* Future+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Future+Extension.swift"; sourceTree = "<group>"; };
+		98686FBC21C22F4B0016CDEE /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
+		98686FBE21C2359A0016CDEE /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		98686FC021C250180016CDEE /* MonitorModelel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorModelel.swift; sourceTree = "<group>"; };
+		98686FC221C3500D0016CDEE /* DevicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesModel.swift; sourceTree = "<group>"; };
 		9877417421BBBE60009A238B /* ISPMIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISPMIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9877418321BBBE62009A238B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9877419421BBBF9F009A238B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				98686F9121C0A0AC0016CDEE /* UserService.swift */,
+				98686FBC21C22F4B0016CDEE /* ProjectService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -213,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				98686F9A21C0A9360016CDEE /* User.swift */,
+				98686FBE21C2359A0016CDEE /* ProjectModel.swift */,
+				98686FC021C250180016CDEE /* MonitorModelel.swift */,
+				98686FC221C3500D0016CDEE /* DevicesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -572,7 +584,9 @@
 				9877419E21BBBFA0009A238B /* AppDelegate.swift in Sources */,
 				98686F9521C0A1680016CDEE /* Extensions.swift in Sources */,
 				9806DF0521BE418600B6A367 /* ListItemViewController.swift in Sources */,
+				98686FC321C3500D0016CDEE /* DevicesModel.swift in Sources */,
 				9806DEF921BE0A6600B6A367 /* UIColor+Extension.swift in Sources */,
+				98686FBD21C22F4B0016CDEE /* ProjectService.swift in Sources */,
 				987741B521BD3B58009A238B /* GraphQLQuery.swift in Sources */,
 				98686FB921C20C1D0016CDEE /* BaseButton.swift in Sources */,
 				98686F8A21BFBF2D0016CDEE /* DevicesListCell.swift in Sources */,
@@ -599,6 +613,8 @@
 				98686F9221C0A0AC0016CDEE /* UserService.swift in Sources */,
 				9806DF0321BE3E7F00B6A367 /* BaseSecondaryBlueView.swift in Sources */,
 				98686FA721C0DA210016CDEE /* IOTNotificationCenter.swift in Sources */,
+				98686FC121C250180016CDEE /* MonitorModelel.swift in Sources */,
+				98686FBF21C2359A0016CDEE /* ProjectModel.swift in Sources */,
 				98686F8621BF9E3B0016CDEE /* BaseLabels.swift in Sources */,
 				987741B821BD3B58009A238B /* Future+When.swift in Sources */,
 				98686F9B21C0A9360016CDEE /* User.swift in Sources */,

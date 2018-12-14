@@ -3,7 +3,7 @@ import UIKit
 /// 直接打印出内容
 ///
 /// - Parameter message: 打印的内容
-func MyLog<T>(_ message : T) {
+func MyPrint<T>(_ message : T) {
     
     #if DEBUG
     print("\(message)")
@@ -16,7 +16,7 @@ func MyLog<T>(_ message : T) {
 ///   - message: 打印消息
 ///   - file: 打印所属类
 ///   - lineNumber: 打印语句所在行数
-func MyLogLine<T>(_ message : T, file : String = #file, lineNumber : Int = #line) {
+func MyPrint<T>(_ message : T, file : String = #file, lineNumber : Int = #line) {
     
     #if DEBUG
     let fileName = (file as NSString).lastPathComponent

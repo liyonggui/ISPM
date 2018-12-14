@@ -12,12 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ISPMIOT" customModuleProvider="target">
             <connections>
+                <outlet property="addressLabel" destination="PBj-EP-SCP" id="nCu-3u-L0o"/>
+                <outlet property="areaLabel" destination="hJW-aS-ltt" id="iLh-Oz-Izm"/>
                 <outlet property="contantTableView" destination="AMT-Ft-dIU" id="vDA-kb-lTD"/>
+                <outlet property="iconImageView" destination="WbE-dX-92b" id="WZJ-cW-1ko"/>
                 <outlet property="leadingConstraint" destination="car-Vj-4Xf" id="qBu-F0-VaX"/>
                 <outlet property="listItemView" destination="ut1-SL-Xi7" id="6H5-6W-k8V"/>
                 <outlet property="mainTableView" destination="KNQ-Hl-Ax5" id="yHx-uT-piE"/>
                 <outlet property="projectInfoView" destination="lkD-eW-zIt" id="bEN-kI-mju"/>
+                <outlet property="projectNameLabel" destination="twe-AF-sH2" id="Jyv-br-5Ho"/>
                 <outlet property="tapSegmented" destination="HRh-LJ-aDv" id="lMP-DM-rog"/>
+                <outlet property="timeLabel" destination="sj1-HV-Kgc" id="VlR-yN-P1P"/>
+                <outlet property="typeLabel" destination="8Mo-ij-XwG" id="fBh-za-DcG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Z8r-p5-hnp"/>
             </connections>
         </placeholder>
@@ -89,7 +95,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-EP-SCP" customClass="LabeBluel14" customModule="ISPMIOT" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-EP-SCP" customClass="LabeBluel12" customModule="ISPMIOT" customModuleProvider="target">
                                     <rect key="frame" x="8" y="34.5" width="231" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.28502963420209926" green="0.72356158757435385" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

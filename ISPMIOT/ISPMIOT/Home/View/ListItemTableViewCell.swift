@@ -8,7 +8,7 @@ class ListItemTableViewCell : BaseTableViewCell {
         addShadow(cgColor: UIColor.white.cgColor)
     }
     
-    func setup() {
-        
+    func setup(_ model: ProjectModel) {
+        titleLabel.text = model.name
     }
 }

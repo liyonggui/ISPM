@@ -44,6 +44,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="mainView" destination="1Nn-LY-7KF" id="lb4-ax-oUu"/>
+                <outlet property="titleLabel" destination="lhV-FX-wOM" id="fa9-DC-5z4"/>
             </connections>
             <point key="canvasLocation" x="354.39999999999998" y="38.23088455772114"/>
         </tableViewCell>
