@@ -5,6 +5,7 @@ class ListItemTableViewCell : BaseTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .default
         addShadow(cgColor: UIColor.white.cgColor)
     }
     

@@ -15,6 +15,7 @@ class ProjectStatusCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        
     }
     
     private func setupUI() {

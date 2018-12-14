@@ -13,6 +13,7 @@ class ListItemViewController: BaseViewController {
         let tableVeiw = BaseTableView()
         tableVeiw.delegate = self
         tableVeiw.dataSource = self
+        
         tableVeiw.registerNib(ListItemTableViewCell.self)
         return tableVeiw
     }()

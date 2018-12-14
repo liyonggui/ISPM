@@ -310,7 +310,7 @@ extension URLSession: HTTPClient {
         let task = self.dataTask(with: urlRequest) {(data, response, error) in
             
             guard nil == error else {
-                reject(NSError(domain: "Connection failed", code: HTTPError.serverError.rawValue, userInfo: [NSUnderlyingErrorKey: error!]), promise: promise)
+                reject(NSError(domain: "网络连接失败", code: HTTPError.serverError.rawValue, userInfo: [NSUnderlyingErrorKey: error!]), promise: promise)
                 return
             }
             let response = response as! HTTPURLResponse
@@ -322,11 +322,11 @@ extension URLSession: HTTPClient {
                     reject(NSError(domain: statusAndURL, code: HTTPError.serverError.rawValue,   userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
                 case 401, 403:
                     if response.url?.host == "s3.amazonaws.com" {
-                        reject(NSError(domain: "Connection failed", code: HTTPError.serverError.rawValue, userInfo: .none), promise: promise)
+                        reject(NSError(domain: "网络连接失败", code: HTTPError.serverError.rawValue, userInfo: .none), promise: promise)
                         return
                     }
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "didRecieve401Response")))
-                    reject(NSError(domain: "Not Authorized",                                code: HTTPError.notAuthorized.rawValue, userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
+                    reject(NSError(domain: "没有q权限",                                code: HTTPError.notAuthorized.rawValue, userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
                 default:
                     reject(NSError(domain: statusAndURL, code: HTTPError.serverError.rawValue,   userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
                 }

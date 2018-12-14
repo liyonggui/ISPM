@@ -8,6 +8,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainTableView: BaseTableView!
     @IBOutlet weak var tapSegmented: UISegmentedControl!
+    @IBOutlet weak var headerView: BaseMainView!
     
     @IBOutlet weak var projectNameLabel: LabelWhite16!
     @IBOutlet weak var typeLabel: LabelWhite14!
@@ -29,11 +30,10 @@ class HomeViewController: BaseViewController {
     
     var monitorArray: [MonitorModelel] = []
     var devicesArray: [DevicesModel] = []
+    var projectArray: [ProjectModel] = []
     var projectModel: ProjectModel? {
         didSet {
-            if let model = projectModel {
-                loadEnvMonitor(model)
-            }
+            setup(projectModel)
         }
     }
         
@@ -53,10 +53,28 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    private func setup(_ model: ProjectModel?) {
+        guard let model = projectModel else {
+            return
+        }
+        projectNameLabel.text = model.name
+        addressLabel.text = "地址:" + model.address
+        timeLabel.text = "时间:" + model.startDate
+        loadEnvMonitor(model)
+        DispatchQueue.main.async {
+            
+            self.view.layoutIfNeeded()
+            self.view.setNeedsLayout()
+        }
+//        projectInfoView.layoutIfNeeded()
+//        projectInfoView.setNeedsLayout()
+    }
+    
     /// 网络请求项目列表
     private func loadProjectList() {
         interfaceSharedInstance.projectService.getProjects().successOrShowError(on: self) {
             self.listItemViewController.projectList = $0
+            // 第一次默认显示第一个
             self.projectModel = $0.first
         }
     }
@@ -69,13 +87,12 @@ class HomeViewController: BaseViewController {
         interfaceSharedInstance.projectService.getEnvMonitor(model).onSuccess {
             guard $0.count > 0 else { return }
             self.monitorArray = $0
-            self.mainTableView.reloadData()
             interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
                 self.devicesArray = $0
+                self.mainTableView.reloadData()
             }
         }
     }
-    
     
     // MARK: - UI 设置
     private func setupUI() {
