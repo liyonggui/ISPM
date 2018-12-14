@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IOTNotificationCenter.defaultCenter.addObserver(self, selector: #selector(dd), notificationType: .userLoggedIn)
         IQKeyboardManager.shared.enable = true
         setupWindow()
-        UIApplication.shared.statusBarStyle = .lightContent
         interfaceSharedInstance = Interface(environment: .qa, applicationSource: "IOT")
         return true
     }
