@@ -33,7 +33,6 @@ class HomeViewController: BaseViewController {
         didSet {
             if let model = projectModel {
                 loadEnvMonitor(model)
-                loadDevices(model)
             }
         }
     }
@@ -62,21 +61,18 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    /// 网络请求设备列表
-    private func loadDevices(_ model: ProjectModel) {
-        interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
-            self.devicesArray = $0
-        }
-    }
-    
-    /// 网络请求环境数据
+    /// 网络请求项目列表和环境数据
     ///
     /// - Parameter model: 项目模型
     private func loadEnvMonitor(_ model: ProjectModel) {
-        interfaceSharedInstance.projectService.getEnvMonitor(model).successOrShowError(on: self) {
+        showActivityHUD()
+        interfaceSharedInstance.projectService.getEnvMonitor(model).onSuccess {
             guard $0.count > 0 else { return }
             self.monitorArray = $0
             self.mainTableView.reloadData()
+            interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
+                self.devicesArray = $0
+            }
         }
     }
     
