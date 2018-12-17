@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="ISPMIOT" customModuleProvider="target">
             <connections>
                 <outlet property="addressLabel" destination="PBj-EP-SCP" id="nCu-3u-L0o"/>
-                <outlet property="areaLabel" destination="hJW-aS-ltt" id="iLh-Oz-Izm"/>
                 <outlet property="contantTableView" destination="AMT-Ft-dIU" id="vDA-kb-lTD"/>
                 <outlet property="headerView" destination="UzX-Hn-YpT" id="Tea-GV-uvQ"/>
                 <outlet property="iconImageView" destination="WbE-dX-92b" id="WZJ-cW-1ko"/>
@@ -23,7 +22,7 @@
                 <outlet property="projectInfoView" destination="lkD-eW-zIt" id="bEN-kI-mju"/>
                 <outlet property="projectNameLabel" destination="twe-AF-sH2" id="Jyv-br-5Ho"/>
                 <outlet property="tapSegmented" destination="HRh-LJ-aDv" id="lMP-DM-rog"/>
-                <outlet property="timeLabel" destination="sj1-HV-Kgc" id="VlR-yN-P1P"/>
+                <outlet property="timeLabel" destination="sj1-HV-Kgc" id="unk-ul-pkb"/>
                 <outlet property="typeLabel" destination="8Mo-ij-XwG" id="fBh-za-DcG"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Z8r-p5-hnp"/>
             </connections>
@@ -70,7 +69,7 @@
                     <rect key="frame" x="0.0" y="20" width="369" height="642"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UzX-Hn-YpT" customClass="BaseMainView" customModule="ISPMIOT" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="369" height="141"/>
+                            <rect key="frame" x="0.0" y="0.0" width="369" height="144.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="广州机场" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twe-AF-sH2" customClass="LabelWhite16" customModule="ISPMIOT" customModuleProvider="target">
                                     <rect key="frame" x="8" y="10" width="231" height="19.5"/>
@@ -78,71 +77,69 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型：建筑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mo-ij-XwG" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="54" width="231" height="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="类型：建筑(100000㎡)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Mo-ij-XwG" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="77.5" width="231" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="面积：10000㎡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJW-aS-ltt" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="74" width="231" height="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开工时间：2018-05-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj1-HV-Kgc" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="97.5" width="231" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间：2018-05-10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj1-HV-Kgc" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="94" width="231" height="17"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-EP-SCP" customClass="LabeBluel12" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="34.5" width="231" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" red="0.28502963420209926" green="0.72356158757435385" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home" translatesAutoresizingMaskIntoConstraints="NO" id="WbE-dX-92b">
-                                    <rect key="frame" x="249" y="20" width="110" height="101"/>
+                                    <rect key="frame" x="249" y="20" width="110" height="104.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="110" id="i9r-zt-Tus"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式：13534554323" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-JB-hJF" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="114" width="231" height="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式：13534554323(张三)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIc-JB-hJF" customClass="LabelWhite14" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="117.5" width="231" height="17"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="业主：李四 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osB-k6-UrV" customClass="LabelWhite16" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="32.5" width="86" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-EP-SCP" customClass="LabeBluel12" customModule="ISPMIOT" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="57.5" width="37" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.28502963420209926" green="0.72356158757435385" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.094117647058823528" green="0.17254901960784313" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="WbE-dX-92b" secondAttribute="trailing" constant="10" id="0IN-5h-bcn"/>
-                                <constraint firstItem="PBj-EP-SCP" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="7E9-Ex-Zb3"/>
-                                <constraint firstItem="PBj-EP-SCP" firstAttribute="top" secondItem="twe-AF-sH2" secondAttribute="bottom" constant="5" id="7T1-bk-5Y9"/>
+                                <constraint firstItem="sj1-HV-Kgc" firstAttribute="top" secondItem="8Mo-ij-XwG" secondAttribute="bottom" constant="3" id="0k0-gj-5ly"/>
+                                <constraint firstItem="PBj-EP-SCP" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="5HI-RG-DE8"/>
                                 <constraint firstAttribute="bottom" secondItem="WbE-dX-92b" secondAttribute="bottom" constant="20" id="7aJ-cq-GOC"/>
-                                <constraint firstItem="hJW-aS-ltt" firstAttribute="top" secondItem="8Mo-ij-XwG" secondAttribute="bottom" constant="3" id="8jO-RG-ocj"/>
                                 <constraint firstItem="sj1-HV-Kgc" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="8qL-SU-Y9I"/>
                                 <constraint firstItem="twe-AF-sH2" firstAttribute="top" secondItem="UzX-Hn-YpT" secondAttribute="top" constant="10" id="BHA-Ql-gwN"/>
                                 <constraint firstItem="8Mo-ij-XwG" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="BvZ-A9-GGM"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="top" secondItem="sj1-HV-Kgc" secondAttribute="bottom" constant="3" id="DdH-0s-tdZ"/>
                                 <constraint firstItem="twe-AF-sH2" firstAttribute="leading" secondItem="UzX-Hn-YpT" secondAttribute="leading" constant="8" id="HuT-9r-F8P"/>
+                                <constraint firstItem="osB-k6-UrV" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="PLb-o6-ePp"/>
+                                <constraint firstItem="osB-k6-UrV" firstAttribute="top" secondItem="twe-AF-sH2" secondAttribute="bottom" constant="3" id="S8B-Qe-izl"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="SXK-v4-dkw"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="Sd5-LX-dQI"/>
-                                <constraint firstItem="sj1-HV-Kgc" firstAttribute="top" secondItem="hJW-aS-ltt" secondAttribute="bottom" constant="3" id="UCs-Zj-05v"/>
                                 <constraint firstItem="WbE-dX-92b" firstAttribute="top" secondItem="UzX-Hn-YpT" secondAttribute="top" constant="20" id="VgI-9m-UZZ"/>
-                                <constraint firstItem="hJW-aS-ltt" firstAttribute="trailing" secondItem="8Mo-ij-XwG" secondAttribute="trailing" id="YZ0-Sb-DK4"/>
+                                <constraint firstItem="8Mo-ij-XwG" firstAttribute="top" secondItem="PBj-EP-SCP" secondAttribute="bottom" constant="5" id="cBp-60-Q5u"/>
                                 <constraint firstItem="8Mo-ij-XwG" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="ciG-XN-jbK"/>
                                 <constraint firstItem="WbE-dX-92b" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="trailing" constant="10" id="eTC-5D-avD"/>
-                                <constraint firstItem="hJW-aS-ltt" firstAttribute="leading" secondItem="8Mo-ij-XwG" secondAttribute="leading" id="fa0-Ca-9DT"/>
                                 <constraint firstItem="sj1-HV-Kgc" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="kss-uV-tvM"/>
-                                <constraint firstItem="PBj-EP-SCP" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="lgf-CP-CRa"/>
+                                <constraint firstItem="PBj-EP-SCP" firstAttribute="top" secondItem="osB-k6-UrV" secondAttribute="bottom" constant="5" id="kzd-sp-DFk"/>
                                 <constraint firstAttribute="bottom" secondItem="qIc-JB-hJF" secondAttribute="bottom" constant="10" id="o8V-xm-ozM"/>
-                                <constraint firstItem="8Mo-ij-XwG" firstAttribute="centerY" secondItem="UzX-Hn-YpT" secondAttribute="centerY" constant="-8" id="sxZ-cb-D7u"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-7N-fpV" userLabel="tabView">
-                            <rect key="frame" x="0.0" y="141" width="369" height="44"/>
+                            <rect key="frame" x="0.0" y="144.5" width="369" height="44"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HRh-LJ-aDv">
                                     <rect key="frame" x="2" y="0.0" width="365" height="45"/>
@@ -164,10 +161,10 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-Sw-gX4">
-                            <rect key="frame" x="0.0" y="187" width="369" height="455"/>
+                            <rect key="frame" x="0.0" y="190.5" width="369" height="451.5"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KNQ-Hl-Ax5" customClass="BaseTableView" customModule="ISPMIOT" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="369" height="455"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="369" height="451.5"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                             </subviews>

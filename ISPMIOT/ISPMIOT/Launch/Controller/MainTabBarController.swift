@@ -11,11 +11,11 @@ class MainTabBarController: UITabBarController {
         setUpTabBarAssets()
         setupUI()
     }
-    
+        
     private func setupChildViewControllers() {
         setViewControllers([homeViewController], animated: false)
     }
-    
+        
     // MARK: - setup UI
     private func setupUI() {
         tabBar.barTintColor = .mainBlue

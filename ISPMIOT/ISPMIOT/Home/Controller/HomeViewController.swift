@@ -62,12 +62,11 @@ class HomeViewController: BaseViewController {
         timeLabel.text = "时间:" + model.startDate
         loadEnvMonitor(model)
         DispatchQueue.main.async {
-            
             self.view.layoutIfNeeded()
             self.view.setNeedsLayout()
+            self.projectInfoView.layoutIfNeeded()
+            self.projectInfoView.setNeedsLayout()
         }
-//        projectInfoView.layoutIfNeeded()
-//        projectInfoView.setNeedsLayout()
     }
     
     /// 网络请求项目列表

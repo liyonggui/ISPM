@@ -246,7 +246,7 @@ extension URLSession: HTTPClient {
         
         dataFuture.onSuccess { (data: Data, statusCode: Int) -> Void in
             guard let dataString = String(data: data, encoding: String.Encoding.utf8) else {
-                reject(NSError(domain: "Invalid string content", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: mainPromise)
+                reject(NSError(domain: "无效的字符串内容", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: mainPromise)
                 return
             }
             resolve((dataString, statusCode), promise: mainPromise)
@@ -269,14 +269,14 @@ extension URLSession: HTTPClient {
 
         // Compose URL
         guard let urlComponentsssss = URLComponents(url: request.serviceDescription.baseURL, resolvingAgainstBaseURL: false) else {
-            reject(NSError(domain: "Invalid url", code: HTTPError.invalidURL.rawValue, userInfo: .none), promise: promise)
+            reject(NSError(domain: "无效的 url", code: HTTPError.invalidURL.rawValue, userInfo: .none), promise: promise)
             return promise.future
         }
         var urlComponents = urlComponentsssss
         urlComponents.path = (request.serviceDescription.baseURL.path) + request.path
 
         guard var url = urlComponents.url else {
-            reject(NSError(domain: "Invalid path", code: HTTPError.invalidPathFragment.rawValue, userInfo: .none), promise: promise)
+            reject(NSError(domain: "无效的 path", code: HTTPError.invalidPathFragment.rawValue, userInfo: .none), promise: promise)
             return promise.future
         }
 
@@ -284,7 +284,7 @@ extension URLSession: HTTPClient {
             + "?"
             + request.serviceDescription.persistentUrlParams.paramString()
             + request.customUrlParams.paramString()) else {
-                reject(NSError(domain: "Invalid url", code: HTTPError.invalidURL.rawValue, userInfo: .none), promise: promise)
+                reject(NSError(domain: "无效的 url", code: HTTPError.invalidURL.rawValue, userInfo: .none), promise: promise)
                 return promise.future
         }
         url = queryAppendedURL
@@ -301,7 +301,7 @@ extension URLSession: HTTPClient {
 
         // Set body data
         guard let bodyData = request.httpBody.bodyData() else {
-            reject(NSError(domain: "Invalid body object", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: promise)
+            reject(NSError(domain: "无效的 body object", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: promise)
             return promise.future
         }
         urlRequest.httpBody = bodyData
@@ -316,7 +316,7 @@ extension URLSession: HTTPClient {
             let response = response as! HTTPURLResponse
             guard 200...299 ~= response.statusCode else {
                 let url = response.url?.absoluteString ?? ""
-                let statusAndURL =  "Server Error (\(response.statusCode) in \(url)"
+                let statusAndURL =  "服务器错误： (\(response.statusCode) UrURL： \(url)"
                 switch response.statusCode {
                 case 500...599:
                     reject(NSError(domain: statusAndURL, code: HTTPError.serverError.rawValue,   userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
@@ -326,7 +326,7 @@ extension URLSession: HTTPClient {
                         return
                     }
                     NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "didRecieve401Response")))
-                    reject(NSError(domain: "没有q权限",                                code: HTTPError.notAuthorized.rawValue, userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
+                    reject(NSError(domain: "没有权限",                                code: HTTPError.notAuthorized.rawValue, userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
                 default:
                     reject(NSError(domain: statusAndURL, code: HTTPError.serverError.rawValue,   userInfo: self.userInfoDictionary(data, statusCode: response.statusCode)), promise: promise)
                 }
@@ -334,7 +334,7 @@ extension URLSession: HTTPClient {
             }
 
             guard let data = data else {
-                reject(NSError(domain: "Invalid data in \(response.url?.absoluteString ?? "<no url>")", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: promise)
+                reject(NSError(domain: "无效的数据： \(response.url?.absoluteString ?? "<没有url>")", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: promise)
                 return
             }
 
@@ -374,7 +374,7 @@ extension URLSession: HTTPClient {
         }
 
         guard .none == json.error else {
-            reject(NSError(domain: "Invalid JSON content \(json.error?.localizedDescription ?? "with no error")", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: mainPromise)
+            reject(NSError(domain: "无效的JSON： \(json.error?.localizedDescription ?? "没有error")", code: HTTPError.unreadableFormat.rawValue, userInfo: .none), promise: mainPromise)
             return mainPromise.future
         }
 

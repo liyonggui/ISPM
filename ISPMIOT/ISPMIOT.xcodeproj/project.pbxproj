@@ -59,6 +59,9 @@
 		987741B721BD3B58009A238B /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741B021BD3B57009A238B /* Promise.swift */; };
 		987741B821BD3B58009A238B /* Future+When.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741B121BD3B57009A238B /* Future+When.swift */; };
 		987741B921BD3B58009A238B /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987741B221BD3B57009A238B /* NetworkConstants.swift */; };
+		98EFDD3B21C3AF6000EFDB12 /* CellBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD3A21C3AF6000EFDB12 /* CellBackgroundView.swift */; };
+		98EFDD3D21C3AFA300EFDB12 /* CellBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EFDD3C21C3AFA300EFDB12 /* CellBackgroundView.xib */; };
+		98EFDD3F21C3B24D00EFDB12 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD3E21C3B24D00EFDB12 /* NibLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +119,9 @@
 		987741B021BD3B57009A238B /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
 		987741B121BD3B57009A238B /* Future+When.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Future+When.swift"; sourceTree = "<group>"; };
 		987741B221BD3B57009A238B /* NetworkConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		98EFDD3A21C3AF6000EFDB12 /* CellBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBackgroundView.swift; sourceTree = "<group>"; };
+		98EFDD3C21C3AFA300EFDB12 /* CellBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellBackgroundView.xib; sourceTree = "<group>"; };
+		98EFDD3E21C3B24D00EFDB12 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		C5ABE312638DE68216D940B0 /* Pods_ISPMIOT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPMIOT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB217BD1891631D0DDFE153C /* Pods-ISPMIOT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISPMIOT.release.xcconfig"; path = "Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT.release.xcconfig"; sourceTree = "<group>"; };
 		E5CBEEAEB1EEFBA9E222AE02 /* Pods-ISPMIOT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISPMIOT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 		9806DEEB21BDFC6000B6A367 /* Share */ = {
 			isa = PBXGroup;
 			children = (
+				98EFDD3921C3AF5300EFDB12 /* View */,
 				98686FB321C2048A0016CDEE /* Controller */,
 				9806DEEF21BDFD1C00B6A367 /* Model */,
 				9806DEEC21BDFC6000B6A367 /* Extension */,
@@ -205,6 +212,7 @@
 				98686FA621C0DA210016CDEE /* IOTNotificationCenter.swift */,
 				98686FAA21C10BAC0016CDEE /* MyLog.swift */,
 				98686FBA21C213D90016CDEE /* Future+Extension.swift */,
+				98EFDD3E21C3B24D00EFDB12 /* NibLoadable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -444,6 +452,15 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		98EFDD3921C3AF5300EFDB12 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98EFDD3A21C3AF6000EFDB12 /* CellBackgroundView.swift */,
+				98EFDD3C21C3AFA300EFDB12 /* CellBackgroundView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,6 +524,7 @@
 			files = (
 				98686FA921C0DD170016CDEE /* LoginViewController.xib in Resources */,
 				9806DF0F21BE4F5F00B6A367 /* ListItemTableViewCell.xib in Resources */,
+				98EFDD3D21C3AFA300EFDB12 /* CellBackgroundView.xib in Resources */,
 				98686F8421BF621E0016CDEE /* ProjectStatusCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
 				98686F8C21BFC0DF0016CDEE /* DevicesListCell.xib in Resources */,
@@ -602,11 +620,13 @@
 				987741A421BBC244009A238B /* HomeViewController.swift in Sources */,
 				9806DEF321BE046400B6A367 /* Constants.swift in Sources */,
 				9806DEFB21BE0AAE00B6A367 /* UIView+Extensions.swift in Sources */,
+				98EFDD3B21C3AF6000EFDB12 /* CellBackgroundView.swift in Sources */,
 				98686F8821BF9FCE0016CDEE /* LabelTools.swift in Sources */,
 				9806DF1121BE507B00B6A367 /* BaseTableViewCell.swift in Sources */,
 				987741B721BD3B58009A238B /* Promise.swift in Sources */,
 				98686F9021C09E850016CDEE /* Interface.swift in Sources */,
 				9806DEF121BE016400B6A367 /* BaseNavigationController.swift in Sources */,
+				98EFDD3F21C3B24D00EFDB12 /* NibLoadable.swift in Sources */,
 				9806DF0721BE42DA00B6A367 /* ListItemTableViewCell.swift in Sources */,
 				98686FAB21C10BAC0016CDEE /* MyLog.swift in Sources */,
 				9806DEEA21BDF81000B6A367 /* MainTabBarController.swift in Sources */,
