@@ -12,7 +12,6 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var projectNameLabel: LabelWhite16!
     @IBOutlet weak var typeLabel: LabelWhite14!
-    @IBOutlet weak var areaLabel: LabelWhite14!
     @IBOutlet weak var timeLabel: LabelWhite14!
     @IBOutlet weak var addressLabel: LabeBluel12!
     @IBOutlet weak var iconImageView: UIImageView!
@@ -61,12 +60,6 @@ class HomeViewController: BaseViewController {
         addressLabel.text = "地址:" + model.address
         timeLabel.text = "开工时间:" + model.startDate
         loadEnvMonitor(model)
-//        DispatchQueue.main.async {
-//            self.view.layoutIfNeeded()
-//            self.view.setNeedsLayout()
-//            self.projectInfoView.layoutIfNeeded()
-//            self.projectInfoView.setNeedsLayout()
-//        }
     }
     
     /// 网络请求项目列表
@@ -111,7 +104,9 @@ class HomeViewController: BaseViewController {
         mainTableView.delegate = self
         mainTableView.registerNib(ProjectStatusCell.self)
         mainTableView.registerNib(DevicesListCell.self)
+        mainTableView.registerNib(ProjectInfoCell.self)
         mainTableView.backgroundColor = .clear
+        
     }
     
     @IBAction func didTapArrow(_ sender: UIButton) {
@@ -141,7 +136,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedState {
         case .project:
-            return monitorArray.count
+            return monitorArray.count + 1
         case .devices:
             return devicesArray.count
         }
@@ -150,9 +145,15 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedState {
         case .project:
-            return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                cell.setup(self.monitorArray[indexPath.row])
-            })
+            if indexPath.row == 0 {
+                return tableView.dequeueReusableCell(of: ProjectInfoCell.self, for: indexPath, defaultCell: nil, configure: { cell in
+                    cell.setup()
+                })
+            } else {
+                return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
+                    cell.setup(self.monitorArray[indexPath.row - 1])
+                })
+            }
         case .devices:
             return tableView.dequeueReusableCell(of: DevicesListCell.self, for: indexPath, defaultCell: nil, configure: { cell in
                 cell.setup(self.devicesArray[indexPath.row])
