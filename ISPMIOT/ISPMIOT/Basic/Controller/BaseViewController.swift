@@ -46,7 +46,7 @@ extension BaseViewController {
         guard let errorMsg = error?.domain else {
             return
         }
-        showAlert("提示", message: errorMsg)
+        showAlert("提示", message: errorMsg.isEmpty ? "网络连接失败" : errorMsg)
     }
 }
 

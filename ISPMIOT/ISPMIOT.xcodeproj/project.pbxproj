@@ -62,6 +62,8 @@
 		98EFDD3B21C3AF6000EFDB12 /* CellBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD3A21C3AF6000EFDB12 /* CellBackgroundView.swift */; };
 		98EFDD3D21C3AFA300EFDB12 /* CellBackgroundView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EFDD3C21C3AFA300EFDB12 /* CellBackgroundView.xib */; };
 		98EFDD3F21C3B24D00EFDB12 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD3E21C3B24D00EFDB12 /* NibLoadable.swift */; };
+		98EFDD4121C7A07300EFDB12 /* ProjectInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD4021C7A07300EFDB12 /* ProjectInfoCell.swift */; };
+		98EFDD4321C7A0E400EFDB12 /* ProjectInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,8 @@
 		98EFDD3A21C3AF6000EFDB12 /* CellBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellBackgroundView.swift; sourceTree = "<group>"; };
 		98EFDD3C21C3AFA300EFDB12 /* CellBackgroundView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellBackgroundView.xib; sourceTree = "<group>"; };
 		98EFDD3E21C3B24D00EFDB12 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		98EFDD4021C7A07300EFDB12 /* ProjectInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfoCell.swift; sourceTree = "<group>"; };
+		98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectInfoCell.xib; sourceTree = "<group>"; };
 		C5ABE312638DE68216D940B0 /* Pods_ISPMIOT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPMIOT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB217BD1891631D0DDFE153C /* Pods-ISPMIOT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISPMIOT.release.xcconfig"; path = "Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT.release.xcconfig"; sourceTree = "<group>"; };
 		E5CBEEAEB1EEFBA9E222AE02 /* Pods-ISPMIOT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISPMIOT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -384,6 +388,8 @@
 				98686F8321BF621E0016CDEE /* ProjectStatusCell.xib */,
 				98686F8921BFBF2D0016CDEE /* DevicesListCell.swift */,
 				98686F8B21BFC0DF0016CDEE /* DevicesListCell.xib */,
+				98EFDD4021C7A07300EFDB12 /* ProjectInfoCell.swift */,
+				98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -524,6 +530,7 @@
 			files = (
 				98686FA921C0DD170016CDEE /* LoginViewController.xib in Resources */,
 				9806DF0F21BE4F5F00B6A367 /* ListItemTableViewCell.xib in Resources */,
+				98EFDD4321C7A0E400EFDB12 /* ProjectInfoCell.xib in Resources */,
 				98EFDD3D21C3AFA300EFDB12 /* CellBackgroundView.xib in Resources */,
 				98686F8421BF621E0016CDEE /* ProjectStatusCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
@@ -617,6 +624,7 @@
 				987741B321BD3B58009A238B /* Future.swift in Sources */,
 				9806DF0D21BE4E3100B6A367 /* BaseTableView.swift in Sources */,
 				98686FB521C204A80016CDEE /* TopViewController.swift in Sources */,
+				98EFDD4121C7A07300EFDB12 /* ProjectInfoCell.swift in Sources */,
 				987741A421BBC244009A238B /* HomeViewController.swift in Sources */,
 				9806DEF321BE046400B6A367 /* Constants.swift in Sources */,
 				9806DEFB21BE0AAE00B6A367 /* UIView+Extensions.swift in Sources */,

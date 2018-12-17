@@ -59,14 +59,14 @@ class HomeViewController: BaseViewController {
         }
         projectNameLabel.text = model.name
         addressLabel.text = "地址:" + model.address
-        timeLabel.text = "时间:" + model.startDate
+        timeLabel.text = "开工时间:" + model.startDate
         loadEnvMonitor(model)
-        DispatchQueue.main.async {
-            self.view.layoutIfNeeded()
-            self.view.setNeedsLayout()
-            self.projectInfoView.layoutIfNeeded()
-            self.projectInfoView.setNeedsLayout()
-        }
+//        DispatchQueue.main.async {
+//            self.view.layoutIfNeeded()
+//            self.view.setNeedsLayout()
+//            self.projectInfoView.layoutIfNeeded()
+//            self.projectInfoView.setNeedsLayout()
+//        }
     }
     
     /// 网络请求项目列表
