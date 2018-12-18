@@ -15,6 +15,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var timeLabel: LabelWhite14!
     @IBOutlet weak var addressLabel: LabeBluel12!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var ownerLabel: LabelWhite14!
+    @IBOutlet weak var contactLbel: LabelWhite14!
     
     lazy var listItemViewController: ListItemViewController = {
         let vc = ListItemViewController()
@@ -39,6 +41,12 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        if let iamge = UIImage(named: "banner") {
+//            setNavigationBar(image: iamge)
+//        }
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "banner"), for: .compact)
+//        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "banner")!
+        //        UINavigationBar.appearance().backgroundColor = .red
         setNavigationBar(title: NavTitle.projectInformation)
         setupUI()
         loadProjectList()
@@ -56,9 +64,13 @@ class HomeViewController: BaseViewController {
         guard let model = projectModel else {
             return
         }
+        
         projectNameLabel.text = model.name
-        addressLabel.text = "地址:" + model.address
-        timeLabel.text = "开工时间:" + model.startDate
+        ownerLabel.text = "业主：" + model.ownerName
+        typeLabel.text = "类型：" + model.typeStr
+        addressLabel.text = "地址：" + model.address
+        timeLabel.text = "开工时间：" + model.startDate
+        contactLbel.text = "联系方式：" + model.ownerPhone + "(\(model.ownerName))"
         loadEnvMonitor(model)
     }
     
@@ -95,7 +107,11 @@ class HomeViewController: BaseViewController {
             listView.frame = frame
             contantTableView.addSubview(listView)
         }
-        
+        [projectNameLabel, addressLabel, timeLabel, ownerLabel, contactLbel, addressLabel].forEach {
+            $0?.adjustsFontSizeToFitWidth = true
+            $0?.minimumScaleFactor = 0.5
+        }
+        tapSegmented.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
         setupTableView()
     }
     
@@ -106,7 +122,6 @@ class HomeViewController: BaseViewController {
         mainTableView.registerNib(DevicesListCell.self)
         mainTableView.registerNib(ProjectInfoCell.self)
         mainTableView.backgroundColor = .clear
-        
     }
     
     @IBAction func didTapArrow(_ sender: UIButton) {
@@ -151,7 +166,7 @@ extension HomeViewController: UITableViewDataSource {
                 })
             } else {
                 return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                    cell.setup(self.monitorArray[indexPath.row - 1])
+                    cell.setup(self.monitorArray[indexPath.row - 1], type: CellTape(rawValue: indexPath.row - 1))
                 })
             }
         case .devices:
@@ -170,7 +185,35 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 // MARK: - enum
+
+/// 返回cell的类型
+///
+/// - project: 项目状态
+/// - devices: 设备列表
 enum State: Int {
     case project = 0
     case devices
+}
+
+/// cell 类型
+///
+/// - pm25: PM2.5
+/// - pm10: PM10
+/// - temperature: 温度
+/// - humidity: 湿度
+/// - pressure: 气压
+/// - windSpeed: 风速
+/// - noiseLevel: 噪音
+/// - windPower: 风力
+/// - tsp: 总悬浮微粒
+enum CellTape: Int {
+    case pm25 = 0
+    case pm10
+    case temperature
+    case humidity
+    case pressure
+    case windSpeed
+    case noiseLevel
+    case windPower
+    case tsp
 }

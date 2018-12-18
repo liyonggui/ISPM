@@ -3,14 +3,13 @@ import UIKit
 class ProjectStatusCell: BaseTableViewCell {
     
     @IBOutlet weak var mainView: UIView!
-//    @IBOutlet weak var pm25Label: UILabel!
-//    @IBOutlet weak var humidityLabel: UILabel!
-//    @IBOutlet weak var noiseLevelLabel: UILabel!
-//    @IBOutlet weak var pressureLabel: UILabel!
-//    @IBOutlet weak var temperatureLabel: UILabel!
-//    @IBOutlet weak var windDirectionLabel: UILabel!
-//    @IBOutlet weak var windPowerLabel: UILabel!
-//    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var iconImg: UIImageView!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var aveDayLabel: UILabel!
+    @IBOutlet weak var aveMonthLabel: UILabel!
+    @IBOutlet weak var lowestLabel: UILabel!
+    @IBOutlet weak var recordLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,14 +25,44 @@ class ProjectStatusCell: BaseTableViewCell {
         mainView.clipsToBounds = true
     }
     
-    func setup(_ model: MonitorModelel) {
-//        pm25Label.text = "\(model.pm25)"
-//        humidityLabel.text = "\(model.humidity)"
-//        noiseLevelLabel.text = "\(model.noiseLevel)"
-//        pressureLabel.text = "\(model.pressure)"
-//        temperatureLabel.text = "\(model.temperature)"
-//        windDirectionLabel.text = model.windDirection
-//        windPowerLabel.text = "\(model.windPower)"
-//        windSpeedLabel.text = "\(model.windSpeed)"
+    func setup(_ model: MonitorModelel, type: CellTape?) {
+        guard let type = type else {
+            return
+        }
+        var data = ""
+        var time = ""
+        var aveDay = ""
+        var aveMonth = ""
+        var lowest = ""
+        var record = ""
+        var icon: UIImage?
+        switch type {
+        case .pm25:
+            data = ""
+            time = ""
+            aveDay = ""
+            aveMonth = ""
+            lowest = ""
+            record = ""
+            icon = UIImage(named: "pmIcon")
+        case .pm10:
+            icon = UIImage(named: "pmIcon")
+        case .humidity:
+            icon = UIImage(named: "humidity")
+        case .temperature:
+            icon = UIImage(named: "temperature")
+        default: break
+        }
+        iconImg.image = icon
+        dataLabel.text = data
+        timeLabel.text = time
+        aveDayLabel.text = aveDay
+        aveMonthLabel.text = aveMonth
+        lowestLabel.text = lowest
+        recordLabel.text = record
+    }
+    
+    private func set() {
+        
     }
 }

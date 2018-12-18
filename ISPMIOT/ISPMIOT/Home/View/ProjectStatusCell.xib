@@ -235,7 +235,14 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="mainView" destination="aHM-Hh-2zc" id="iFJ-EI-4gW"/>
+                <outlet property="aveDayLabel" destination="aP3-mP-xrA" id="qRa-zV-uCw"/>
+                <outlet property="aveMonthLabel" destination="f5f-kf-jk3" id="95i-r6-SMC"/>
+                <outlet property="dataLabel" destination="qr1-eo-DOP" id="6H7-Di-WUN"/>
+                <outlet property="iconImg" destination="cDH-hm-4MC" id="buU-NL-otD"/>
+                <outlet property="lowestLabel" destination="VQc-ON-5wZ" id="hvg-CO-UIe"/>
+                <outlet property="mainView" destination="aHM-Hh-2zc" id="s4C-1V-fLD"/>
+                <outlet property="recordLabel" destination="nWX-dW-vxp" id="rUZ-kk-fRo"/>
+                <outlet property="timeLabel" destination="rnq-qh-YQJ" id="fPX-bm-j7M"/>
             </connections>
             <point key="canvasLocation" x="41.600000000000001" y="83.208395802098963"/>
         </tableViewCell>

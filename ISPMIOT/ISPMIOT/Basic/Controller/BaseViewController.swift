@@ -123,7 +123,6 @@ private class SingleTitleView: UIView {
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
 }
 
-
 /// DoubleTitleView - 两行文本
 private class DoubleTitleView: UIView {
     lazy var mainTitle: UILabel = {
@@ -139,7 +138,7 @@ private class DoubleTitleView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "▾"
-        label.font = UIFont(name: "ArialMT", size: 14) ?? UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
         label.textColor = .white
         return label
