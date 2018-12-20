@@ -2,10 +2,12 @@ import Foundation
 import SwiftyJSON
 
 /// 项目对象
-public class DevicesModel {
-    
+public struct DevicesModel {
+    /// ID
     public var id: Int
+    /// 项目名称
     public var name: String
+    ///
     public var manufactureDate: String
     public var productModel: String
     public var category: String

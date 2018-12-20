@@ -14,7 +14,6 @@ class ProjectStatusCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        
     }
     
     private func setupUI() {
@@ -25,25 +24,20 @@ class ProjectStatusCell: BaseTableViewCell {
         mainView.clipsToBounds = true
     }
     
-    func setup(_ model: MonitorModelel, type: CellTape?) {
-        guard let type = type else {
-            return
-        }
-        var data = ""
-        var time = ""
-        var aveDay = ""
-        var aveMonth = ""
-        var lowest = ""
-        var record = ""
+    /// 设置数据
+    ///
+    /// - Parameter model: 传入模型
+    func setup(_ model: MonitorModelel) {
+        dataLabel.text = "\(model.latestData)"
+        timeLabel.text = model.createTime
+        aveDayLabel.text = "\(model.todayAvg)"
+        aveMonthLabel.text = "\(model.monthAvg)"
+        lowestLabel.text = "\(model.min)"
+        recordLabel.text = "\(model.max)"
+        
         var icon: UIImage?
-        switch type {
+        switch model.envType {
         case .pm25:
-            data = ""
-            time = ""
-            aveDay = ""
-            aveMonth = ""
-            lowest = ""
-            record = ""
             icon = UIImage(named: "pmIcon")
         case .pm10:
             icon = UIImage(named: "pmIcon")
@@ -54,12 +48,6 @@ class ProjectStatusCell: BaseTableViewCell {
         default: break
         }
         iconImg.image = icon
-        dataLabel.text = data
-        timeLabel.text = time
-        aveDayLabel.text = aveDay
-        aveMonthLabel.text = aveMonth
-        lowestLabel.text = lowest
-        recordLabel.text = record
     }
     
     private func set() {

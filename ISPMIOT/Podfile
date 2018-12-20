@@ -8,6 +8,7 @@ def app_pods
     pod 'IQKeyboardManagerSwift'
     pod 'MBProgressHUD'
     pod 'Charts'
+    pod 'SDWebImage'
 end
 
 target 'ISPMIOT' do

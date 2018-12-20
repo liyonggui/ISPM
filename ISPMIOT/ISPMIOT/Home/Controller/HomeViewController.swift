@@ -41,12 +41,6 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let iamge = UIImage(named: "banner") {
-//            setNavigationBar(image: iamge)
-//        }
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(named: "banner"), for: .compact)
-//        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "banner")!
-        //        UINavigationBar.appearance().backgroundColor = .red
         setNavigationBar(title: NavTitle.projectInformation)
         setupUI()
         loadProjectList()
@@ -72,6 +66,9 @@ class HomeViewController: BaseViewController {
         timeLabel.text = "开工时间：" + model.startDate
         contactLbel.text = "联系方式：" + model.ownerPhone + "(\(model.ownerName))"
         loadEnvMonitor(model)
+        if let _ = mainTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProjectInfoCell {
+            mainTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
     }
     
     /// 网络请求项目列表
@@ -122,6 +119,7 @@ class HomeViewController: BaseViewController {
         mainTableView.registerNib(DevicesListCell.self)
         mainTableView.registerNib(ProjectInfoCell.self)
         mainTableView.backgroundColor = .clear
+        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
     }
     
     @IBAction func didTapArrow(_ sender: UIButton) {
@@ -162,11 +160,13 @@ extension HomeViewController: UITableViewDataSource {
         case .project:
             if indexPath.row == 0 {
                 return tableView.dequeueReusableCell(of: ProjectInfoCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                    cell.setup()
+                    cell.setup(self.projectModel)
                 })
             } else {
                 return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                    cell.setup(self.monitorArray[indexPath.row - 1], type: CellTape(rawValue: indexPath.row - 1))
+                    if let type = EnvironmentParameterType(rawValue: indexPath.row - 1) {
+                        cell.setup(self.monitorArray[type.rawValue])
+                    }
                 })
             }
         case .devices:
@@ -206,14 +206,14 @@ enum State: Int {
 /// - noiseLevel: 噪音
 /// - windPower: 风力
 /// - tsp: 总悬浮微粒
-enum CellTape: Int {
-    case pm25 = 0
-    case pm10
-    case temperature
-    case humidity
-    case pressure
-    case windSpeed
-    case noiseLevel
-    case windPower
-    case tsp
-}
+//enum CellTape: Int {
+//    case pm25 = 0
+//    case pm10
+//    case temperature
+//    case humidity
+//    case pressure
+//    case windSpeed
+//    case noiseLevel
+//    case windPower
+//    case tsp
+//}

@@ -17,14 +17,14 @@ extension UITableView {
     
     func dequeueReusableCell<T: UITableViewCell>(_ cellType: T.Type, for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: cellType.reuseId, for: indexPath) as? T else {
-            fatalError("Could not deque cell of type " + cellType.reuseId)
+            fatalError("缓存池找不到对应cell： " + cellType.reuseId)
         }
         return cell
     }
     
     func dequeueReusableHeaderFooter<T: UITableViewHeaderFooterView>(_ viewType: T.Type) -> T {
         guard let cell = dequeueReusableHeaderFooterView(withIdentifier: viewType.reuseId) as? T else {
-            fatalError("Could not deque header footer view of type " + viewType.reuseId)
+            fatalError("缓存池找不到对应header footer view： " + viewType.reuseId)
         }
         return cell
     }

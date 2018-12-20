@@ -1,5 +1,6 @@
 import UIKit
 
+// MARK: - 日期相关
 extension String {
 
     /// 返回日期(年月日)string
@@ -43,24 +44,5 @@ extension String {
         let start = index(startIndex, offsetBy: range.lowerBound)
         let end = index(start, offsetBy: range.upperBound - range.lowerBound)
         return String(self[start ..< end])
-    }
-    
-//    func mySubString(to index: Int) -> String {
-//        return String(self[..<self.index(self.startIndex, offsetBy: index)])
-//    }
-//
-//    func mySubString(from index: Int) -> String {
-//        return String(self[self.index(self.startIndex, offsetBy: index)...])
-//    }
-}
-
-//不包含后几个字符串的方法
-extension String {
-    func dropLast(_ n: Int = 1) -> String {
-        return String(characters.dropLast(n))
-    }
-    
-    var dropLast: String {
-        return dropLast()
     }
 }
