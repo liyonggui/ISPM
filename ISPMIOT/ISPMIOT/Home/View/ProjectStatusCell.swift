@@ -13,6 +13,7 @@ class ProjectStatusCell: BaseTableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         setupUI()
     }
     
@@ -22,6 +23,11 @@ class ProjectStatusCell: BaseTableViewCell {
         mainView.cornerRadius = 10
         mainView.borderColor = .blue
         mainView.clipsToBounds = true
+        
+        [dataLabel, timeLabel, aveDayLabel, aveMonthLabel, lowestLabel, recordLabel].forEach {
+            $0?.adjustsFontSizeToFitWidth = true
+            $0?.minimumScaleFactor = 0.5
+        }
     }
     
     /// 设置数据

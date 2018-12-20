@@ -10,7 +10,6 @@ public struct ProjectService: Service {
     public func getEnvMonitor(_ model: ProjectModel) -> Future<[MonitorModelel]> {
         let request = ServiceRequest(
             path: "/getEnvMonitorByPid/\(model.id)",
-//            path: "/getEnvMonitorByPid/d9b3b5754e2f4dfb967700723f8b90c3",
             verb: .post,
             serviceDescription: serviceDescription
         )
@@ -22,14 +21,13 @@ public struct ProjectService: Service {
         }
     }
     
-    /// 获取环境数据
+    /// 获取设备列表数据
     ///
     /// - Parameter model: 传入模型
     /// - Returns: 返回模型数组
     public func getDevices(_ model: ProjectModel) -> Future<[DevicesModel]> {
         let request = ServiceRequest(
-            path: "/getEnvMonitorByPid/\(model.id)",
-//            path: "/getDevicesByPid/d9b3b5754e2f4dfb967700723f8b90c3",
+            path: "/getDevicesByPid/\(model.id)",
             verb: .post,
             serviceDescription: serviceDescription
         )

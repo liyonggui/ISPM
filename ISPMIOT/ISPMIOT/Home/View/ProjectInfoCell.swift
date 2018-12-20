@@ -16,6 +16,10 @@ class ProjectInfoCell: BaseTableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        [totalLabel, onlineLabel, offlineLabel, errorLabel, environmentLabel, faceLabel, cameraLabel, craneLabel].forEach {
+            $0?.adjustsFontSizeToFitWidth = true
+            $0?.minimumScaleFactor = 0.5
+        }
     }
     
     /// 设置cell
@@ -43,14 +47,6 @@ class ProjectInfoCell: BaseTableViewCell {
             
             }
         }
-        
-        let imgs = ["https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2578367175,2856159644&fm=26&gp=0.jpg",
-                    "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3202486095,1447021423&fm=26&gp=0.jpg",
-                    "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2868546495,2985100633&fm=26&gp=0.jpg",
-                    "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2481221036,1730549978&fm=26&gp=0.jpg",
-                    "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2352271939,3127961297&fm=26&gp=0.jpg"
-        ]
-//        MyPrint(model.)
         setImgs(model.images)
     }
     
