@@ -7,6 +7,5 @@ class BaseNavigationController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.barTintColor = .mainBlue
-//        navigationBar.setBackgroundImage(UIImage(named: "banner"), for: .default)
     }
 }

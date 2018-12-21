@@ -40,24 +40,9 @@ public struct MonitorModelel {
     /// 风向
     public var windDirection: String
     /// 环境监测类型
-    public var envType: EnvironmentParameterType = .pm25
+    public var envType: EnvironmentParameterType?
     /// 类型string格式
-    public var typeStr: String {
-        didSet {
-            switch typeStr {
-            case "pm25": envType = .pm25
-            case "pm10": envType = .pm10
-            case "temperature": envType = .temperature
-            case "humidity": envType = .humidity
-            case "pressure": envType = .pressure
-            case "wind_speed": envType = .windSpeed
-            case "noise_level": envType = .noiseLevel
-            case "wind_power": envType = .windPower
-            case "TSP": envType = .tsp
-            default: break
-            }
-        }
-    }
+    public var typeStr: String
     
     public init?(json: JSON) {
 //        guard let id = json["id"].string else { return nil }
@@ -80,6 +65,20 @@ public struct MonitorModelel {
         self.typeStr = json["typeStr"].stringValue
         self.latestData = json["latestData"].floatValue
         self.windDirection = json["windDirection"].stringValue
+
+        // 设置类型
+        switch typeStr {
+        case "pm25": envType = .pm25
+        case "pm10": envType = .pm10
+        case "temperature": envType = .temperature
+        case "humidity": envType = .humidity
+        case "pressure": envType = .pressure
+        case "wind_speed": envType = .windSpeed
+        case "noise_level": envType = .noiseLevel
+        case "wind_power": envType = .windPower
+        case "TSP": envType = .tsp
+        default: break
+        }
     }
 }
 

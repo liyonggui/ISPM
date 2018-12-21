@@ -8,6 +8,7 @@ class ListItemViewController: BaseViewController {
         }
     }
     var callBack: ((ProjectModel) -> Void)?
+    var indexPath = IndexPath(row: 0, section: 0)
     var first = true
     
     lazy var tableView: BaseTableView = {

@@ -26,8 +26,9 @@ public struct ProjectService: Service {
     /// - Parameter model: 传入模型
     /// - Returns: 返回模型数组
     public func getDevices(_ model: ProjectModel) -> Future<[DevicesModel]> {
-        let request = ServiceRequest(
+        let request = ServiceRequest( //02f175fc8a3548c7bd438f67ded83bbf
             path: "/getDevicesByPid/\(model.id)",
+//            path: "/getDevicesByPid/02f175fc8a3548c7bd438f67ded83bbf",
             verb: .post,
             serviceDescription: serviceDescription
         )

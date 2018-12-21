@@ -795,7 +795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispm.ISPMIOT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispmiot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ISPMIOT/Resources/ISPMIOT-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -818,7 +818,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispm.ISPMIOT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.opjtech.ispmiot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ISPMIOT/Resources/ISPMIOT-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

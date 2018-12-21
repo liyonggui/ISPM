@@ -1,5 +1,6 @@
 import UIKit
 
+/// 环境监测cell
 class ProjectStatusCell: BaseTableViewCell {
     
     @IBOutlet weak var mainView: UIView!
@@ -10,6 +11,7 @@ class ProjectStatusCell: BaseTableViewCell {
     @IBOutlet weak var aveMonthLabel: UILabel!
     @IBOutlet weak var lowestLabel: UILabel!
     @IBOutlet weak var recordLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,20 +42,21 @@ class ProjectStatusCell: BaseTableViewCell {
         aveMonthLabel.text = "\(model.monthAvg)"
         lowestLabel.text = "\(model.min)"
         recordLabel.text = "\(model.max)"
-        
-        var icon: UIImage?
-        switch model.envType {
-        case .pm25:
-            icon = UIImage(named: "pmIcon")
-        case .pm10:
-            icon = UIImage(named: "pmIcon")
-        case .humidity:
-            icon = UIImage(named: "humidity")
-        case .temperature:
-            icon = UIImage(named: "temperature")
-        default: break
+        if let type = model.envType {
+            var title: String?
+            switch type {
+            case .pm25: title = "PM2.5"
+            case .pm10: title = "PM10"
+            case .humidity: title = "温度"
+            case .temperature: title = "湿度"
+            case .pressure: title = "压力"
+            case .noiseLevel: title = "噪声"
+            case .windPower: title = "风力"
+            case .tsp: title = "TSP"
+            case .windSpeed: title = "风速"
+            }
+            titleLabel.text = title
         }
-        iconImg.image = icon
     }
     
     private func set() {

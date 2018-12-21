@@ -23,18 +23,14 @@ class HomeViewController: BaseViewController {
         return vc
     }()
     
-    var selectedState: State = .project {
-        didSet {
-            mainTableView.reloadData()
-        }
-    }
+    var selectedState: State = .project
     
     var monitorArray: [MonitorModelel] = []
     var devicesArray: [DevicesModel] = []
     var projectArray: [ProjectModel] = []
     var projectModel: ProjectModel? {
         didSet {
-            setup(projectModel)
+            setupProjectInfo(projectModel)
         }
     }
         
@@ -54,7 +50,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    private func setup(_ model: ProjectModel?) {
+    private func setupProjectInfo(_ model: ProjectModel?) {
         guard let model = projectModel else {
             return
         }
@@ -80,18 +76,25 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    /// 网络请求项目列表和环境数据
+    /// 网络请求环境数据
     ///
     /// - Parameter model: 项目模型
     private func loadEnvMonitor(_ model: ProjectModel) {
         showActivityHUD()
         interfaceSharedInstance.projectService.getEnvMonitor(model).onSuccess {
-            guard $0.count > 0 else { return }
+//            guard $0.count > 0 else { return }
             self.monitorArray = $0
-            interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
-                self.devicesArray = $0
-                self.mainTableView.reloadData()
-            }
+            self.loadDevices(model)
+        }
+    }
+    
+    /// 网络请求设备列表
+    ///
+    /// - Parameter model: 项目模型
+    private func loadDevices(_ model: ProjectModel) {
+        interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
+            self.devicesArray = $0
+            self.mainTableView.reloadData()
         }
     }
     
@@ -120,7 +123,7 @@ class HomeViewController: BaseViewController {
         mainTableView.registerNib(DevicesListCell.self)
         mainTableView.registerNib(ProjectInfoCell.self)
         mainTableView.backgroundColor = .clear
-        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
+//        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
     }
     
     @IBAction func didTapArrow(_ sender: UIButton) {
@@ -141,6 +144,7 @@ class HomeViewController: BaseViewController {
     
     @IBAction func didTapTabSegmented(_ sender: UISegmentedControl) {
         selectedState = State(rawValue: sender.selectedSegmentIndex) ?? .project
+        mainTableView.reloadData()
     }
 }
 
@@ -195,26 +199,3 @@ enum State: Int {
     case project = 0
     case devices
 }
-
-/// cell 类型
-///
-/// - pm25: PM2.5
-/// - pm10: PM10
-/// - temperature: 温度
-/// - humidity: 湿度
-/// - pressure: 气压
-/// - windSpeed: 风速
-/// - noiseLevel: 噪音
-/// - windPower: 风力
-/// - tsp: 总悬浮微粒
-//enum CellTape: Int {
-//    case pm25 = 0
-//    case pm10
-//    case temperature
-//    case humidity
-//    case pressure
-//    case windSpeed
-//    case noiseLevel
-//    case windPower
-//    case tsp
-//}

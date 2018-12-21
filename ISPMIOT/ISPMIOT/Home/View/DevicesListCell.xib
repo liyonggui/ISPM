@@ -51,6 +51,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="countLabel" destination="i1N-Kz-hNV" id="GZ3-wf-Zba"/>
                 <outlet property="mainView" destination="1Nn-LY-7KF" id="lb4-ax-oUu"/>
                 <outlet property="titleLabel" destination="lhV-FX-wOM" id="fa9-DC-5z4"/>
             </connections>

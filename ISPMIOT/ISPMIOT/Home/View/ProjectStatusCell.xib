@@ -144,15 +144,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="71h-c4-7b0">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="71"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pmIcon" translatesAutoresizingMaskIntoConstraints="NO" id="cDH-hm-4MC">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cDH-hm-4MC">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="71"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXR-w3-4me">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="71"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="EXR-w3-4me" firstAttribute="top" secondItem="71h-c4-7b0" secondAttribute="top" id="FFF-zW-ScV"/>
                                             <constraint firstAttribute="bottom" secondItem="cDH-hm-4MC" secondAttribute="bottom" id="PzP-3W-NZt"/>
+                                            <constraint firstItem="EXR-w3-4me" firstAttribute="leading" secondItem="71h-c4-7b0" secondAttribute="leading" id="WKe-hF-C5W"/>
                                             <constraint firstAttribute="trailing" secondItem="cDH-hm-4MC" secondAttribute="trailing" id="bwu-Z3-Xbc"/>
                                             <constraint firstItem="cDH-hm-4MC" firstAttribute="top" secondItem="71h-c4-7b0" secondAttribute="top" id="h5i-nx-Zms"/>
+                                            <constraint firstAttribute="bottom" secondItem="EXR-w3-4me" secondAttribute="bottom" id="iOZ-nl-t30"/>
                                             <constraint firstItem="cDH-hm-4MC" firstAttribute="leading" secondItem="71h-c4-7b0" secondAttribute="leading" id="nFP-jG-YFf"/>
+                                            <constraint firstAttribute="trailing" secondItem="EXR-w3-4me" secondAttribute="trailing" id="udz-MA-Gha"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Hp-lA-dIL">
@@ -160,7 +170,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23.9" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr1-eo-DOP">
                                                 <rect key="frame" x="0.0" y="0.0" width="170" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -271,11 +281,9 @@
                 <outlet property="mainView" destination="aHM-Hh-2zc" id="s4C-1V-fLD"/>
                 <outlet property="recordLabel" destination="nWX-dW-vxp" id="rUZ-kk-fRo"/>
                 <outlet property="timeLabel" destination="rnq-qh-YQJ" id="fPX-bm-j7M"/>
+                <outlet property="titleLabel" destination="EXR-w3-4me" id="XWs-BR-9yH"/>
             </connections>
             <point key="canvasLocation" x="41.600000000000001" y="83.208395802098963"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="pmIcon" width="1028" height="1028"/>
-    </resources>
 </document>

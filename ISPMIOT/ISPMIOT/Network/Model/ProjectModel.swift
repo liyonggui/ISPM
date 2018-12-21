@@ -12,7 +12,7 @@ public struct ProjectModel {
     /// 地址
     public var address: String
     public var coveredArea: String
-    /// e业主
+    /// 业主
     public var ownerName: String
     public var ownerPhone: String
     /// 类型

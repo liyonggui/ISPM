@@ -1,5 +1,6 @@
 import UIKit
 
+/// 项目列表cell
 class ListItemTableViewCell : BaseTableViewCell, NibLoadable {
     @IBOutlet weak var titleLabel: UILabel!
     

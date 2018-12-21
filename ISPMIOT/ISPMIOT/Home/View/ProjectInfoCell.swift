@@ -1,6 +1,7 @@
 import UIKit
 import SDWebImage
 
+/// 项目信息cell
 class ProjectInfoCell: BaseTableViewCell {
 
     @IBOutlet weak var totalLabel: UILabel!
