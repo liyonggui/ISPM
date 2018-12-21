@@ -10,10 +10,10 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         // TODO: 测试数据
-        usernameTF.text = "admin"
-        passwordTF.text = "admin"
+//        usernameTF.text = "admin"
+//        passwordTF.text = "admin"
         
-//        loginButton.isEnabled = false
+        loginButton.isEnabled = false
         
         usernameTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
         passwordTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)

@@ -21,7 +21,7 @@ class ProjectStatusCell: BaseTableViewCell {
         mainView.backgroundColor = .backgroundBlue1
         mainView.borderWidth = 1
         mainView.cornerRadius = 10
-        mainView.borderColor = .blue
+        mainView.borderColor = .borderColorBlue
         mainView.clipsToBounds = true
         
         [dataLabel, timeLabel, aveDayLabel, aveMonthLabel, lowestLabel, recordLabel].forEach {

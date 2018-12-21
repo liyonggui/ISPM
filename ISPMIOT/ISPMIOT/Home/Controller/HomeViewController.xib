@@ -151,6 +151,7 @@
                                         <segment title="项目状态"/>
                                         <segment title="设备列表"/>
                                     </segments>
+                                    <color key="tintColor" red="0.047005639750000001" green="0.73354117340000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="didTapTabSegmented:" destination="-1" eventType="valueChanged" id="Qzb-CU-VP8"/>
                                     </connections>

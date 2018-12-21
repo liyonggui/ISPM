@@ -104,6 +104,7 @@ class HomeViewController: BaseViewController {
             listView.frame = frame
             contantTableView.addSubview(listView)
         }
+        // 设置字体最小值
         [projectNameLabel, addressLabel, timeLabel, ownerLabel, contactLbel, addressLabel].forEach {
             $0?.adjustsFontSizeToFitWidth = true
             $0?.minimumScaleFactor = 0.5
