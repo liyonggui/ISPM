@@ -10,13 +10,13 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var tapSegmented: UISegmentedControl!
     @IBOutlet weak var headerView: BaseMainView!
     
-    @IBOutlet weak var projectNameLabel: LabelWhite16!
-    @IBOutlet weak var typeLabel: LabelWhite14!
-    @IBOutlet weak var timeLabel: LabelWhite14!
-    @IBOutlet weak var addressLabel: LabeBluel12!
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var ownerLabel: LabelWhite14!
-    @IBOutlet weak var contactLbel: LabelWhite14!
+    @IBOutlet weak var ownerLabel: UILabel!
+    @IBOutlet weak var contactLbel: UILabel!
     
     lazy var listItemViewController: ListItemViewController = {
         let vc = ListItemViewController()
