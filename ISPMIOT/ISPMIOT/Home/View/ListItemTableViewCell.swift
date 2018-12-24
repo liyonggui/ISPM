@@ -1,10 +1,17 @@
 import UIKit
 
-class ListItemTableViewCell : BaseTableViewCell {
+/// 项目列表cell
+class ListItemTableViewCell : BaseTableViewCell, NibLoadable {
     @IBOutlet weak var titleLabel: UILabel!
+    
+    lazy var cellBgView: CellBackgroundView = {
+        return CellBackgroundView.loadFromNib()
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .default
+        selectedBackgroundView = cellBgView
         addShadow(cgColor: UIColor.white.cgColor)
     }
     

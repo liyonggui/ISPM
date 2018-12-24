@@ -17,5 +17,8 @@ class ServicesConstants {
 /// API参数
 struct APIConstant {
     static var appKey = ""
-    static var baseURL = URL(string:"http://192.168.1.164:8080/app")
+    /// 发布环境  http://47.107.92.201
+    static var baseURL = URL(string:"http://47.107.92.201:9090/app")
+    /// 测试环境
+//    static var baseURL = URL(string:"http://192.168.1.137:8080/app")
 }

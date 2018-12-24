@@ -16,14 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        IOTNotificationCenter.defaultCenter.addObserver(self, selector: #selector(dd), notificationType: .userLoggedIn)
+        IOTNotificationCenter.defaultCenter.addObserver(self, selector: #selector(logined), notificationType: .userLoggedIn)
         IQKeyboardManager.shared.enable = true
         setupWindow()
         interfaceSharedInstance = Interface(environment: .qa, applicationSource: "IOT")
         return true
     }
     
-    @objc func dd() {
+    @objc func logined() {
         window?.rootViewController = mainTabBarController
     }
     

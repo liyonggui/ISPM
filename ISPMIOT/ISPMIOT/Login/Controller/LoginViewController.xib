@@ -23,6 +23,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="kMc-Kq-Rqo">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQ8-f5-2Jn">
                     <rect key="frame" x="50" y="258.5" width="275" height="150"/>
                     <subviews>
@@ -67,15 +70,44 @@
                         <constraint firstItem="XbS-64-dDW" firstAttribute="leading" secondItem="8Ts-f7-D67" secondAttribute="leading" id="jdt-mS-oy9"/>
                         <constraint firstItem="XbS-64-dDW" firstAttribute="trailing" secondItem="8Ts-f7-D67" secondAttribute="trailing" id="qbU-sK-bKS"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPJ设备网关" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yby-nj-ofh">
+                    <rect key="frame" x="126" y="182.5" width="123" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="991-dM-SeV">
+                    <rect key="frame" x="179.5" y="218.5" width="16" height="14.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kMc-Kq-Rqo" secondAttribute="trailing" id="0Js-ZA-l2h"/>
                 <constraint firstItem="QQ8-f5-2Jn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="1kB-Qz-EKA"/>
+                <constraint firstItem="kMc-Kq-Rqo" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="EPr-7S-Yzk"/>
+                <constraint firstItem="991-dM-SeV" firstAttribute="top" secondItem="Yby-nj-ofh" secondAttribute="bottom" constant="10" id="MEH-4i-SA5"/>
                 <constraint firstItem="QQ8-f5-2Jn" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PV9-Fl-YrS"/>
+                <constraint firstItem="kMc-Kq-Rqo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Zby-gT-WZt"/>
+                <constraint firstItem="Yby-nj-ofh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cHr-Jk-xjW"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kMc-Kq-Rqo" secondAttribute="bottom" id="pmR-32-6y4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QQ8-f5-2Jn" secondAttribute="trailing" constant="50" id="sHZ-cq-1I0"/>
+                <constraint firstItem="QQ8-f5-2Jn" firstAttribute="top" secondItem="Yby-nj-ofh" secondAttribute="bottom" constant="50" id="tSB-T9-jNf"/>
+                <constraint firstItem="991-dM-SeV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="u8a-Mi-84A"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="132" y="154.27286356821591"/>
         </view>
     </objects>
+    <resources>
+        <image name="loginbg" width="1022" height="884"/>
+    </resources>
 </document>

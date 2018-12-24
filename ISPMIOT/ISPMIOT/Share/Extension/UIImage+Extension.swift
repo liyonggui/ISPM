@@ -6,7 +6,7 @@ protocol ImageSettable {
 
 extension UIImage: ImageSettable {
     enum Name: String {
-        case homeIcon = "home"
+        case homeIcon = "homeIcon"
     }
     
     convenience init?(named name: Name) {

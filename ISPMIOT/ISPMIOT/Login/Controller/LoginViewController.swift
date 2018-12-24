@@ -10,12 +10,24 @@ class LoginViewController: BaseViewController {
         super.viewDidLoad()
         
         // TODO: 测试数据
-        usernameTF.text = "admin"
-        passwordTF.text = "admin"
+//        usernameTF.text = "admin"
+//        passwordTF.text = "admin"
         
-//        loginButton.isEnabled = false
+        loginButton.isEnabled = false
+        
         usernameTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
         passwordTF.addTarget(self, action: #selector(valueChanged), for: .editingChanged)
+        
+        let iamgeView1 = UIImageView(image: UIImage(named: "username_icon"))
+        iamgeView1.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        usernameTF.leftView = iamgeView1
+        usernameTF.leftViewMode = .always
+        
+        let iamgeView2 = UIImageView(image: UIImage(named: "password_icon"))
+        iamgeView2.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+        passwordTF.leftView = iamgeView2
+        passwordTF.leftViewMode = .always
+        
     }
     
     @objc func valueChanged() {

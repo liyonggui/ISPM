@@ -2,10 +2,12 @@ import Foundation
 import SwiftyJSON
 
 /// 项目对象
-public class DevicesModel {
-    
+public struct DevicesModel {
+    /// ID
     public var id: Int
+    /// 项目名称
     public var name: String
+    ///
     public var manufactureDate: String
     public var productModel: String
     public var category: String
@@ -14,14 +16,16 @@ public class DevicesModel {
     public var projectName: String
     public var companyName: String
     public var siteNum: String
+    public var count: Int
     public var ip: String
     public var pageSize: Int
     public var pageCount: Int
     public var pageCurrent: Int
     
+    
     public init?(json: JSON) {
-        guard let id = json["id"].int else { return nil }
-        self.id = id
+//        guard let id = json["id"].int else { return nil }
+        self.id = json["id"].intValue
         self.name = json["vname"].stringValue
         self.manufactureDate = json["manufactureDate"].stringValue
         self.productModel = json["productModel"].stringValue
@@ -35,5 +39,6 @@ public class DevicesModel {
         self.pageSize = json["pageSize"].intValue
         self.pageCount = json["pageCount"].intValue
         self.pageCurrent = json["pageCurrent"].intValue
+        self.count = json["count"].intValue
     }
 }

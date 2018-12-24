@@ -8,33 +8,29 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var mainTableView: BaseTableView!
     @IBOutlet weak var tapSegmented: UISegmentedControl!
+    @IBOutlet weak var headerView: BaseMainView!
     
-    @IBOutlet weak var projectNameLabel: LabelWhite16!
-    @IBOutlet weak var typeLabel: LabelWhite14!
-    @IBOutlet weak var areaLabel: LabelWhite14!
-    @IBOutlet weak var timeLabel: LabelWhite14!
-    @IBOutlet weak var addressLabel: LabeBluel12!
+    @IBOutlet weak var projectNameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var ownerLabel: UILabel!
+    @IBOutlet weak var contactLbel: UILabel!
     
     lazy var listItemViewController: ListItemViewController = {
         let vc = ListItemViewController()
         return vc
     }()
     
-    var selectedState: State = .project {
-        didSet {
-            mainTableView.reloadData()
-        }
-    }
+    var selectedState: State = .project
     
     var monitorArray: [MonitorModelel] = []
     var devicesArray: [DevicesModel] = []
+    var projectArray: [ProjectModel] = []
     var projectModel: ProjectModel? {
         didSet {
-            if let model = projectModel {
-                loadEnvMonitor(model)
-                loadDevices(model)
-            }
+            setupProjectInfo(projectModel)
         }
     }
         
@@ -54,18 +50,29 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    private func setupProjectInfo(_ model: ProjectModel?) {
+        guard let model = projectModel else {
+            return
+        }
+        
+        projectNameLabel.text = model.name
+        ownerLabel.text = "业主：" + model.ownerName
+        typeLabel.text = "类型：" + model.typeStr
+        addressLabel.text = "地址：" + model.address
+        timeLabel.text = "开工时间：" + model.startDate
+        contactLbel.text = "联系方式：" + model.ownerPhone + "(\(model.ownerName))"
+        loadEnvMonitor(model)
+        if let _ = mainTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as? ProjectInfoCell {
+            mainTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        }
+    }
+    
     /// 网络请求项目列表
     private func loadProjectList() {
         interfaceSharedInstance.projectService.getProjects().successOrShowError(on: self) {
             self.listItemViewController.projectList = $0
+            // 第一次默认显示第一个
             self.projectModel = $0.first
-        }
-    }
-    
-    /// 网络请求设备列表
-    private func loadDevices(_ model: ProjectModel) {
-        interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
-            self.devicesArray = $0
         }
     }
     
@@ -73,13 +80,23 @@ class HomeViewController: BaseViewController {
     ///
     /// - Parameter model: 项目模型
     private func loadEnvMonitor(_ model: ProjectModel) {
-        interfaceSharedInstance.projectService.getEnvMonitor(model).successOrShowError(on: self) {
-            guard $0.count > 0 else { return }
+        showActivityHUD()
+        interfaceSharedInstance.projectService.getEnvMonitor(model).onSuccess {
+//            guard $0.count > 0 else { return }
             self.monitorArray = $0
-            self.mainTableView.reloadData()
+            self.loadDevices(model)
         }
     }
     
+    /// 网络请求设备列表
+    ///
+    /// - Parameter model: 项目模型
+    private func loadDevices(_ model: ProjectModel) {
+        interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
+            self.devicesArray = $0
+            self.mainTableView.reloadData()
+        }
+    }
     
     // MARK: - UI 设置
     private func setupUI() {
@@ -90,7 +107,12 @@ class HomeViewController: BaseViewController {
             listView.frame = frame
             contantTableView.addSubview(listView)
         }
-        
+        // 设置字体最小值
+        [projectNameLabel, addressLabel, timeLabel, ownerLabel, contactLbel, addressLabel].forEach {
+            $0?.adjustsFontSizeToFitWidth = true
+            $0?.minimumScaleFactor = 0.5
+        }
+        tapSegmented.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
         setupTableView()
     }
     
@@ -99,7 +121,9 @@ class HomeViewController: BaseViewController {
         mainTableView.delegate = self
         mainTableView.registerNib(ProjectStatusCell.self)
         mainTableView.registerNib(DevicesListCell.self)
+        mainTableView.registerNib(ProjectInfoCell.self)
         mainTableView.backgroundColor = .clear
+//        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
     }
     
     @IBAction func didTapArrow(_ sender: UIButton) {
@@ -120,6 +144,7 @@ class HomeViewController: BaseViewController {
     
     @IBAction func didTapTabSegmented(_ sender: UISegmentedControl) {
         selectedState = State(rawValue: sender.selectedSegmentIndex) ?? .project
+        mainTableView.reloadData()
     }
 }
 
@@ -129,7 +154,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch selectedState {
         case .project:
-            return monitorArray.count
+            return monitorArray.count + 1
         case .devices:
             return devicesArray.count
         }
@@ -138,9 +163,17 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedState {
         case .project:
-            return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                cell.setup(self.monitorArray[indexPath.row])
-            })
+            if indexPath.row == 0 {
+                return tableView.dequeueReusableCell(of: ProjectInfoCell.self, for: indexPath, defaultCell: nil, configure: { cell in
+                    cell.setup(self.projectModel)
+                })
+            } else {
+                return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
+                    if let type = EnvironmentParameterType(rawValue: indexPath.row - 1) {
+                        cell.setup(self.monitorArray[type.rawValue])
+                    }
+                })
+            }
         case .devices:
             return tableView.dequeueReusableCell(of: DevicesListCell.self, for: indexPath, defaultCell: nil, configure: { cell in
                 cell.setup(self.devicesArray[indexPath.row])
@@ -157,6 +190,11 @@ extension HomeViewController: UITableViewDelegate {
 }
 
 // MARK: - enum
+
+/// 返回cell的类型
+///
+/// - project: 项目状态
+/// - devices: 设备列表
 enum State: Int {
     case project = 0
     case devices

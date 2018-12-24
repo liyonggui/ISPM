@@ -7,6 +7,8 @@ def app_pods
     pod 'JSONWebToken'
     pod 'IQKeyboardManagerSwift'
     pod 'MBProgressHUD'
+    pod 'Charts'
+    pod 'SDWebImage'
 end
 
 target 'ISPMIOT' do

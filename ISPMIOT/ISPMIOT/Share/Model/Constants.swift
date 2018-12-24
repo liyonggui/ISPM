@@ -1,7 +1,7 @@
 import UIKit
 
 struct TabTitle {
-    static var home = "我的"
+    static var home = "首页"
 }
 
 struct NavTitle {
