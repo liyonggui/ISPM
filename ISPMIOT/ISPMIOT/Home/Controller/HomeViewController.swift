@@ -1,4 +1,5 @@
 import UIKit
+import MapKit
 
 class HomeViewController: BaseViewController {
 
@@ -33,6 +34,11 @@ class HomeViewController: BaseViewController {
             setupProjectInfo(projectModel)
         }
     }
+    
+    /// 地图编码器
+    lazy var geoCoder: CLGeocoder = {
+        return CLGeocoder()
+    }()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,6 +132,35 @@ class HomeViewController: BaseViewController {
 //        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
     }
     
+    // MARK: - 点击事件
+    /// 点击地图
+    @IBAction func didTapMap(_ sender: UIButton) {
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let appleAction = UIAlertAction(title: "苹果地图", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let address = "广东广州番禺区祈福新村"
+            self.geoCoder.geocodeAddressString(address) { (pls: [CLPlacemark]?, error: Error?)  in
+                if error == nil {
+                    guard let plsResult = pls, let firstPL = plsResult.first, let loc = firstPL.location?.coordinate else { return }
+                    
+                    let currentLocation = MKMapItem.forCurrentLocation()
+                    let toLocation = MKMapItem(placemark:MKPlacemark(coordinate:loc,addressDictionary:nil))
+                    toLocation.name = address
+                    MKMapItem.openMaps(with: [currentLocation,toLocation], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsShowsTrafficKey: NSNumber(value: true)])
+                    
+                    UIApplication.shared.canOpenURL(URL(string: address)!)
+                } else {
+                    MyPrint("error: 编码错误")
+                    MyPrint(error)
+                }
+            }
+        })
+        optionMenu.addAction(appleAction)
+        present(optionMenu, animated: true, completion: nil)
+    }
+    
+    /// 点击切换
     @IBAction func didTapArrow(_ sender: UIButton) {
         var leading: CGFloat = 0.0
         if leadingConstraint.constant == 0.0 {
@@ -165,7 +200,7 @@ extension HomeViewController: UITableViewDataSource {
         case .project:
             if indexPath.row == 0 {
                 return tableView.dequeueReusableCell(of: ProjectInfoCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                    cell.setup(self.projectModel)
+                    cell.setup(self.projectModel, delegate: self)
                 })
             } else {
                 return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
@@ -187,6 +222,17 @@ extension HomeViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     
+}
+
+// MARK: - ProjectInfoCellDelegate
+extension HomeViewController: ProjectInfoCellDelegate {
+    func didTapImg(_ cell: BaseTableViewCell) {
+        MyPrint("sdfsdf")
+//        guard let index = mainTableView.indexPath(for: cell), let model = projectModel else {
+//            return
+//        }
+
+    }
 }
 
 // MARK: - enum

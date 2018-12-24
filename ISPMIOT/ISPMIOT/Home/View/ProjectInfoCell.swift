@@ -1,6 +1,15 @@
 import UIKit
 import SDWebImage
 
+/// 代理
+protocol ProjectInfoCellDelegate: class {
+    func didTapImg(_ cell: BaseTableViewCell)
+}
+
+extension ProjectInfoCellDelegate {
+    func didTapImg(_ cell: BaseTableViewCell) {}
+}
+
 /// 项目信息cell
 class ProjectInfoCell: BaseTableViewCell {
 
@@ -14,6 +23,8 @@ class ProjectInfoCell: BaseTableViewCell {
     @IBOutlet weak var craneLabel: UILabel!
     @IBOutlet weak var imgScrollView: UIScrollView!
     
+    var delegate: ProjectInfoCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -23,8 +34,14 @@ class ProjectInfoCell: BaseTableViewCell {
         }
     }
     
+    /// 点击图片
+    @objc func didTapImg() {
+        delegate?.didTapImg(self)
+        MyPrint("asdfewrsdfs")
+    }
+    
     /// 设置cell
-    func setup(_ model: ProjectModel?) {
+    func setup(_ model: ProjectModel?, delegate: ProjectInfoCellDelegate) {
         guard let model = model else {
             return
         }
@@ -32,18 +49,31 @@ class ProjectInfoCell: BaseTableViewCell {
         onlineLabel.text = "在线：\(model.availableCount)"
         offlineLabel.text = "离线：\(model.totalCount)"
         errorLabel.text = "错误：\(model.totalCount)"
+        self.delegate = delegate
+        // 测试数据
+//        totalLabel.text = "总数：2"
+//        onlineLabel.text = "在线：2"
+//        offlineLabel.text = "离线：0"
+//        errorLabel.text = "错误：0"
         
         model.devices.forEach {
             // 类别(1.人脸识别柱,2.视频监控,3.环境监测仪,4.塔吊,5.其它)
-            switch $0.category {
+//            let model = $0
+//            model.availableCount = 0
+//            model.outlineCount = 0
+//            model.unavailableCount = 0
+            let model = $0
+            switch model.category {
             case "1":
-                faceLabel.attributedText = getAttributedString($0)
+//                model.availableCount = 1
+                faceLabel.attributedText = getAttributedString(model)
             case "2":
-                cameraLabel.attributedText = getAttributedString($0)
+                cameraLabel.attributedText = getAttributedString(model)
             case "3":
-                environmentLabel.attributedText = getAttributedString($0)
+//                model.availableCount = 1
+                environmentLabel.attributedText = getAttributedString(model)
             case "4":
-                craneLabel.attributedText = getAttributedString($0)
+                craneLabel.attributedText = getAttributedString(model)
             default: break
             
             }
@@ -58,6 +88,7 @@ class ProjectInfoCell: BaseTableViewCell {
         let two = NSMutableAttributedString(string: "\(model.outlineCount)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray])
         let three = NSMutableAttributedString(string: "\(model.unavailableCount)", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
         let diagonal = NSMutableAttributedString(string: "/", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
+        
         attributedStrM.append(one)
         attributedStrM.append(diagonal)
         attributedStrM.append(two)
@@ -76,6 +107,9 @@ class ProjectInfoCell: BaseTableViewCell {
         var index = 0
         imgURLArr.forEach {
             let img = UIImageView(frame: CGRect(x: imgScrollView.width * CGFloat(index), y: 0, width: imgScrollView.width, height: imgScrollView.height))
+            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapImg))
+            img.addGestureRecognizer(tap)
+            img.isUserInteractionEnabled = true
             imgScrollView.addSubview(img)
             img.sd_setImage(with: URL(string: $0), completed: nil)
             index += 1

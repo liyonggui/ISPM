@@ -92,7 +92,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地址：" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-EP-SCP">
-                                    <rect key="frame" x="8" y="56.5" width="231" height="14.5"/>
+                                    <rect key="frame" x="8" y="56.5" width="37" height="14.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" red="0.28627450980392155" green="0.72941176470588232" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -116,6 +116,17 @@
                                     <color key="textColor" red="0.28627450980392155" green="0.72941176470588232" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRw-3t-uzI">
+                                    <rect key="frame" x="48" y="54" width="20" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="S66-4Y-QMx"/>
+                                        <constraint firstAttribute="width" constant="20" id="hho-zd-9N7"/>
+                                    </constraints>
+                                    <state key="normal" image="map"/>
+                                    <connections>
+                                        <action selector="didTapMap:" destination="-1" eventType="touchUpInside" id="XWa-iZ-I8N"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.094117647058823528" green="0.17254901960784313" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -127,19 +138,21 @@
                                 <constraint firstItem="8Mo-ij-XwG" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="BvZ-A9-GGM"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="top" secondItem="sj1-HV-Kgc" secondAttribute="bottom" constant="3" id="DdH-0s-tdZ"/>
                                 <constraint firstItem="twe-AF-sH2" firstAttribute="leading" secondItem="UzX-Hn-YpT" secondAttribute="leading" constant="8" id="HuT-9r-F8P"/>
-                                <constraint firstItem="PBj-EP-SCP" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="LD5-Bg-H6S"/>
+                                <constraint firstItem="PBj-EP-SCP" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="twe-AF-sH2" secondAttribute="trailing" constant="-10" id="LD5-Bg-H6S"/>
                                 <constraint firstItem="osB-k6-UrV" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="PLb-o6-ePp"/>
                                 <constraint firstItem="osB-k6-UrV" firstAttribute="top" secondItem="twe-AF-sH2" secondAttribute="bottom" constant="3" id="S8B-Qe-izl"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="SXK-v4-dkw"/>
                                 <constraint firstItem="qIc-JB-hJF" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="Sd5-LX-dQI"/>
                                 <constraint firstItem="WbE-dX-92b" firstAttribute="centerY" secondItem="UzX-Hn-YpT" secondAttribute="centerY" id="Vfo-IR-93D"/>
                                 <constraint firstItem="8Mo-ij-XwG" firstAttribute="top" secondItem="PBj-EP-SCP" secondAttribute="bottom" constant="5" id="cBp-60-Q5u"/>
+                                <constraint firstItem="xRw-3t-uzI" firstAttribute="leading" secondItem="PBj-EP-SCP" secondAttribute="trailing" constant="3" id="cZA-80-2os"/>
                                 <constraint firstItem="8Mo-ij-XwG" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="ciG-XN-jbK"/>
                                 <constraint firstItem="osB-k6-UrV" firstAttribute="trailing" secondItem="twe-AF-sH2" secondAttribute="trailing" id="dUp-cg-aRW"/>
                                 <constraint firstItem="WbE-dX-92b" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="trailing" constant="10" id="eTC-5D-avD"/>
                                 <constraint firstItem="sj1-HV-Kgc" firstAttribute="leading" secondItem="twe-AF-sH2" secondAttribute="leading" id="kss-uV-tvM"/>
                                 <constraint firstItem="PBj-EP-SCP" firstAttribute="top" secondItem="osB-k6-UrV" secondAttribute="bottom" constant="5" id="kzd-sp-DFk"/>
                                 <constraint firstAttribute="bottom" secondItem="qIc-JB-hJF" secondAttribute="bottom" constant="10" id="o8V-xm-ozM"/>
+                                <constraint firstItem="xRw-3t-uzI" firstAttribute="centerY" secondItem="PBj-EP-SCP" secondAttribute="centerY" id="v6D-vg-5gl"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kO1-7N-fpV" userLabel="tabView">
@@ -230,5 +243,6 @@
     </objects>
     <resources>
         <image name="huanjingyi" width="128" height="128"/>
+        <image name="map" width="128" height="128"/>
     </resources>
 </document>

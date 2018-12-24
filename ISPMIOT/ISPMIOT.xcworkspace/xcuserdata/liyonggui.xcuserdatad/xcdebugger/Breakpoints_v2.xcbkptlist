@@ -21,5 +21,69 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISPMIOT/Home/View/ProjectInfoCell.swift"
+            timestampString = "567335248.895599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "setup(_:delegate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ISPMIOT/Home/View/ProjectInfoCell.swift"
+            timestampString = "567335248.895731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "ProjectInfoCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ISPMIOT.ProjectInfoCell.awakeFromNib() -&gt; ()"
+                  moduleName = "ISPMIOT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liyonggui/ISPM/ISPMIOT/ISPMIOT/Home/View/ProjectInfoCell.swift"
+                  timestampString = "567324423.640896"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "105">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.UILabel&gt;) -&gt; () in ISPMIOT.ProjectInfoCell.awakeFromNib() -&gt; ()"
+                  moduleName = "ISPMIOT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liyonggui/ISPM/ISPMIOT/ISPMIOT/Home/View/ProjectInfoCell.swift"
+                  timestampString = "567324423.6429271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
