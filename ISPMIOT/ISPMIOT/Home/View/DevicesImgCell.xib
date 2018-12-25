@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="238" id="N7y-jz-Sgd" customClass="DevicesImgCell" customModule="ISPMIOT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="238"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N7y-jz-Sgd" id="Tei-n5-WhT">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="237.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbi-o0-1r8" userLabel="mainView">
+                        <rect key="frame" x="0.0" y="0.0" width="417" height="200"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q3L-gA-1mw">
+                                <rect key="frame" x="3" y="2" width="411" height="196"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5fb-Xu-9ak">
+                                <rect key="frame" x="3" y="199" width="411" height="1"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.72941176470000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ZED-5J-OKa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Q3L-gA-1mw" secondAttribute="trailing" constant="3" id="199-8c-BKa"/>
+                            <constraint firstAttribute="bottom" secondItem="Q3L-gA-1mw" secondAttribute="bottom" constant="2" id="2MH-aN-roY"/>
+                            <constraint firstAttribute="bottom" secondItem="5fb-Xu-9ak" secondAttribute="bottom" id="Ib3-vR-fxD"/>
+                            <constraint firstItem="Q3L-gA-1mw" firstAttribute="leading" secondItem="tbi-o0-1r8" secondAttribute="leading" constant="3" id="MhF-tN-hcn"/>
+                            <constraint firstAttribute="height" constant="200" id="Mnb-Ss-782"/>
+                            <constraint firstItem="Q3L-gA-1mw" firstAttribute="top" secondItem="tbi-o0-1r8" secondAttribute="top" constant="2" id="c98-jY-ip9"/>
+                            <constraint firstItem="5fb-Xu-9ak" firstAttribute="trailing" secondItem="Q3L-gA-1mw" secondAttribute="trailing" id="gca-t9-gCm"/>
+                            <constraint firstItem="5fb-Xu-9ak" firstAttribute="leading" secondItem="Q3L-gA-1mw" secondAttribute="leading" id="hqO-zp-IB6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tbi-o0-1r8" firstAttribute="leading" secondItem="Tei-n5-WhT" secondAttribute="leading" id="Aae-2L-uY3"/>
+                    <constraint firstAttribute="trailing" secondItem="tbi-o0-1r8" secondAttribute="trailing" id="Dmh-Uv-7Rj"/>
+                    <constraint firstItem="tbi-o0-1r8" firstAttribute="top" secondItem="Tei-n5-WhT" secondAttribute="top" id="Xuk-dj-u80"/>
+                    <constraint firstAttribute="bottom" secondItem="tbi-o0-1r8" secondAttribute="bottom" constant="1" id="mEm-zn-Vp3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgView" destination="Q3L-gA-1mw" id="4Lo-ru-VlX"/>
+            </connections>
+            <point key="canvasLocation" x="210.40000000000001" y="93.553223388305852"/>
+        </tableViewCell>
+    </objects>
+</document>

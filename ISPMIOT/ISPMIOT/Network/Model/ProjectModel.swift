@@ -27,7 +27,7 @@ public struct ProjectModel {
     public var outlineCount = 0
     /// 错误
     public var unavailableCount = 0
-    /// 图片
+    /// 分布图片数组
     public var images: [String] = []
     
     public init?(json: JSON) {

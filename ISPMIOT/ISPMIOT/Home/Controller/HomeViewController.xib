@@ -162,6 +162,7 @@
                                     <rect key="frame" x="2" y="0.0" width="365" height="45"/>
                                     <segments>
                                         <segment title="实时监控"/>
+                                        <segment title="设备分布"/>
                                         <segment title="设备列表"/>
                                     </segments>
                                     <color key="tintColor" red="0.047005639750000001" green="0.73354117340000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

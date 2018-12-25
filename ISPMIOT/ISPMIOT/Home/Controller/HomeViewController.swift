@@ -128,6 +128,8 @@ class HomeViewController: BaseViewController {
         mainTableView.registerNib(ProjectStatusCell.self)
         mainTableView.registerNib(DevicesListCell.self)
         mainTableView.registerNib(ProjectInfoCell.self)
+        mainTableView.registerNib(DevicesImgCell.self)
+        
         mainTableView.backgroundColor = .clear
 //        mainTableView.contentInset = .init(top: 0, left: 0, bottom: 40, right: 0)
     }
@@ -139,7 +141,8 @@ class HomeViewController: BaseViewController {
         
         let appleAction = UIAlertAction(title: "苹果地图", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
-            let address = "广东广州番禺区祈福新村"
+            guard let address = self.projectModel?.address else { return }
+            
             self.geoCoder.geocodeAddressString(address) { (pls: [CLPlacemark]?, error: Error?)  in
                 if error == nil {
                     guard let plsResult = pls, let firstPL = plsResult.first, let loc = firstPL.location?.coordinate else { return }
@@ -192,15 +195,17 @@ extension HomeViewController: UITableViewDataSource {
             return monitorArray.count + 1
         case .devices:
             return devicesArray.count
+        case .devicesImg:
+            return self.projectModel?.images.count ?? 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch selectedState {
-        case .project:
+        case .project: // 实时监控
             if indexPath.row == 0 {
                 return tableView.dequeueReusableCell(of: ProjectInfoCell.self, for: indexPath, defaultCell: nil, configure: { cell in
-                    cell.setup(self.projectModel, delegate: self)
+                    cell.setup(self.projectModel)
                 })
             } else {
                 return tableView.dequeueReusableCell(of: ProjectStatusCell.self, for: indexPath, defaultCell: nil, configure: { cell in
@@ -209,7 +214,13 @@ extension HomeViewController: UITableViewDataSource {
                     }
                 })
             }
-        case .devices:
+        case .devicesImg: // 设备分布图
+            return tableView.dequeueReusableCell(of: DevicesImgCell.self, for: indexPath, defaultCell: nil, configure: { cell in
+                if let images = self.projectModel?.images {
+                    cell.setup(images[indexPath.row], delegate: self)
+                }
+            })
+        case .devices: // 设备列表
             return tableView.dequeueReusableCell(of: DevicesListCell.self, for: indexPath, defaultCell: nil, configure: { cell in
                 cell.setup(self.devicesArray[indexPath.row])
             })
@@ -224,9 +235,9 @@ extension HomeViewController: UITableViewDelegate {
     
 }
 
-// MARK: - ProjectInfoCellDelegate
-extension HomeViewController: ProjectInfoCellDelegate {
-    func didTapImg(_ cell: BaseTableViewCell) {
+// MARK: - DevicesImgCellDelegate
+extension HomeViewController: DevicesImgCellDelegate {
+    func didTapImg(_ cell: DevicesImgCell) {
         MyPrint("sdfsdf")
 //        guard let index = mainTableView.indexPath(for: cell), let model = projectModel else {
 //            return
@@ -240,8 +251,10 @@ extension HomeViewController: ProjectInfoCellDelegate {
 /// 返回cell的类型
 ///
 /// - project: 项目状态
+/// - devicesImg: 设备分布
 /// - devices: 设备列表
 enum State: Int {
     case project = 0
+    case devicesImg
     case devices
 }

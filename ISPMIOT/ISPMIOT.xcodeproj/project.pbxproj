@@ -66,6 +66,8 @@
 		98EFDD4321C7A0E400EFDB12 /* ProjectInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */; };
 		98EFDD4521C8A01B00EFDB12 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EFDD4421C8A01B00EFDB12 /* String+Extension.swift */; };
 		98F5194521D0FA1900D231C8 /* ToolManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F5194421D0FA1900D231C8 /* ToolManager.swift */; };
+		98F5194721D0FF2F00D231C8 /* DevicesImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F5194621D0FF2F00D231C8 /* DevicesImgCell.swift */; };
+		98F5194921D0FF5600D231C8 /* DevicesImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98F5194821D0FF5600D231C8 /* DevicesImgCell.xib */; };
 		98FCB4F621CB361B00B126CB /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FCB4F521CB361B00B126CB /* UIDevice+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +133,8 @@
 		98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectInfoCell.xib; sourceTree = "<group>"; };
 		98EFDD4421C8A01B00EFDB12 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		98F5194421D0FA1900D231C8 /* ToolManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolManager.swift; sourceTree = "<group>"; };
+		98F5194621D0FF2F00D231C8 /* DevicesImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesImgCell.swift; sourceTree = "<group>"; };
+		98F5194821D0FF5600D231C8 /* DevicesImgCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DevicesImgCell.xib; sourceTree = "<group>"; };
 		98FCB4F521CB361B00B126CB /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
 		C5ABE312638DE68216D940B0 /* Pods_ISPMIOT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISPMIOT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB217BD1891631D0DDFE153C /* Pods-ISPMIOT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ISPMIOT.release.xcconfig"; path = "Pods/Target Support Files/Pods-ISPMIOT/Pods-ISPMIOT.release.xcconfig"; sourceTree = "<group>"; };
@@ -399,6 +403,8 @@
 				98686F8B21BFC0DF0016CDEE /* DevicesListCell.xib */,
 				98EFDD4021C7A07300EFDB12 /* ProjectInfoCell.swift */,
 				98EFDD4221C7A0E400EFDB12 /* ProjectInfoCell.xib */,
+				98F5194621D0FF2F00D231C8 /* DevicesImgCell.swift */,
+				98F5194821D0FF5600D231C8 /* DevicesImgCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				98EFDD4321C7A0E400EFDB12 /* ProjectInfoCell.xib in Resources */,
 				98EFDD3D21C3AFA300EFDB12 /* CellBackgroundView.xib in Resources */,
 				98686F8421BF621E0016CDEE /* ProjectStatusCell.xib in Resources */,
+				98F5194921D0FF5600D231C8 /* DevicesImgCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
 				98686F8C21BFC0DF0016CDEE /* DevicesListCell.xib in Resources */,
 				9806DEFF21BE297E00B6A367 /* HomeViewController.xib in Resources */,
@@ -671,6 +678,7 @@
 				987741B821BD3B58009A238B /* Future+When.swift in Sources */,
 				98686F9B21C0A9360016CDEE /* User.swift in Sources */,
 				98686F8221BF60640016CDEE /* ProjectStatusCell.swift in Sources */,
+				98F5194721D0FF2F00D231C8 /* DevicesImgCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

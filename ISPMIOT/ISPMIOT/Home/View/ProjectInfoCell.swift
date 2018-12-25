@@ -1,14 +1,6 @@
 import UIKit
 import SDWebImage
 
-/// 代理
-protocol ProjectInfoCellDelegate: class {
-    func didTapImg(_ cell: BaseTableViewCell)
-}
-
-extension ProjectInfoCellDelegate {
-    func didTapImg(_ cell: BaseTableViewCell) {}
-}
 
 /// 项目信息cell
 class ProjectInfoCell: BaseTableViewCell {
@@ -21,10 +13,8 @@ class ProjectInfoCell: BaseTableViewCell {
     @IBOutlet weak var faceLabel: UILabel!
     @IBOutlet weak var cameraLabel: UILabel!
     @IBOutlet weak var craneLabel: UILabel!
-    @IBOutlet weak var imgScrollView: UIScrollView!
-    
-    var delegate: ProjectInfoCellDelegate?
-    
+
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -34,14 +24,10 @@ class ProjectInfoCell: BaseTableViewCell {
         }
     }
     
-    /// 点击图片
-    @objc func didTapImg() {
-        delegate?.didTapImg(self)
-        MyPrint("asdfewrsdfs")
-    }
+    
     
     /// 设置cell
-    func setup(_ model: ProjectModel?, delegate: ProjectInfoCellDelegate) {
+    func setup(_ model: ProjectModel?) {
         guard let model = model else {
             return
         }
@@ -49,7 +35,7 @@ class ProjectInfoCell: BaseTableViewCell {
         onlineLabel.text = "在线：\(model.availableCount)"
         offlineLabel.text = "离线：\(model.totalCount)"
         errorLabel.text = "错误：\(model.totalCount)"
-        self.delegate = delegate
+        
         // 测试数据
 //        totalLabel.text = "总数：2"
 //        onlineLabel.text = "在线：2"
@@ -78,7 +64,7 @@ class ProjectInfoCell: BaseTableViewCell {
             
             }
         }
-        setImgs(model.images)
+//        setImgs(model.images)
     }
     
     /// 设置各项数据
@@ -95,28 +81,6 @@ class ProjectInfoCell: BaseTableViewCell {
         attributedStrM.append(diagonal)
         attributedStrM.append(three)
         return attributedStrM
-    }
-    
-    /// 设置图片
-    private func setImgs(_ imgURLArr: [String]) {
-        // 移除所有控件
-        imgScrollView.subviews.forEach {
-            $0.removeFromSuperview()
-        }
-        
-        var index = 0
-        imgURLArr.forEach {
-            let img = UIImageView(frame: CGRect(x: imgScrollView.width * CGFloat(index), y: 0, width: imgScrollView.width, height: imgScrollView.height))
-            let tap = UITapGestureRecognizer(target: self, action: #selector(didTapImg))
-            img.addGestureRecognizer(tap)
-            img.isUserInteractionEnabled = true
-            imgScrollView.addSubview(img)
-            img.sd_setImage(with: URL(string: $0), completed: nil)
-            index += 1
-        }
-        
-        imgScrollView.contentSize = CGSize(width: imgScrollView.width * CGFloat(imgURLArr.count), height: 0)
-        imgScrollView.isPagingEnabled = true
     }
     
 }
