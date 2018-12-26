@@ -12,6 +12,6 @@ class BaseMainView: UIView {
     }
     
     private func setup() {
-        backgroundColor = .mainBlue
+        backgroundColor = .mainBackgroundBlue
     }
 }

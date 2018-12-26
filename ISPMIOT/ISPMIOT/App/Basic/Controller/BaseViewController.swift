@@ -3,6 +3,25 @@ import UIKit
 /// VC 基类
 class BaseViewController: UIViewController {
 
+    enum PresentationStyle {
+        case push
+        case modal
+    }
+    
+    // 显示类型
+    var presentationStyle: PresentationStyle = .push {
+        didSet {
+            setupLeftNavBarButtonItem()
+        }
+    }
+    
+    /// 左边点击事件
+    var customLeftNavBarSelector: Selector? {
+        didSet {
+            setupLeftNavBarButtonItem()
+        }
+    }
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -18,9 +37,54 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .mainBlue
+//        setupPan()
+        setupUI()
+        setupLeftNavBarButtonItem()
     }
     
+    // 设置右滑返回
+    private func setupPan() {
+        let target = navigationController?.interactivePopGestureRecognizer?.delegate
+        let pan = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
+        view.addGestureRecognizer(pan)
+        // 禁用系统方式
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        pan.delegate = self
+    }
+    
+    // 设置UI
+    private func setupUI() {
+        view.backgroundColor = .mainBackgroundBlue
+    }
+    
+    // 设置nav
+    func setupLeftNavBarButtonItem() {
+        var leftNavBarSelector = presentationStyle == .push ? #selector(didTapBackButton) : #selector(didTapCloseButton)
+        if let selector = customLeftNavBarSelector { leftNavBarSelector = selector }
+        navigationItem.leftBarButtonItem = presentationStyle == .push ? UIBarButtonItem.backButton(nil, target: self, selector: leftNavBarSelector, showArrow: true) : UIBarButtonItem.closeButton(target: self, selector: leftNavBarSelector)
+    }
+    
+    @objc func didTapBackButton() {
+        dismiss()
+    }
+    
+    @objc func didTapCloseButton() {
+        dismiss()
+    }
+    
+    @objc func dismiss(animated flag: Bool = true) {
+        switch presentationStyle {
+        case .push: navigationController?.popViewController(animated: flag)
+        case .modal: dismiss(animated: flag, completion: nil)
+        }
+    }
+}
+
+// MARK: - UIGestureRecognizerDelegate
+extension BaseViewController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return children.count > 1
+    }
 }
 
 // MARK: - 显示HUB
@@ -77,6 +141,10 @@ extension BaseViewController {
     func setNavigationBar(image: UIImage) {
         let logo = UIImageView(image: image)
         navigationItem.titleView = logo
+    }
+    
+    func setNavigationBarHidden() {
+        navigationItem.leftBarButtonItem = nil
     }
     
     // For Tests

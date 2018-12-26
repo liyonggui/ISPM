@@ -12,7 +12,7 @@ class BaseTableViewCell: UITableViewCell {
     }
     
     private func setup() {
-        backgroundColor = .mainBlue
+        backgroundColor = .mainBackgroundBlue
         selectionStyle = .none
     }
 }

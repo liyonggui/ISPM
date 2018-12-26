@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="330" id="GmK-zM-QqJ" customClass="ChartsCell" customModule="ISPMIOT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="502" height="350"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GmK-zM-QqJ" id="L9G-gF-Zh1">
+                <rect key="frame" x="0.0" y="0.0" width="502" height="349.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="291-h4-TRM" userLabel="mainView">
+                        <rect key="frame" x="0.0" y="0.0" width="502" height="350.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sem-SF-NsT" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="5.5" width="502" height="340"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="sem-SF-NsT" secondAttribute="bottom" constant="5" id="PHg-HD-9Pn"/>
+                            <constraint firstAttribute="height" constant="350" id="aRG-YG-BeE"/>
+                            <constraint firstItem="sem-SF-NsT" firstAttribute="leading" secondItem="291-h4-TRM" secondAttribute="leading" id="iOD-Fe-FJh"/>
+                            <constraint firstItem="sem-SF-NsT" firstAttribute="top" secondItem="291-h4-TRM" secondAttribute="top" constant="5" id="w5H-Q6-kXz"/>
+                            <constraint firstAttribute="trailing" secondItem="sem-SF-NsT" secondAttribute="trailing" id="xDU-dW-G6a"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="291-h4-TRM" firstAttribute="leading" secondItem="L9G-gF-Zh1" secondAttribute="leading" id="5gJ-5V-pVw"/>
+                    <constraint firstAttribute="bottom" secondItem="291-h4-TRM" secondAttribute="bottom" id="M0v-ME-L81"/>
+                    <constraint firstItem="291-h4-TRM" firstAttribute="top" secondItem="L9G-gF-Zh1" secondAttribute="top" id="fqj-sg-XzS"/>
+                    <constraint firstAttribute="trailing" secondItem="291-h4-TRM" secondAttribute="trailing" id="iDb-To-3C6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="chartView" destination="sem-SF-NsT" id="1w1-Eh-mlz"/>
+            </connections>
+            <point key="canvasLocation" x="-475.19999999999999" y="19.790104947526238"/>
+        </tableViewCell>
+    </objects>
+</document>

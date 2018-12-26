@@ -26,9 +26,13 @@ class HomeViewController: BaseViewController {
     
     var selectedState: State = .project
     
+    /// 环境模型数组
     var monitorArray: [MonitorModelel] = []
+    /// 设备模型数组
     var devicesArray: [DevicesModel] = []
+    /// 项目模型数组
     var projectArray: [ProjectModel] = []
+    /// 当前选中项目模型
     var projectModel: ProjectModel? {
         didSet {
             setupProjectInfo(projectModel)
@@ -39,11 +43,12 @@ class HomeViewController: BaseViewController {
     lazy var geoCoder: CLGeocoder = {
         return CLGeocoder()
     }()
-        
+    
+    // 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavigationBar(title: NavTitle.projectInformation)
+        setupNav()
         setupUI()
         loadProjectList()
         setupCallBack()
@@ -56,6 +61,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    /// 设置项目信息展示
     private func setupProjectInfo(_ model: ProjectModel?) {
         guard let model = projectModel else {
             return
@@ -83,25 +89,26 @@ class HomeViewController: BaseViewController {
     }
     
     /// 网络请求环境数据
-    ///
-    /// - Parameter model: 项目模型
     private func loadEnvMonitor(_ model: ProjectModel) {
         showActivityHUD()
         interfaceSharedInstance.projectService.getEnvMonitor(model).onSuccess {
-//            guard $0.count > 0 else { return }
             self.monitorArray = $0
             self.loadDevices(model)
         }
     }
     
     /// 网络请求设备列表
-    ///
-    /// - Parameter model: 项目模型
     private func loadDevices(_ model: ProjectModel) {
         interfaceSharedInstance.projectService.getDevices(model).successOrShowError(on: self) {
             self.devicesArray = $0
             self.mainTableView.reloadData()
         }
+    }
+    
+    // 设置nav
+    private func setupNav() {
+        setNavigationBar(title: NavTitle.projectInformation)
+        setNavigationBarHidden()
     }
     
     // MARK: - UI 设置
@@ -122,6 +129,7 @@ class HomeViewController: BaseViewController {
         setupTableView()
     }
     
+    // 设置tableview
     private func setupTableView() {
         mainTableView.dataSource = self
         mainTableView.delegate = self
@@ -146,19 +154,22 @@ class HomeViewController: BaseViewController {
             self.geoCoder.geocodeAddressString(address) { (pls: [CLPlacemark]?, error: Error?)  in
                 if error == nil {
                     guard let plsResult = pls, let firstPL = plsResult.first, let loc = firstPL.location?.coordinate else { return }
-                    
                     let currentLocation = MKMapItem.forCurrentLocation()
                     let toLocation = MKMapItem(placemark:MKPlacemark(coordinate:loc,addressDictionary:nil))
                     toLocation.name = address
                     MKMapItem.openMaps(with: [currentLocation,toLocation], launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving,MKLaunchOptionsShowsTrafficKey: NSNumber(value: true)])
-                    
-                    UIApplication.shared.canOpenURL(URL(string: address)!)
+                    if let url = URL(string: address) {
+                        UIApplication.shared.canOpenURL(url)
+                    }
                 } else {
                     MyPrint("error: 编码错误")
                     MyPrint(error)
                 }
             }
         })
+        
+        let cancel = UIAlertAction(title: "取消", style: .destructive, handler: nil)
+        optionMenu.addAction(cancel)
         optionMenu.addAction(appleAction)
         present(optionMenu, animated: true, completion: nil)
     }
@@ -232,7 +243,15 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch selectedState {
+        case .project:
+            guard indexPath.row > 0, let type = EnvironmentParameterType(rawValue: indexPath.row - 1) else { return }
+            let vc = ChartsViewController(self.monitorArray[type.rawValue])
+            navigationController?.pushViewController(vc, animated: true)
+        default: break
+        }
+    }
 }
 
 // MARK: - DevicesImgCellDelegate

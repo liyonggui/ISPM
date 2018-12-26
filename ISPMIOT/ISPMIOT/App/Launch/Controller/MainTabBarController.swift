@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
         
     // MARK: - setup UI
     private func setupUI() {
-        tabBar.barTintColor = .mainBlue
+        tabBar.barTintColor = .mainBackgroundBlue
         let item = UITabBarItem.appearance()
         item.setTitleTextAttributes([
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11),
