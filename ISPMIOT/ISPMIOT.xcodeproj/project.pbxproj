@@ -12,6 +12,26 @@
 		9800886821D1FDE200C9CC91 /* ChartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800886721D1FDE200C9CC91 /* ChartsCell.swift */; };
 		9800886A21D1FDEE00C9CC91 /* ChartsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9800886921D1FDEE00C9CC91 /* ChartsCell.xib */; };
 		9800886C21D2061800C9CC91 /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9800886B21D2061800C9CC91 /* BalloonMarker.swift */; };
+		980088C221D3214F00C9CC91 /* XLProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088A221D3214F00C9CC91 /* XLProgressView.m */; };
+		980088C321D3214F00C9CC91 /* UIView+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088A421D3214F00C9CC91 /* UIView+XLExtension.m */; };
+		980088C421D3214F00C9CC91 /* UIImage+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088A721D3214F00C9CC91 /* UIImage+XLExtension.m */; };
+		980088C521D3214F00C9CC91 /* XLZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088A921D3214F00C9CC91 /* XLZoomingScrollView.m */; };
+		980088C621D3214F00C9CC91 /* XLPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088AA21D3214F00C9CC91 /* XLPhotoBrowser.m */; };
+		980088C721D3214F00C9CC91 /* FSActionSheet_cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 980088B121D3214F00C9CC91 /* FSActionSheet_cancel@3x.png */; };
+		980088C821D3214F00C9CC91 /* FSActionSheet_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 980088B221D3214F00C9CC91 /* FSActionSheet_cancel@2x.png */; };
+		980088C921D3214F00C9CC91 /* FSActionSheetConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088B321D3214F00C9CC91 /* FSActionSheetConfig.m */; };
+		980088CA21D3214F00C9CC91 /* FSActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088B421D3214F00C9CC91 /* FSActionSheet.m */; };
+		980088CB21D3214F00C9CC91 /* FSActionSheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088B521D3214F00C9CC91 /* FSActionSheetCell.m */; };
+		980088CC21D3214F00C9CC91 /* FSActionSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088B621D3214F00C9CC91 /* FSActionSheetItem.m */; };
+		980088CD21D3214F00C9CC91 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088BB21D3214F00C9CC91 /* TADotView.m */; };
+		980088CE21D3214F00C9CC91 /* TAPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088BC21D3214F00C9CC91 /* TAPageControl.m */; };
+		980088CF21D3214F00C9CC91 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088BD21D3214F00C9CC91 /* TAAnimatedDotView.m */; };
+		980088D021D3214F00C9CC91 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088BE21D3214F00C9CC91 /* TAAbstractDotView.m */; };
+		980088D521D3267E00C9CC91 /* PhotoBrowserTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 980088D421D3267E00C9CC91 /* PhotoBrowserTool.m */; };
+		980088DB21D3514100C9CC91 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980088DA21D3514100C9CC91 /* CameraViewController.swift */; };
+		980088DD21D363DC00C9CC91 /* CameraCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980088DC21D363DC00C9CC91 /* CameraCollectionViewCell.swift */; };
+		980088DF21D3658200C9CC91 /* CameraCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 980088DE21D3658200C9CC91 /* CameraCollectionViewCell.xib */; };
+		980088E121D366AD00C9CC91 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980088E021D366AD00C9CC91 /* UICollectionView+Extension.swift */; };
 		9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9806DEFC21BE12FE00B6A367 /* Assets.xcassets */; };
 		989EC65721D1BFC20054A997 /* ListItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989EC5FC21D1BFC20054A997 /* ListItemViewController.swift */; };
 		989EC65821D1BFC20054A997 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 989EC5FD21D1BFC20054A997 /* HomeViewController.xib */; };
@@ -83,6 +103,42 @@
 		9800886721D1FDE200C9CC91 /* ChartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsCell.swift; sourceTree = "<group>"; };
 		9800886921D1FDEE00C9CC91 /* ChartsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartsCell.xib; sourceTree = "<group>"; };
 		9800886B21D2061800C9CC91 /* BalloonMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		980088A021D3214F00C9CC91 /* UIImage+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XLExtension.h"; sourceTree = "<group>"; };
+		980088A121D3214F00C9CC91 /* XLPhotoBrowserConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserConfig.h; sourceTree = "<group>"; };
+		980088A221D3214F00C9CC91 /* XLProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLProgressView.m; sourceTree = "<group>"; };
+		980088A321D3214F00C9CC91 /* XLZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLZoomingScrollView.h; sourceTree = "<group>"; };
+		980088A421D3214F00C9CC91 /* UIView+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XLExtension.m"; sourceTree = "<group>"; };
+		980088A521D3214F00C9CC91 /* XLPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowser.h; sourceTree = "<group>"; };
+		980088A621D3214F00C9CC91 /* XLProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLProgressView.h; sourceTree = "<group>"; };
+		980088A721D3214F00C9CC91 /* UIImage+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XLExtension.m"; sourceTree = "<group>"; };
+		980088A821D3214F00C9CC91 /* XLPhotoBrowserTypeDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPhotoBrowserTypeDefine.h; sourceTree = "<group>"; };
+		980088A921D3214F00C9CC91 /* XLZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLZoomingScrollView.m; sourceTree = "<group>"; };
+		980088AA21D3214F00C9CC91 /* XLPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPhotoBrowser.m; sourceTree = "<group>"; };
+		980088AB21D3214F00C9CC91 /* UIView+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XLExtension.h"; sourceTree = "<group>"; };
+		980088AE21D3214F00C9CC91 /* FSActionSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetItem.h; sourceTree = "<group>"; };
+		980088AF21D3214F00C9CC91 /* FSActionSheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetCell.h; sourceTree = "<group>"; };
+		980088B121D3214F00C9CC91 /* FSActionSheet_cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FSActionSheet_cancel@3x.png"; sourceTree = "<group>"; };
+		980088B221D3214F00C9CC91 /* FSActionSheet_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FSActionSheet_cancel@2x.png"; sourceTree = "<group>"; };
+		980088B321D3214F00C9CC91 /* FSActionSheetConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetConfig.m; sourceTree = "<group>"; };
+		980088B421D3214F00C9CC91 /* FSActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheet.m; sourceTree = "<group>"; };
+		980088B521D3214F00C9CC91 /* FSActionSheetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetCell.m; sourceTree = "<group>"; };
+		980088B621D3214F00C9CC91 /* FSActionSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSActionSheetItem.m; sourceTree = "<group>"; };
+		980088B721D3214F00C9CC91 /* FSActionSheetConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheetConfig.h; sourceTree = "<group>"; };
+		980088B821D3214F00C9CC91 /* FSActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSActionSheet.h; sourceTree = "<group>"; };
+		980088BA21D3214F00C9CC91 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
+		980088BB21D3214F00C9CC91 /* TADotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TADotView.m; sourceTree = "<group>"; };
+		980088BC21D3214F00C9CC91 /* TAPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPageControl.m; sourceTree = "<group>"; };
+		980088BD21D3214F00C9CC91 /* TAAnimatedDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAnimatedDotView.m; sourceTree = "<group>"; };
+		980088BE21D3214F00C9CC91 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
+		980088BF21D3214F00C9CC91 /* TADotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TADotView.h; sourceTree = "<group>"; };
+		980088C021D3214F00C9CC91 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
+		980088C121D3214F00C9CC91 /* TAPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPageControl.h; sourceTree = "<group>"; };
+		980088D321D3267E00C9CC91 /* PhotoBrowserTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoBrowserTool.h; sourceTree = "<group>"; };
+		980088D421D3267E00C9CC91 /* PhotoBrowserTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoBrowserTool.m; sourceTree = "<group>"; };
+		980088DA21D3514100C9CC91 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		980088DC21D363DC00C9CC91 /* CameraCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCollectionViewCell.swift; sourceTree = "<group>"; };
+		980088DE21D3658200C9CC91 /* CameraCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraCollectionViewCell.xib; sourceTree = "<group>"; };
+		980088E021D366AD00C9CC91 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		9806DEFC21BE12FE00B6A367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9877417421BBBE60009A238B /* ISPMIOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ISPMIOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9877418321BBBE62009A238B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +240,109 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9800889F21D3214F00C9CC91 /* XLPhotoBrowser+CoderXL */ = {
+			isa = PBXGroup;
+			children = (
+				980088A021D3214F00C9CC91 /* UIImage+XLExtension.h */,
+				980088A121D3214F00C9CC91 /* XLPhotoBrowserConfig.h */,
+				980088A221D3214F00C9CC91 /* XLProgressView.m */,
+				980088A321D3214F00C9CC91 /* XLZoomingScrollView.h */,
+				980088A421D3214F00C9CC91 /* UIView+XLExtension.m */,
+				980088A521D3214F00C9CC91 /* XLPhotoBrowser.h */,
+				980088A621D3214F00C9CC91 /* XLProgressView.h */,
+				980088A721D3214F00C9CC91 /* UIImage+XLExtension.m */,
+				980088A821D3214F00C9CC91 /* XLPhotoBrowserTypeDefine.h */,
+				980088A921D3214F00C9CC91 /* XLZoomingScrollView.m */,
+				980088AA21D3214F00C9CC91 /* XLPhotoBrowser.m */,
+				980088AB21D3214F00C9CC91 /* UIView+XLExtension.h */,
+				980088AC21D3214F00C9CC91 /* Vender */,
+			);
+			path = "XLPhotoBrowser+CoderXL";
+			sourceTree = "<group>";
+		};
+		980088AC21D3214F00C9CC91 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				980088AD21D3214F00C9CC91 /* FSActionSheet */,
+				980088B921D3214F00C9CC91 /* PageControl */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		980088AD21D3214F00C9CC91 /* FSActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				980088AE21D3214F00C9CC91 /* FSActionSheetItem.h */,
+				980088AF21D3214F00C9CC91 /* FSActionSheetCell.h */,
+				980088B021D3214F00C9CC91 /* FSActionSheetResources */,
+				980088B321D3214F00C9CC91 /* FSActionSheetConfig.m */,
+				980088B421D3214F00C9CC91 /* FSActionSheet.m */,
+				980088B521D3214F00C9CC91 /* FSActionSheetCell.m */,
+				980088B621D3214F00C9CC91 /* FSActionSheetItem.m */,
+				980088B721D3214F00C9CC91 /* FSActionSheetConfig.h */,
+				980088B821D3214F00C9CC91 /* FSActionSheet.h */,
+			);
+			path = FSActionSheet;
+			sourceTree = "<group>";
+		};
+		980088B021D3214F00C9CC91 /* FSActionSheetResources */ = {
+			isa = PBXGroup;
+			children = (
+				980088B121D3214F00C9CC91 /* FSActionSheet_cancel@3x.png */,
+				980088B221D3214F00C9CC91 /* FSActionSheet_cancel@2x.png */,
+			);
+			path = FSActionSheetResources;
+			sourceTree = "<group>";
+		};
+		980088B921D3214F00C9CC91 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				980088BA21D3214F00C9CC91 /* TAAbstractDotView.h */,
+				980088BB21D3214F00C9CC91 /* TADotView.m */,
+				980088BC21D3214F00C9CC91 /* TAPageControl.m */,
+				980088BD21D3214F00C9CC91 /* TAAnimatedDotView.m */,
+				980088BE21D3214F00C9CC91 /* TAAbstractDotView.m */,
+				980088BF21D3214F00C9CC91 /* TADotView.h */,
+				980088C021D3214F00C9CC91 /* TAAnimatedDotView.h */,
+				980088C121D3214F00C9CC91 /* TAPageControl.h */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		980088D621D3513700C9CC91 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				980088D721D3513700C9CC91 /* Controller */,
+				980088D821D3513700C9CC91 /* Model */,
+				980088D921D3513700C9CC91 /* View */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		980088D721D3513700C9CC91 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				980088DA21D3514100C9CC91 /* CameraViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		980088D821D3513700C9CC91 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		980088D921D3513700C9CC91 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				980088DC21D363DC00C9CC91 /* CameraCollectionViewCell.swift */,
+				980088DE21D3658200C9CC91 /* CameraCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9877416B21BBBE60009A238B = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +374,7 @@
 		989EC5F921D1BFC20054A997 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				980088D621D3513700C9CC91 /* Camera */,
 				989EC69321D1C4390054A997 /* Charts */,
 				989EC5FA21D1BFC20054A997 /* Home */,
 				989EC60B21D1BFC20054A997 /* Launch */,
@@ -257,16 +417,16 @@
 		989EC60021D1BFC20054A997 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				989EC60121D1BFC20054A997 /* DevicesImgCell.xib */,
-				989EC60221D1BFC20054A997 /* ListItemTableViewCell.xib */,
-				989EC60321D1BFC20054A997 /* DevicesListCell.xib */,
-				989EC60421D1BFC20054A997 /* ProjectStatusCell.xib */,
 				989EC60521D1BFC20054A997 /* ProjectInfoCell.swift */,
 				989EC60621D1BFC20054A997 /* ProjectInfoCell.xib */,
 				989EC60721D1BFC20054A997 /* ListItemTableViewCell.swift */,
+				989EC60221D1BFC20054A997 /* ListItemTableViewCell.xib */,
 				989EC60821D1BFC20054A997 /* DevicesImgCell.swift */,
+				989EC60121D1BFC20054A997 /* DevicesImgCell.xib */,
 				989EC60921D1BFC20054A997 /* ProjectStatusCell.swift */,
+				989EC60421D1BFC20054A997 /* ProjectStatusCell.xib */,
 				989EC60A21D1BFC20054A997 /* DevicesListCell.swift */,
+				989EC60321D1BFC20054A997 /* DevicesListCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				989EC64121D1BFC20054A997 /* ReusableCellExtensions.swift */,
+				980088E021D366AD00C9CC91 /* UICollectionView+Extension.swift */,
 				989EC64221D1BFC20054A997 /* UIAlertController+Extension.swift */,
 				989EC64321D1BFC20054A997 /* UIFont+Extension.swift */,
 				989EC64421D1BFC20054A997 /* UIColor+Extension.swift */,
@@ -519,24 +680,9 @@
 		989EC65421D1BFC20054A997 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				989EC65521D1BFC20054A997 /* MWPhotoBrowser */,
+				9800889F21D3214F00C9CC91 /* XLPhotoBrowser+CoderXL */,
 			);
 			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		989EC65521D1BFC20054A997 /* MWPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				989EC65621D1BFC20054A997 /* Classes */,
-			);
-			path = MWPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		989EC65621D1BFC20054A997 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		989EC69321D1C4390054A997 /* Charts */ = {
@@ -562,6 +708,8 @@
 			isa = PBXGroup;
 			children = (
 				9800886B21D2061800C9CC91 /* BalloonMarker.swift */,
+				980088D321D3267E00C9CC91 /* PhotoBrowserTool.h */,
+				980088D421D3267E00C9CC91 /* PhotoBrowserTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -638,16 +786,19 @@
 			files = (
 				98B2294C21D1CE38002FFCFE /* ChartsViewController.xib in Resources */,
 				989EC65B21D1BFC20054A997 /* ListItemTableViewCell.xib in Resources */,
+				980088C721D3214F00C9CC91 /* FSActionSheet_cancel@3x.png in Resources */,
 				989EC65D21D1BFC20054A997 /* ProjectStatusCell.xib in Resources */,
 				989EC69221D1BFC20054A997 /* CellBackgroundView.xib in Resources */,
 				9800886A21D1FDEE00C9CC91 /* ChartsCell.xib in Resources */,
 				989EC65A21D1BFC20054A997 /* DevicesImgCell.xib in Resources */,
 				989EC65C21D1BFC20054A997 /* DevicesListCell.xib in Resources */,
 				9806DEFD21BE12FE00B6A367 /* Assets.xcassets in Resources */,
+				980088C821D3214F00C9CC91 /* FSActionSheet_cancel@2x.png in Resources */,
 				989EC65F21D1BFC20054A997 /* ProjectInfoCell.xib in Resources */,
 				989EC66621D1BFC20054A997 /* Launch.xib in Resources */,
 				989EC65821D1BFC20054A997 /* HomeViewController.xib in Resources */,
 				989EC68021D1BFC20054A997 /* LoginViewController.xib in Resources */,
+				980088DF21D3658200C9CC91 /* CameraCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,22 +867,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				989EC67921D1BFC20054A997 /* LabelTools.swift in Sources */,
+				980088D021D3214F00C9CC91 /* TAAbstractDotView.m in Sources */,
 				989EC66A21D1BFC20054A997 /* ProjectModel.swift in Sources */,
 				989EC67B21D1BFC20054A997 /* BaseMainView.swift in Sources */,
 				989EC67421D1BFC20054A997 /* Promise.swift in Sources */,
 				989EC66D21D1BFC20054A997 /* DevicesModel.swift in Sources */,
+				980088CE21D3214F00C9CC91 /* TAPageControl.m in Sources */,
 				989EC67221D1BFC20054A997 /* GraphQLQuery.swift in Sources */,
 				989EC68721D1BFC20054A997 /* UIView+Extensions.swift in Sources */,
+				980088E121D366AD00C9CC91 /* UICollectionView+Extension.swift in Sources */,
 				989EC67A21D1BFC20054A997 /* BaseTableViewCell.swift in Sources */,
 				989EC69121D1BFC20054A997 /* CellBackgroundView.swift in Sources */,
 				989EC66021D1BFC20054A997 /* ListItemTableViewCell.swift in Sources */,
 				989EC67021D1BFC20054A997 /* Future.swift in Sources */,
 				989EC66321D1BFC20054A997 /* DevicesListCell.swift in Sources */,
+				980088C321D3214F00C9CC91 /* UIView+XLExtension.m in Sources */,
 				989EC68F21D1BFC20054A997 /* Future+Extension.swift in Sources */,
+				980088CA21D3214F00C9CC91 /* FSActionSheet.m in Sources */,
 				989EC66421D1BFC20054A997 /* MainTabBarController.swift in Sources */,
 				989EC66521D1BFC20054A997 /* AppDelegate.swift in Sources */,
 				989EC67D21D1BFC20054A997 /* BaseTableView.swift in Sources */,
 				989EC66E21D1BFC20054A997 /* UserService.swift in Sources */,
+				980088CD21D3214F00C9CC91 /* TADotView.m in Sources */,
 				989EC68821D1BFC20054A997 /* UIImage+Extension.swift in Sources */,
 				989EC66B21D1BFC20054A997 /* MonitorModelel.swift in Sources */,
 				989EC65E21D1BFC20054A997 /* ProjectInfoCell.swift in Sources */,
@@ -739,11 +896,15 @@
 				989EC66721D1BFC20054A997 /* Extensions.swift in Sources */,
 				989EC67721D1BFC20054A997 /* BaseViewController.swift in Sources */,
 				9800886821D1FDE200C9CC91 /* ChartsCell.swift in Sources */,
+				980088C521D3214F00C9CC91 /* XLZoomingScrollView.m in Sources */,
 				989EC66C21D1BFC20054A997 /* User.swift in Sources */,
 				989EC67121D1BFC20054A997 /* NetworkManager.swift in Sources */,
 				989EC68321D1BFC20054A997 /* ReusableCellExtensions.swift in Sources */,
+				980088CB21D3214F00C9CC91 /* FSActionSheetCell.m in Sources */,
 				989EC68A21D1BFC20054A997 /* TopViewController.swift in Sources */,
+				980088DB21D3514100C9CC91 /* CameraViewController.swift in Sources */,
 				989EC67E21D1BFC20054A997 /* BaseSecondaryBlueView.swift in Sources */,
+				980088C421D3214F00C9CC91 /* UIImage+XLExtension.m in Sources */,
 				989EC68221D1BFC20054A997 /* ToolManager.swift in Sources */,
 				989EC65721D1BFC20054A997 /* ListItemViewController.swift in Sources */,
 				989EC66921D1BFC20054A997 /* ServicesConstants.swift in Sources */,
@@ -752,20 +913,27 @@
 				989EC66221D1BFC20054A997 /* ProjectStatusCell.swift in Sources */,
 				989EC66821D1BFC20054A997 /* Interface.swift in Sources */,
 				989EC65921D1BFC20054A997 /* HomeViewController.swift in Sources */,
+				980088D521D3267E00C9CC91 /* PhotoBrowserTool.m in Sources */,
 				9800886C21D2061800C9CC91 /* BalloonMarker.swift in Sources */,
 				989EC67521D1BFC20054A997 /* Future+When.swift in Sources */,
 				989EC68121D1BFC20054A997 /* LoginViewController.swift in Sources */,
+				980088CC21D3214F00C9CC91 /* FSActionSheetItem.m in Sources */,
 				989EC68B21D1BFC20054A997 /* Constants.swift in Sources */,
 				989EC67821D1BFC20054A997 /* BaseNavigationController.swift in Sources */,
 				989EC66121D1BFC20054A997 /* DevicesImgCell.swift in Sources */,
 				989EC67C21D1BFC20054A997 /* BaseLabels.swift in Sources */,
 				989EC68D21D1BFC20054A997 /* MyLog.swift in Sources */,
+				980088C621D3214F00C9CC91 /* XLPhotoBrowser.m in Sources */,
 				9800886421D1E00B00C9CC91 /* Optional+Extension.swift in Sources */,
 				989EC66F21D1BFC20054A997 /* ProjectService.swift in Sources */,
+				980088CF21D3214F00C9CC91 /* TAAnimatedDotView.m in Sources */,
 				989EC69021D1BFC20054A997 /* NibLoadable.swift in Sources */,
+				980088DD21D363DC00C9CC91 /* CameraCollectionViewCell.swift in Sources */,
 				989EC68E21D1BFC20054A997 /* IOTNotificationCenter.swift in Sources */,
 				989EC68521D1BFC20054A997 /* UIFont+Extension.swift in Sources */,
 				989EC67F21D1BFC20054A997 /* BaseButton.swift in Sources */,
+				980088C221D3214F00C9CC91 /* XLProgressView.m in Sources */,
+				980088C921D3214F00C9CC91 /* FSActionSheetConfig.m in Sources */,
 				989EC67321D1BFC20054A997 /* Try.swift in Sources */,
 				989EC69821D1C58B0054A997 /* ChartsViewController.swift in Sources */,
 				98A57A0321D1DA3600D10929 /* UIBarButtonItem+Extension.swift in Sources */,

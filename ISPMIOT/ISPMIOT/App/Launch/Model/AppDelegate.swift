@@ -1,6 +1,13 @@
 import UIKit
 import IQKeyboardManagerSwift
 
+/// 屏幕宽度
+let SCREEN_WIDTH = UIScreen.main.bounds.width
+/// 屏幕高度
+let SCREEN_HEIGHT = UIScreen.main.bounds.height
+/// 屏幕bounds
+let SCREEN_BOUNDS = UIScreen.main.bounds
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

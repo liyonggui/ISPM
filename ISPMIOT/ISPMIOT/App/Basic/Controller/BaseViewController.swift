@@ -37,19 +37,8 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        setupPan()
         setupUI()
         setupLeftNavBarButtonItem()
-    }
-    
-    // 设置右滑返回
-    private func setupPan() {
-        let target = navigationController?.interactivePopGestureRecognizer?.delegate
-        let pan = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
-        view.addGestureRecognizer(pan)
-        // 禁用系统方式
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        pan.delegate = self
     }
     
     // 设置UI
@@ -77,13 +66,6 @@ class BaseViewController: UIViewController {
         case .push: navigationController?.popViewController(animated: flag)
         case .modal: dismiss(animated: flag, completion: nil)
         }
-    }
-}
-
-// MARK: - UIGestureRecognizerDelegate
-extension BaseViewController: UIGestureRecognizerDelegate {
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return children.count > 1
     }
 }
 

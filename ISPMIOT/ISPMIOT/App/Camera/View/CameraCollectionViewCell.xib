@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zgn-gs-pt2" customClass="CameraCollectionViewCell" customModule="ISPMIOT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="241" height="145"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="241" height="145"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geU-FF-gQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="241" height="145"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NND-fr-3xT">
+                                <rect key="frame" x="0.0" y="0.0" width="241" height="145"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glk-cs-31e">
+                                <rect key="frame" x="99.5" y="62" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR2-jk-n2G">
+                                <rect key="frame" x="0.0" y="0.0" width="241" height="145"/>
+                                <state key="normal" image="bofang-sel"/>
+                                <state key="disabled" image="bofang-nor"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qR2-jk-n2G" secondAttribute="bottom" id="GHV-IM-Hzt"/>
+                            <constraint firstItem="Glk-cs-31e" firstAttribute="centerY" secondItem="geU-FF-gQ5" secondAttribute="centerY" id="JFf-Td-s0I"/>
+                            <constraint firstAttribute="bottom" secondItem="NND-fr-3xT" secondAttribute="bottom" id="Pd7-TA-Ezt"/>
+                            <constraint firstItem="qR2-jk-n2G" firstAttribute="leading" secondItem="geU-FF-gQ5" secondAttribute="leading" id="eTq-BL-yZN"/>
+                            <constraint firstItem="qR2-jk-n2G" firstAttribute="top" secondItem="geU-FF-gQ5" secondAttribute="top" id="hxI-OF-z87"/>
+                            <constraint firstItem="NND-fr-3xT" firstAttribute="top" secondItem="geU-FF-gQ5" secondAttribute="top" id="kO6-Ty-6gg"/>
+                            <constraint firstAttribute="trailing" secondItem="NND-fr-3xT" secondAttribute="trailing" id="lfn-ij-Kiw"/>
+                            <constraint firstAttribute="trailing" secondItem="qR2-jk-n2G" secondAttribute="trailing" id="nNl-ge-WOt"/>
+                            <constraint firstItem="Glk-cs-31e" firstAttribute="centerX" secondItem="geU-FF-gQ5" secondAttribute="centerX" id="wsT-6V-4fQ"/>
+                            <constraint firstItem="NND-fr-3xT" firstAttribute="leading" secondItem="geU-FF-gQ5" secondAttribute="leading" id="yKN-PD-R4g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="geU-FF-gQ5" secondAttribute="trailing" id="NHC-P3-3ne"/>
+                <constraint firstItem="geU-FF-gQ5" firstAttribute="top" secondItem="Zgn-gs-pt2" secondAttribute="top" id="YyD-1t-3VG"/>
+                <constraint firstItem="geU-FF-gQ5" firstAttribute="leading" secondItem="Zgn-gs-pt2" secondAttribute="leading" id="i9A-fS-und"/>
+                <constraint firstAttribute="bottom" secondItem="geU-FF-gQ5" secondAttribute="bottom" id="r4T-Vx-KvC"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="cLn-Na-T6j"/>
+            <size key="customSize" width="241" height="145"/>
+            <connections>
+                <outlet property="imgView" destination="NND-fr-3xT" id="7pN-N3-nQ0"/>
+                <outlet property="playButton" destination="qR2-jk-n2G" id="O9y-Tw-cnr"/>
+            </connections>
+            <point key="canvasLocation" x="88.799999999999997" y="63.418290854572717"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bofang-nor" width="32" height="32"/>
+        <image name="bofang-sel" width="32" height="32"/>
+    </resources>
+</document>

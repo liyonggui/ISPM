@@ -35,3 +35,13 @@ public extension UIColor {
     @objc public static var errorRed = UIColor(red: 192/255, green: 4/255, blue: 4/255, alpha: 1)
     @objc public static var successGreen = UIColor(red: 29/255, green: 164/255, blue: 33/255, alpha: 1)
 }
+
+// 颜色随机
+extension UIColor {
+    @objc public static var randomColor:UIColor {
+        let red = CGFloat(arc4random()%256)/255.0
+        let green = CGFloat(arc4random()%256)/255.0
+        let blue = CGFloat(arc4random()%256)/255.0
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+}

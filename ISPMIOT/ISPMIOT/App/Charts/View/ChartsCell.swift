@@ -16,12 +16,13 @@ class ChartsCell: BaseTableViewCell {
         chartView.doubleTapToZoomEnabled = false
         chartView.scaleXEnabled = false
         chartView.scaleYEnabled = false
-        chartView.chartDescription?.text = ""//设置为""隐藏描述文字
         chartView.delegate = self
         
         chartView.noDataText = "暂无数据"
         chartView.noDataTextColor = UIColor.gray
         chartView.noDataFont = UIFont.boldSystemFont(ofSize: 14)
+        chartView.chartDescription?.text = "时间"
+        chartView.chartDescription?.textColor = UIColor.red
         
         //y轴
         chartView.rightAxis.enabled = false
@@ -34,7 +35,7 @@ class ChartsCell: BaseTableViewCell {
         leftAxis.labelPosition = .outsideChart
         leftAxis.gridColor = UIColor(red: 233/255.0, green: 233/255.0, blue: 233/255.0, alpha: 1.0) //网格
         leftAxis.gridAntialiasEnabled = false;//抗锯齿
-        leftAxis.axisMaximum = 500//最大值
+        leftAxis.axisMaximum = 1000//最大值
         leftAxis.axisMinimum = 0
         leftAxis.labelCount = 11//多少等分
         
@@ -58,7 +59,7 @@ class ChartsCell: BaseTableViewCell {
         
         var yDataArray1 = [ChartDataEntry]()
         for i in 0...xValues.count-1 {
-            let y = arc4random()%500;
+            let y = arc4random()%1000;
             let entry = ChartDataEntry(x: Double(i), y: Double(y))
             
             yDataArray1.append(entry)
@@ -74,13 +75,12 @@ class ChartsCell: BaseTableViewCell {
         set1.fillAlpha = 1
         set1.fill = Fill(linearGradient: gradient, angle: 90) //.linearGradient(gradient, angle: 90)
 //
+        // 设置平滑
+        set1.mode = .horizontalBezier
         let data = LineChartData(dataSets: [set1])
         set1.drawFilledEnabled = true
         chartView.data = data
-//        chartView.fil
-//        chartView.animate(xAxisDuration: 2.5, yAxisDuration: 2.5, easingOption: .easeInBack)
-//        chartView.animate(xAxisDuration: 3, yAxisDuration: 3)
-        chartView.animate(xAxisDuration: 3)
+        chartView.animate(xAxisDuration: 3.0, yAxisDuration: 3.0)
     }
     
     // 设置限制线

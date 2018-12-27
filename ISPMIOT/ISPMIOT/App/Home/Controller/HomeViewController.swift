@@ -109,6 +109,7 @@ class HomeViewController: BaseViewController {
     private func setupNav() {
         setNavigationBar(title: NavTitle.projectInformation)
         setNavigationBarHidden()
+        hidesBottomBarWhenPushed = true
     }
     
     // MARK: - UI 设置
@@ -249,6 +250,9 @@ extension HomeViewController: UITableViewDelegate {
             guard indexPath.row > 0, let type = EnvironmentParameterType(rawValue: indexPath.row - 1) else { return }
             let vc = ChartsViewController(self.monitorArray[type.rawValue])
             navigationController?.pushViewController(vc, animated: true)
+        case .devices:
+            let vc = CameraViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default: break
         }
     }
@@ -258,10 +262,19 @@ extension HomeViewController: UITableViewDelegate {
 extension HomeViewController: DevicesImgCellDelegate {
     func didTapImg(_ cell: DevicesImgCell) {
         MyPrint("sdfsdf")
-//        guard let index = mainTableView.indexPath(for: cell), let model = projectModel else {
-//            return
-//        }
+        guard let indexPath = mainTableView.indexPath(for: cell), let model = projectModel else {
+            return
+        }
+        let browser = PhotoBrowserTool.showPhotoBrowser(withCurrentImageIndex: Int32(indexPath.row), images: model.images, delegate: self)
+    }
+}
 
+// MARK: - 浏览器代理
+extension HomeViewController: XLPhotoBrowserDelegate {
+    func photoBrowser(_ browser: XLPhotoBrowser!, clickActionSheetIndex actionSheetindex: Int, currentImageIndex: Int) {
+        MyPrint(currentImageIndex)
+        MyPrint(actionSheetindex)
+        MyPrint(browser)
     }
 }
 
